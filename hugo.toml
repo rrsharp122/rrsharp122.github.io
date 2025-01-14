@@ -1,0 +1,28 @@
+baseURL = "https://rrsharp122.github.io/"
+languageCode = "en-us"
+title = "Your Name"
+theme = "PaperMod"
+
+[params]
+showFullTextInList = true
+enableSearch = true
+defaultTheme = "auto"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  
+  [[menu.main]]
+    identifier = "research"
+    name = "Research"
+    url = "/research/"
+    weight = 20
+  
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "/publications/"
+    weight = 30
