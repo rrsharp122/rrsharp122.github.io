@@ -17,12 +17,24 @@ defaultTheme = "auto"
   
   [[menu.main]]
     identifier = "research"
-    name = "Research"
+    name = "Research Interests"
     url = "/research/"
     weight = 20
   
   [[menu.main]]
     identifier = "publications"
-    name = "Publications"
+    name = "Research Publications"
     url = "/publications/"
     weight = 30
+  
+  [[menu.main]]
+    identifier = "scicomm"
+    name = "Science Communications"
+    url = "/scicomm/"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "scicomm-pieces"
+    name = "SciComm Portfolio"
+    url = "/scicomm-pieces/"
+    weight = 50
