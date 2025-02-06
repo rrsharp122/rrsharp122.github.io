@@ -15,10 +15,11 @@ I grew up in Coweta, Oklahoma, and earned a B.S. in Psychology and a minor in Cr
 Currently, I study how social and environmental factors, like access to quality medical care and stress, affect genetic risk for bipolar disorder. I use publically available data to explore this question and focus on the ethical, legal, and social implications of both my research findings and this field of research itself.
 
 ### At a Glance
-- 🧬 [Key research area]
-- 🔬 [Current work]
-- 📊 [Technical skills]
-- 🎓 [Education highlights]
+- 🧬 Statistical genetics & neuropsychiatric disorders
+- 💻 R, Python, Bash programming
+- 🔬 GWAS & MPRA analysis
+- 📊 Bioinformatics pipeline development
+- 🎓 NSF Graduate Research Fellow
 
 ### Connect
 [Your professional social media links, if desired]
