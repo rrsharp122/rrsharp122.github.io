@@ -3,20 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
-    <script 
-src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script 
-src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" 
-rel="stylesheet">
-    {{ $style := resources.Get "css/main.css" | resources.ToCSS | 
-resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
     {{ block "main" . }}{{ end }}
-    {{ $homepage := resources.Get "js/components/Homepage.js" | babel | 
-resources.Minify }}
+    {{ $homepage := resources.Get "js/components/Homepage.js" | babel | resources.Minify }}
     <script src="{{ $homepage.Permalink }}"></script>
 </body>
 </html>
