@@ -3,13 +3,17 @@
 <head>
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
+    <!-- React and ReactDOM -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Tailwind CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    {{ block "main" . }}{{ end }}
-    {{ $homepage := resources.Get "js/components/Homepage.js" | babel | resources.Minify }}
-    <script src="{{ $homepage.Permalink }}"></script>
+    <div id="react-root">
+        {{ block "main" . }}{{ end }}
+    </div>
+    <script src="/js/components/Homepage.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

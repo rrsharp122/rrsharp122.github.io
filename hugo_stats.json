@@ -1,7 +1,53 @@
 {
   "htmlElements": {
-    "tags": null,
-    "classes": null,
-    "ids": null
+    "tags": [
+      "a",
+      "article",
+      "body",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "h3",
+      "head",
+      "header",
+      "html",
+      "li",
+      "link",
+      "meta",
+      "p",
+      "path",
+      "script",
+      "span",
+      "svg",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "anchor",
+      "entry-hint",
+      "entry-hint-parent",
+      "not-found",
+      "page-header",
+      "post-content",
+      "post-footer",
+      "post-header",
+      "post-meta",
+      "post-single",
+      "post-tags",
+      "post-title",
+      "terms-tags"
+    ],
+    "ids": [
+      "areas-i-write-about",
+      "at-a-glance",
+      "background",
+      "connect",
+      "latest-stories",
+      "making-science-accessible-one-story-at-a-time",
+      "nice-to-meet-you",
+      "react-root",
+      "research-focus"
+    ]
   }
 }
