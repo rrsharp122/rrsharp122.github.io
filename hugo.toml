@@ -1,40 +1,27 @@
 baseURL = "https://rrsharp122.github.io/"
 languageCode = "en-us"
-title = "Your Name"
+title = "Rachel Sharp"
 theme = "PaperMod"
 
 [params]
-showFullTextInList = true
-enableSearch = true
-defaultTheme = "auto"
+  showFullTextInList = true
+  defaultTheme = "auto"
 
 [menu]
+  [[menu.main]]
+    identifier = "writing"
+    name = "Writing Portfolio"
+    url = "/writing/"
+    weight = 10
+  
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 10
-  
-  [[menu.main]]
-    identifier = "research"
-    name = "Research Interests"
-    url = "/research/"
     weight = 20
   
   [[menu.main]]
-    identifier = "publications"
-    name = "Research Publications"
-    url = "/publications/"
+    identifier = "research"
+    name = "Research"
+    url = "/research/"
     weight = 30
-  
-  [[menu.main]]
-    identifier = "scicomm"
-    name = "Science Communications"
-    url = "/scicomm/"
-    weight = 40
-
-  [[menu.main]]
-    identifier = "scicomm-pieces"
-    name = "SciComm Portfolio"
-    url = "/scicomm-pieces/"
-    weight = 50

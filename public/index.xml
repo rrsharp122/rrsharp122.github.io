@@ -39,9 +39,12 @@
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
-      <pubDate>Tue, 14 Jan 2025 16:23:12 -0500</pubDate>
+      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Hello I am Rachel and I like cats&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;nice-to-meet-you&#34;&gt;Nice to meet you!&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m Rachel - a fourth-year PhD Candidate in Neuroscience at UNC Chapel Hill with a passion for science writing, communications, community engagement, and mentorship. I love meeting and working with new people and make an effort to bring creativity, fun, and inclusion into everything I do. Let&amp;rsquo;s connect!&lt;/p&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I grew up in Coweta, Oklahoma, and earned a B.S. in Psychology and a minor in Criminology from the University of Oklahoma in 2019. I then worked for two years as a bioinformatician at the Univerity of Oklahoma Health Sciences Center Core Facilities, before coming to UNC in the Fall of 2021 to pursue my PhD in Neuroscience with a certificate in bioinformatics. In 2022, I began exploring the world of science writing and communications and found my passion for communicating science in an engaging and accessible way.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
