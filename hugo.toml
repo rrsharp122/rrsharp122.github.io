@@ -7,6 +7,12 @@ theme = "PaperMod"
   showFullTextInList = true
   defaultTheme = "auto"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
+[build]
+  writeStats = true
+
 [menu]
   [[menu.main]]
     identifier = "writing"
