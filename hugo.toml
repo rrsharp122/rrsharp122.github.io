@@ -7,6 +7,13 @@ theme = "PaperMod"
   showFullTextInList = true
   defaultTheme = "auto"
 
+[params.assets]
+  disableHLJS = true
+
+[params.cdns]
+  lucideReact = 
+"https://cdnjs.cloudflare.com/ajax/libs/lucide-react/0.263.1/lucide-react.min.js"
+
 [markup.goldmark.renderer]
   unsafe = true
 
