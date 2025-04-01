@@ -1,0 +1,80 @@
+baseURL: "https://yourusername.github.io/"
+languageCode: en-us
+title: "[Your Name] - Science Communication & Research"
+theme: "PaperMod"
+
+params:
+  # PaperMod theme specific configurations
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  
+  # Appearance customizations
+  defaultTheme: light  # light, dark, or auto
+  
+  # Home page profile
+  profileMode:
+    enabled: true
+    title: "[Your Name]"
+    subtitle: "Neuroscience PhD Candidate | Science Communicator | Data Analyst"
+    imageUrl: "/path/to/profile-image.jpg"  # Replace with your profile image
+    imageWidth: 120
+    imageHeight: 120
+    imageQuality: 90
+    buttons:
+      - name: About
+        url: /about
+      - name: Research
+        url: /research
+
+  # Social icons
+  socialIcons:
+    - name: github
+      url: "https://github.com/yourusername"
+    - name: linkedin
+      url: "https://linkedin.com/in/yourusername"
+    - name: email
+      url: "mailto:youremail@unc.edu"
+
+  # SEO and metadata
+  description: "Neuroscience PhD Candidate specializing in science communication and research"
+  keywords: 
+    - neuroscience
+    - science communication
+    - research
+    - data analysis
+    - genetics
+
+# Menu configuration
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: writing
+      name: Science Writing
+      url: /writing/
+      weight: 20
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 30
+    - identifier: cv
+      name: CV
+      url: /cv/
+      weight: 40
+
+# Build settings
+buildDates: true
+enableRobotsTXT: true
+enableEmoji: true
+googleAnalytics: UA-XXXXXXXXX-X  # Replace with your Google Analytics ID
+
+# Markdown rendering
+markup:
+  highlight:
+    style: monokai
+    lineNos: true
+    codeFences: true
