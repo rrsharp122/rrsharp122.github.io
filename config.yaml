@@ -70,3 +70,6 @@ markup:
     style: monokai
     lineNos: true
     codeFences: true
+  goldmark:
+    renderer:
+      unsafe: true  # This allows raw HTML in markdown content
