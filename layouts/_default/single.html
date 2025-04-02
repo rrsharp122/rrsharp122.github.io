@@ -1,0 +1,227 @@
+{{- define "main" }}
+
+<article class="post-single">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title | lower }}</h1>
+        
+        {{ if .Params.quote }}
+        <div class="quote-block">
+            <blockquote>{{ .Params.quote }}</blockquote>
+            {{ if .Params.quoteAuthor }}
+            <cite>—{{ .Params.quoteAuthor }}</cite>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+    
+    <div class="post-content">
+        {{ if .Params.profileImage }}
+        <div class="profile-section">
+            <div class="profile-image-wrapper">
+                <img src="{{ .Params.profileImage }}" alt="{{ .Title }}" class="profile-image">
+                <p class="profile-caption">{{ .Params.caption | default .Params.pronouns | default "" }}</p>
+            </div>
+            
+            {{ if .Params.links }}
+            <div class="profile-links">
+                <h3>LINKS</h3>
+                <ul class="link-list">
+                    {{ range .Params.links }}
+                    <li><a href="{{ .url }}">{{ .name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+            
+            <!-- Social links for profiles -->
+            {{ if .Params.socialLinks }}
+            <div class="profile-social">
+                {{ range .Params.socialLinks }}
+                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fa fa-{{ .icon }}"></i>
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <div class="content-body">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+
+<style>
+    .post-single {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    
+    .post-header {
+        margin-bottom: 40px;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px;
+    }
+    
+    .post-title {
+        font-size: 3rem;
+        font-weight: 400;
+        margin-bottom: 25px;
+        letter-spacing: -0.5px;
+    }
+    
+    .quote-block {
+        max-width: 800px;
+        margin: 30px 0;
+        padding-left: 20px;
+        border-left: 3px solid var(--accent-color);
+    }
+    
+    .quote-block blockquote {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 0 0 5px 0;
+    }
+    
+    .quote-block cite {
+        display: block;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+    
+    .post-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    
+    .profile-section {
+        width: 100%;
+        max-width: 300px;
+        margin-right: 20px;
+    }
+    
+    .profile-image-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .profile-image {
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 10px;
+    }
+    
+    .profile-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        text-transform: uppercase;
+        margin: 5px 0 0 0;
+    }
+    
+    .profile-links {
+        margin-top: 30px;
+    }
+    
+    .profile-links h3 {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    
+    .link-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .link-list li {
+        margin-bottom: 10px;
+    }
+    
+    .link-list a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+    
+    .link-list a:hover {
+        color: var(--primary-color);
+    }
+    
+    .content-body {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .content-body p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .content-body h2 {
+        font-size: 1.8rem;
+        margin: 40px 0 20px 0;
+        font-weight: 500;
+    }
+    
+    .content-body h3 {
+        font-size: 1.4rem;
+        margin: 30px 0 15px 0;
+        font-weight: 500;
+    }
+    
+    .content-body a {
+        color: var(--primary-color);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+    }
+    
+    .content-body a:hover {
+        border-color: var(--primary-color);
+    }
+    
+    .profile-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+    
+    .social-icon:hover {
+        color: var(--primary-color);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .post-content {
+            flex-direction: column;
+        }
+        
+        .profile-section {
+            max-width: 100%;
+            margin-right: 0;
+        }
+        
+        .profile-image {
+            max-width: 250px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+</style>
+
+{{- end }}

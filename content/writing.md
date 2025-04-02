@@ -1,92 +1,118 @@
 ---
-title: "Science Writing Portfolio"
+title: "Science Communication"
 date: 2024-04-01
 draft: false
-showToc: true
-hidemeta: false
+hidemeta: true
 comments: false
-description: "A curated collection of science communication works"
+description: "Examples of my science communication and writing"
 layout: "single"
-cover:
-    image: "/images/writing-header.jpg"
-    alt: "Science Writing"
-    caption: "Translating complex science into accessible stories"
-    hidden: false
-summary: "Exploring the intersection of neuroscience, genomics, and society through clear, engaging writing"
 ---
 
-> "The most effective science communicators are those who can transform complexity into clarity without sacrificing accuracy."
+# Science Communication
 
-## Featured Articles
+I'm passionate about making complex scientific concepts accessible to diverse audiences. My science communication work spans several formats and audiences, from lay explanations of recent research to technical explainers for scientific peers.
 
-### 🧠 Neuroscience Narratives
+## Featured Writing
 
-1. **The Brain on Genes: How DNA Shapes Our Neurons**
-   - *Published in*: Scientific American (Guest Blog)
-   - *Date*: March 2024
-   - **Key Insights**: Explains how genetic variations influence neural development and function in accessible terms
-   - [Read the article](#) <!-- Replace with actual link when available -->
+### Understanding the Brain's Genetic Blueprint
 
-2. **Beyond the Genome: Epigenetics and Brain Health**
-   - *Published in*: Neuroscience Today
-   - *Date*: January 2024
-   - **Impact**: Introduced the concept of epigenetic influences on brain development to a general audience
-   - [Read the article](#) <!-- Replace with actual link when available -->
+**Published in: _Neuroscience Today_ | February 2024**
 
-### 📊 Data Stories
+This article explains how genes shape brain development and function in language accessible to a general audience. I break down complex genomic concepts using everyday analogies and visual explanations.
 
-1. **Visualizing the Genomic Revolution in Neuroscience**
-   - *Published in*: Data Visualization Society Blog
-   - *Date*: February 2024
-   - **Featured**: Interactive data visualizations explaining complex genomic concepts
-   - [View the visualization](#) <!-- Replace with actual link when available -->
+> "Sharp has a remarkable ability to translate dense scientific concepts into engaging narratives that anyone can understand." — _Neuroscience Today_ Editor
 
-### 🎙️ Podcast Appearances
+[Read the full article →](/writing/genetic-blueprint)
 
-1. **Neuroscience for Everyone Podcast**
-   - *Episode*: "Decoding the Language of Genes in the Brain"
-   - *Date*: December 2023
-   - **Discussion**: A conversation about recent advances in psychiatric genetics and what they mean for understanding mental health
-   - [Listen here](#) <!-- Replace with actual link when available -->
+### The Epigenetic Revolution: Beyond the DNA Sequence
 
-## Writing Themes & Approach
+**Published in: _Science Explained_ | November 2023**
 
-My science writing focuses on:
+This piece explores how epigenetic mechanisms influence gene expression without changing the underlying DNA sequence, with a focus on implications for neuropsychiatric disorders.
 
-- 🔍 **Translating complex research into accessible narratives**: Breaking down technical concepts without oversimplification
-- 📖 **Highlighting the human stories behind scientific discoveries**: Connecting research to real-world impact
-- 🌉 **Bridging academic research and public curiosity**: Making science relevant to everyday life
-- 🧩 **Interdisciplinary connections**: Exploring how neuroscience intersects with ethics, society, and policy
-- 🧠 **Neurodiversity and mental health**: Discussing the science behind neurological differences with respect and accuracy
+[Read the full article →](/writing/epigenetic-revolution)
 
-### Writing Philosophy
+### Decoding Single-Cell RNA Sequencing for Neuroscientists
 
-I believe that effective science communication requires:
+**Published in: _Methods in Neuroscience_ | August 2023**
 
-- **Accuracy**: Maintaining scientific integrity while simplifying concepts
-- **Accessibility**: Creating multiple entry points for readers of different backgrounds
-- **Engagement**: Using narrative techniques to make science compelling
-- **Empathy**: Recognizing the human implications of scientific research
+A technical explainer aimed at neuroscientists interested in incorporating single-cell approaches into their research but lacking specialized genomics training.
 
-## Current and Upcoming Projects
+[Read the full article →](/writing/single-cell-explainer)
 
-### 📚 Series: "The Genomic Revolution in Neuroscience"
+## Science Communication Workshops
 
-A planned six-part series exploring how genomics is transforming our understanding of the brain:
+I regularly lead workshops on science communication for fellow researchers:
 
-1. **Part 1**: "From DNA to Neurons: The Basics of Neurogenomics" (Published)
-2. **Part 2**: "Single-Cell Revolution: How New Technologies are Revealing Brain Complexity" (Coming April 2024)
-3. **Part 3**: "The Search for Psychiatric Risk Genes" (Coming May 2024)
-4. **Part 4**: "Beyond Genetics: Epigenetics and Brain Function" (Coming June 2024)
-5. **Part 5**: "Ethical Considerations in Neurogenomics" (Coming July 2024)
-6. **Part 6**: "Future Frontiers: Where Neurogenomics is Heading" (Coming August 2024)
+### From Data to Story: Communicating Your Research to Diverse Audiences
 
-### 🎬 Digital Media Project
+A hands-on workshop that helps scientists transform their technical findings into compelling narratives for different audiences, from grant reviewers to the general public.
 
-- **Visualizing the Genome-Brain Connection**: An interactive web experience explaining how genetic variations influence brain development and function
-- **Collaboration**: Working with digital artists and web developers to create a novel science communication platform
-- **Launch Date**: Fall 2024
+### Visualization Strategies for Complex Data
 
-### 📝 Guest Editorial and Commentary
+This workshop focuses on creating clear, accurate, and engaging visualizations of complex scientific data using R and ggplot2.
 
-I'm available for guest writing, speaking engagements, and media commentary on topics related to neuroscience, genomics, and science communication. Please [contact me](#contact) if you're interested in collaboration.
+```r
+# Example code from the visualization workshop
+library(tidyverse)
+library(patchwork)
+
+# Create a custom theme for consistent, clean visualizations
+theme_scicomm <- function() {
+  theme_minimal() +
+    theme(
+      text = element_text(family = "Helvetica", color = "#333333"),
+      plot.title = element_text(size = 16, face = "bold"),
+      plot.subtitle = element_text(size = 12, color = "#666666"),
+      axis.title = element_text(size = 12, face = "bold"),
+      axis.text = element_text(size = 10),
+      legend.position = "bottom",
+      panel.grid.major = element_line(color = "#e5e5e5"),
+      panel.grid.minor = element_blank()
+    )
+}
+
+# Example visualization of brain gene expression data
+ggplot(brain_expression_data, aes(x = brain_region, y = expression_level, fill = gene)) +
+  geom_boxplot(alpha = 0.8) +
+  scale_fill_brewer(palette = "Purples") +
+  theme_scicomm() +
+  labs(
+    title = "Gene Expression Across Brain Regions",
+    subtitle = "Data from Human Brain Atlas Project",
+    x = "Brain Region",
+    y = "Expression Level (TPM)",
+    fill = "Gene"
+  )
+```
+
+## Public Engagement
+
+### Brain Awareness Week Activities
+
+I organize and lead interactive activities for K-12 students during Brain Awareness Week, introducing concepts in neuroscience and genetics through hands-on experiments and demonstrations.
+
+### Science Podcast Appearances
+
+I've been a guest on several science podcasts discussing topics in neuroscience and genomics:
+
+- **Brains and Genes** - Episode 42: "The Genetic Architecture of Mental Health"
+- **Science Explained** - Episode 87: "Decoding the Brain's Development"
+- **Research Frontiers** - Episode 15: "Emerging Tools in Genomics Research"
+
+## Media Resources
+
+I maintain a collection of resources for journalists and science communicators covering neuroscience and genomics:
+
+- [Glossary of Neuroscience and Genomics Terms](/resources/glossary)
+- [Visualization Library for Common Neuroscience Concepts](/resources/visualizations)
+- [Interview Availability and Contact Information](/contact)
+
+## Blog Posts
+
+I regularly write blog posts about recent advances in neuroscience and genomics, as well as reflections on academic life and science communication:
+
+- [Navigating the Interdisciplinary Nature of Modern Neuroscience](/blog/interdisciplinary-neuroscience)
+- [The Art and Science of Explaining Complex Research to Non-Specialists](/blog/art-of-explanation)
+- [Why R is My Programming Language of Choice for Genomic Analysis](/blog/r-for-genomics)
+- [A Week in the Life of a Computational Neuroscience PhD Student](/blog/week-in-the-life)

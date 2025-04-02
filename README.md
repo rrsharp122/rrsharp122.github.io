@@ -1,34 +1,105 @@
-# Personal Academic Website
+# Rachel Sharp's Personal Academic Website
 
-This repository contains the source code for my personal academic website, built with Hugo and the PaperMod theme, and deployed to GitHub Pages.
+This repository contains the source code for my personal academic website, built with Hugo and the PaperMod theme.
+
+## About This Site
+
+This website serves as a platform to share my research, science communication work, and professional background. It's designed to be clean, visually appealing, and easy to update.
+
+## Technologies Used
+
+- **[Hugo](https://gohugo.io/)**: A fast and modern static site generator written in Go
+- **[PaperMod Theme](https://github.com/adityatelange/hugo-PaperMod)**: A clean, responsive Hugo theme
+- **GitHub Pages**: Hosting platform for the website
+- **GitHub Actions**: Automation for building and deploying the site
 
 ## Local Development
 
-To run the site locally:
+### Prerequisites
 
-1. Install Hugo (Extended version recommended)
-2. Clone this repository
-3. Run `hugo server -D` from the root directory
-4. Access the site at http://localhost:1313/
+- [Hugo Extended](https://gohugo.io/installation/) (version 0.121.0 or later)
+- Git
 
-## Content Structure
+### Running the Site Locally
 
-- `/content/` - All website content
-  - `/content/posts/` - Blog posts and updates
-  - `/content/about.md` - About me page
-  - `/content/research.md` - Research overview
-  - `/content/writing.md` - Writing portfolio
-  - `/content/cv.md` - Curriculum Vitae
-  - `/content/code-showcase.md` - R code examples
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/rrsharp122/rrsharp122.github.io.git
+   cd rrsharp122.github.io
+   ```
+
+2. Start the Hugo development server:
+   ```bash
+   hugo server -D
+   ```
+
+3. View the site at http://localhost:1313/
+
+### Making Changes
+
+#### Content Updates
+
+All content is written in Markdown and located in the `content/` directory:
+
+- **About page**: `content/about.md`
+- **Research page**: `content/research.md`
+- **Science Communication page**: `content/writing.md`
+- **Contact page**: `content/contact.md`
+
+#### Adding Blog Posts
+
+To add a new blog post:
+
+1. Create a new markdown file in the `content/posts/` directory:
+   ```bash
+   hugo new posts/my-new-post.md
+   ```
+
+2. Edit the front matter and content of the file
+
+#### Adding Images
+
+Place images in the `static/images/` directory and reference them in your content with:
+```markdown
+![Alt text](/images/your-image.jpg)
+```
+
+#### Styling Changes
+
+Custom CSS is located in `assets/css/custom.css`
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages using GitHub Actions. Any push to the main branch triggers a build and deployment.
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
-## Theme
+### Manual Deployment
 
-This site uses the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
+If needed, you can manually deploy the site:
+
+1. Build the site:
+   ```bash
+   hugo --minify
+   ```
+
+2. The built site will be in the `public/` directory, which can be deployed to any static hosting service.
+
+## R Code Examples
+
+When adding R code examples to your content, use the following markdown format:
+
+```markdown
+```r
+# Your R code here
+library(tidyverse)
+ggplot(data, aes(x, y)) + 
+  geom_point()
+```
+```
 
 ## License
 
-Content is copyright © Rachel Sharp 2024. Code is licensed under MIT.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+If you have any questions about this website, please contact me at rsharp@unc.edu.

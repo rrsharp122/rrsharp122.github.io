@@ -8,28 +8,16 @@ params:
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: false
-  ShowToc: true
+  ShowToc: false
   ShowShareButtons: false
   
   # Custom Color Scheme
   themeColor: "#6a4c93"
   
   # Appearance customizations
-  defaultTheme: auto  # light, dark, or auto
-  disableThemeToggle: false  # Allow users to switch themes
-  homeInfoParams:
-    Title: "Exploring the Intersection of Neuroscience, Genomics, and Communication"
-    Content: "Welcome to my academic website - a space where complex science meets clear communication. Here you'll find my research in neuroscience and genomics alongside examples of how I translate scientific discoveries for broader audiences."
+  defaultTheme: light  # light, dark, or auto
+  disableThemeToggle: true  # Disable theme toggle
   
-  # Home page profile
-  profileMode:
-    enabled: false
-  
-  # Home page settings for regular mode with custom styling
-  homeInfoParams:
-    Title: "rachel sharp"
-    Content: "neuroscience phd candidate exploring the intersection of genomics, neuroscience, and science communication"
-
   # Social icons
   socialIcons:
     - name: github
@@ -47,33 +35,34 @@ params:
     - bioinformatics
     - genetic research
     - science communication
+    - computational genomics
+    - R programming
+    - data analysis
 
 # Menu configuration
 menu:
   main:
     - identifier: about
-      name: about
+      name: About
       url: /about/
       weight: 10
-    - identifier: writing
-      name: writing
-      url: /writing/
-      weight: 20
     - identifier: research
-      name: research
+      name: Research
       url: /research/
+      weight: 20
+    - identifier: writing
+      name: Science Communication
+      url: /writing/
       weight: 30
-    - identifier: cv
-      name: cv
-      url: /cv/
+    - identifier: contact
+      name: Contact
+      url: /contact/
       weight: 40
-
 
 # Build settings
 buildDates: true
 enableRobotsTXT: true
 enableEmoji: true
-googleAnalytics: UA-XXXXXXXXX-X  # Replace with your Google Analytics ID
 
 # Markdown rendering
 markup:
