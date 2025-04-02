@@ -5,10 +5,14 @@ theme: "PaperMod"
 
 params:
   # PaperMod theme specific configurations
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   ShowToc: true
+  ShowShareButtons: false
+  
+  # Custom Color Scheme
+  themeColor: "#6a4c93"
   
   # Appearance customizations
   defaultTheme: auto  # light, dark, or auto
@@ -19,22 +23,12 @@ params:
   
   # Home page profile
   profileMode:
-    enabled: true
-    title: "Rachel Sharp"
-    subtitle: "Neuroscience PhD Candidate | Science Communicator | Data Analyst"
-    imageUrl: "/images/profilePic.jpeg"  # Your profile image
-    imageWidth: 180  # Increased size for more impact
-    imageHeight: 180
-    imageQuality: 100
-    buttons:
-      - name: About Me
-        url: /about
-      - name: Research
-        url: /research
-      - name: Science Writing
-        url: /writing
-      - name: CV
-        url: /cv
+    enabled: false
+  
+  # Home page settings for regular mode with custom styling
+  homeInfoParams:
+    Title: "rachel sharp"
+    Content: "neuroscience phd candidate exploring the intersection of genomics, neuroscience, and science communication"
 
   # Social icons
   socialIcons:
@@ -58,19 +52,19 @@ params:
 menu:
   main:
     - identifier: about
-      name: About
+      name: about
       url: /about/
       weight: 10
     - identifier: writing
-      name: Science Writing
+      name: writing
       url: /writing/
       weight: 20
     - identifier: research
-      name: Research
+      name: research
       url: /research/
       weight: 30
     - identifier: cv
-      name: CV
+      name: cv
       url: /cv/
       weight: 40
 
