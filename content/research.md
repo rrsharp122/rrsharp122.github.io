@@ -6,6 +6,13 @@ showToc: true
 hidemeta: false
 comments: false
 description: "Research projects, publications, and academic contributions"
+layout: "single"
+cover:
+    image: "/images/research-banner.jpg"
+    alt: "Research visualization"
+    caption: "Integrating multi-omic data to understand neuropsychiatric disorders"
+    hidden: false
+summary: "Exploring the genetic underpinnings of neuropsychiatric disorders through computational approaches and multi-omic data integration"
 ---
 
 ## Current Research Project

@@ -11,7 +11,11 @@ params:
   ShowToc: true
   
   # Appearance customizations
-  defaultTheme: light  # light, dark, or auto
+  defaultTheme: auto  # light, dark, or auto
+  disableThemeToggle: false  # Allow users to switch themes
+  homeInfoParams:
+    Title: "Exploring the Intersection of Neuroscience, Genomics, and Communication"
+    Content: "Welcome to my academic website - a space where complex science meets clear communication. Here you'll find my research in neuroscience and genomics alongside examples of how I translate scientific discoveries for broader audiences."
   
   # Home page profile
   profileMode:
@@ -19,14 +23,18 @@ params:
     title: "Rachel Sharp"
     subtitle: "Neuroscience PhD Candidate | Science Communicator | Data Analyst"
     imageUrl: "/images/profilePic.jpeg"  # Your profile image
-    imageWidth: 120
-    imageHeight: 120
-    imageQuality: 90
+    imageWidth: 180  # Increased size for more impact
+    imageHeight: 180
+    imageQuality: 100
     buttons:
-      - name: About
+      - name: About Me
         url: /about
       - name: Research
         url: /research
+      - name: Science Writing
+        url: /writing
+      - name: CV
+        url: /cv
 
   # Social icons
   socialIcons:
