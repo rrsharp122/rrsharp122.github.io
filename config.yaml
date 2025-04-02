@@ -1,6 +1,6 @@
-baseURL: "https://yourusername.github.io/"
+baseURL: "https://rrsharp122.github.io/"
 languageCode: en-us
-title: "[Your Name] - Science Communication & Research"
+title: "Rachel Sharp - Neuroscience Research & Communication"
 theme: "PaperMod"
 
 params:
@@ -16,9 +16,9 @@ params:
   # Home page profile
   profileMode:
     enabled: true
-    title: "[Your Name]"
+    title: "Rachel Sharp"
     subtitle: "Neuroscience PhD Candidate | Science Communicator | Data Analyst"
-    imageUrl: "/path/to/profile-image.jpg"  # Replace with your profile image
+    imageUrl: "/images/profilePic.jpeg"  # Your profile image
     imageWidth: 120
     imageHeight: 120
     imageQuality: 90
@@ -31,20 +31,20 @@ params:
   # Social icons
   socialIcons:
     - name: github
-      url: "https://github.com/yourusername"
+      url: "https://github.com/rrsharp122"
     - name: linkedin
-      url: "https://linkedin.com/in/yourusername"
+      url: "https://www.linkedin.com/in/rachel-sharp-a07b69272"
     - name: email
-      url: "mailto:youremail@unc.edu"
+      url: "mailto:rsharp@unc.edu"
 
   # SEO and metadata
-  description: "Neuroscience PhD Candidate specializing in science communication and research"
+  description: "Neuroscience PhD Candidate specializing in psychiatric genetics and bioinformatics"
   keywords: 
     - neuroscience
+    - psychiatric genetics
+    - bioinformatics
+    - genetic research
     - science communication
-    - research
-    - data analysis
-    - genetics
 
 # Menu configuration
 menu:
@@ -65,6 +65,7 @@ menu:
       name: CV
       url: /cv/
       weight: 40
+
 
 # Build settings
 buildDates: true
