@@ -5,72 +5,29 @@ draft: false
 hidemeta: true
 comments: false
 description: "Overview of my research in neuroscience and genomics"
-layout: "single"
+layout: "research"
 ---
 
-# Research
+## Statistical Validation and Pipeline Development for Neuropsychiatric Genomics
 
-## Integrating Multi-omic Approaches to Understand Brain Function
-
-My research program sits at the intersection of neuroscience, genomics, and computational biology. I use multi-omic approaches to understand the genetic architecture of brain development and neuropsychiatric disorders.
+My research focuses on the statistical validation of genetic variants associated with neuropsychiatric disorders and the development of standardized computational pipelines for genomic data analysis. I work at the intersection of neuroscience, computational genomics, and bioinformatics to advance our understanding of the genetic mechanisms underlying psychiatric conditions.
 
 ### Current Projects
 
-#### Genetic Mechanisms in Neuropsychiatric Disorders
+#### Statistical Validation of GWAS-Identified Neuropsychiatric Variants
 
-I'm investigating how genetic variation contributes to the risk of developing neuropsychiatric disorders. By integrating data from genome-wide association studies (GWAS) with functional genomic data, we can identify potential causal variants and understand their biological impact.
+I'm investigating the statistical validity of genetic variants identified in genome-wide association studies (GWAS) for neuropsychiatric disorders, particularly bipolar disorder and schizophrenia. My work involves integrating GWAS data with Massively Parallel Reporter Assay (MPRA) datasets and Quantitative Trait Loci (QTL) data to validate genetic mechanisms contributing to disease risk.
 
-```r
-# Example of R code for analyzing GWAS data
-library(tidyverse)
-library(data.table)
+A key finding from my research has been demonstrating the statistical failure of commonly used algorithms to prioritize causal variants - a significant contribution that challenges current methodological approaches in the field.
 
-# Load GWAS summary statistics
-gwas_data <- fread("gs://mybucket/gwas_summary_stats.txt")
+#### MPRA Data Analysis Pipeline Development
 
-# Filter for genome-wide significant SNPs
-sig_snps <- gwas_data %>%
-  filter(p_value < 5e-8) %>%
-  arrange(p_value)
+I'm developing standardized computational pipelines for analyzing MPRA data across five internationally funded centers as part of the International Impact of Genomic Variation on Function (IGVF) Consortium. This collaborative effort aims to create reproducible, systematic approaches to functional genomics analysis that can be implemented across different research institutions.
 
-# Plot Manhattan plot
-manhattan_plot <- ggplot(gwas_data, aes(x = BP_position, y = -log10(p_value), color = as.factor(CHR))) +
-  geom_point(alpha = 0.8, size = 1.3) +
-  scale_color_manual(values = rep(c("#6a4c93", "#9370DB"), 22)) +
-  theme_minimal() +
-  labs(title = "Manhattan Plot",
-       x = "Chromosome Position",
-       y = "-log10(p-value)")
-```
-
-#### Single-cell Transcriptomics in Neurodevelopment
-
-I'm using single-cell RNA sequencing to characterize cell type-specific gene expression patterns during brain development. This approach allows us to understand how different cell types contribute to the complex process of brain development and how disruptions in these processes may lead to neuropsychiatric disorders.
-
-```r
-# Example of R code for analyzing single-cell RNA-seq data
-library(Seurat)
-library(tidyverse)
-
-# Load scRNA-seq data
-seurat_obj <- readRDS("gs://mybucket/scRNA_seq_data.rds")
-
-# Perform standard pre-processing
-seurat_obj <- seurat_obj %>%
-  NormalizeData() %>%
-  FindVariableFeatures() %>%
-  ScaleData() %>%
-  RunPCA() %>%
-  RunUMAP(dims = 1:30) %>%
-  FindNeighbors(dims = 1:30) %>%
-  FindClusters(resolution = 0.8)
-
-# Visualize cell clusters
-umap_plot <- DimPlot(seurat_obj, reduction = "umap", label = TRUE) +
-  theme_minimal() +
-  scale_color_viridis_d() +
-  labs(title = "Cell Type Clusters in Developing Brain")
-```
+My role involves:
+- Leading cross-center meetings to coordinate pipeline development
+- Organizing teams to develop discrete pipeline components  
+- Ensuring reproducibility and standardization across diverse computational environments
 
 ### Methodological Approach
 
@@ -90,27 +47,56 @@ I collaborate with researchers across disciplines to enhance the impact of my wo
 - **Computational Biology Group**: Developing new methods for analyzing multi-omic data
 - **Bioethics Initiative**: Addressing ethical implications of genetic testing and research
 
-## Publications
+## Selected Publications
 
-### Peer-Reviewed Articles
+### Recent Research Contributions
 
-1. Sharp R, Smith J, et al. (2023). "Integrative Analysis of Multi-omic Data Reveals Novel Insights into the Genetic Architecture of Autism Spectrum Disorder." *Journal of Neurodevelopmental Disorders*, 15(3), 142-159.
+<div class="publication-item">
+  <div class="publication-thumbnail">
+    <img src="/images/research-banner.jpg" alt="Publication thumbnail" class="pub-thumb">
+  </div>
+  <div class="publication-content">
+    <h4>Statistical Validation of Neuropsychiatric GWAS Variants Using MPRA Data</h4>
+    <p class="pub-authors"><strong>R. Sharp</strong>, et al.</p>
+    <p class="pub-journal"><em>In preparation</em> • 2024</p>
+    <p class="pub-description">Demonstrating statistical failure of commonly used algorithms to prioritize causal variants in neuropsychiatric GWAS studies.</p>
+  </div>
+</div>
 
-2. Johnson A, **Sharp R**, et al. (2022). "Single-cell Transcriptomic Profiling of Developing Human Cortex Identifies Cell Type-Specific Genetic Risk for Neuropsychiatric Disorders." *Nature Neuroscience*, 25(8), 1032-1045.
+<div class="publication-item">
+  <div class="publication-thumbnail">
+    <img src="/images/neuroscience-banner.jpg" alt="Publication thumbnail" class="pub-thumb">
+  </div>
+  <div class="publication-content">
+    <h4>Standardized MPRA Analysis Pipelines for the IGVF Consortium</h4>
+    <p class="pub-authors"><strong>R. Sharp</strong>, IGVF Consortium</p>
+    <p class="pub-journal"><em>In development</em> • 2024</p>
+    <p class="pub-description">Developing reproducible computational pipelines for functional genomics analysis across international research centers.</p>
+  </div>
+</div>
 
-3. **Sharp R**, Williams L, et al. (2021). "Computational Framework for Integrating GWAS and Single-cell RNA-seq Data." *Bioinformatics*, 37(12), 1683-1691.
+My research has also contributed to several collaborative projects investigating kidney immunology, metabolic disorders, and cancer biology through bioinformatics approaches. Key publications include work on macrophage heterogeneity, therapeutic targets for C. difficile disease, and metabolic adaptations in various disease contexts.
 
-### Preprints
+### Academic Profiles & Metrics
 
-1. **Sharp R**, Brown K, et al. (2024). "Gene Regulatory Networks in Neurodevelopment: Implications for Psychiatric Disorders." *bioRxiv*, doi: 10.1101/2024.02.15.123456.
+For a complete list of publications and citation metrics, please see my:
+
+- [CV page](/cv/) 
+- [ORCID profile](https://orcid.org/0000-0002-3070-9200)
+- [Google Scholar profile](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)
+
+<div class="scholar-metrics">
+  <p><strong>Google Scholar Metrics:</strong> Visit my <a href="https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra" target="_blank">Google Scholar profile</a> for current H-index and citation statistics.</p>
+</div>
 
 ## Funding
 
-My research is currently supported by:
+My research is supported by:
 
-- National Institute of Mental Health (NIMH) F31 Predoctoral Fellowship
-- UNC Neuroscience Center Graduate Research Fellowship
-- Brain & Behavior Research Foundation Young Investigator Grant
+- **National Science Foundation Graduate Research Fellowship Program (2023)**  
+  $111,000 stipend over 3 years, plus tuition, fees, insurance, and travel support
+- **UNC Department of Neuroscience T32 Training Grant (2022)**
+- **Genomics of Brain Disorders Conference Bursary Travel Award (2023)**
 
 ## Future Directions
 

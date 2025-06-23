@@ -1,190 +1,104 @@
 {{- define "main" }}
 
-<div class="main-content">
-    <!-- Main header section inspired by jp flores layout -->
+<div class="main-content" style="max-width: 1200px; margin: 0 auto;">
+    <!-- Hero section emphasizing science communication -->
     <div class="home-intro-section">
         <div class="intro-content">
-            <h1 class="main-name">rachel sharp</h1>
-            <p class="subtitle">PHD CANDIDATE IN NEUROSCIENCE & COMPUTATIONAL GENOMICS</p>
+            <h1 class="main-name">Rachel Sharp</h1>
+            <p class="subtitle">SCIENCE COMMUNICATOR & PhD CANDIDATE IN NEUROSCIENCE</p>
+            <p class="tagline">Making complex science accessible through compelling storytelling</p>
             
             <!-- Social icons -->
             <div class="social-icons">
                 {{- range site.Params.socialIcons }}
-                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
                     {{ partial "svg.html" . }}
                 </a>
                 {{- end }}
             </div>
             
-            <a href="/about" class="read-more-link">READ MORE →</a>
+            <a href="/science-communication" class="cta-button">VIEW MY WRITING →</a>
         </div>
         
         <div class="profile-image-container">
-            <img src="/images/profilePic.jpeg" alt="Rachel Sharp" class="home-profile-image">
+            <img src="/images/profilePic.jpeg" alt="Rachel Sharp, Science Communicator" class="home-profile-image">
         </div>
     </div>
+
+    <!-- Featured Writing Section -->
+    <section class="featured-writing-section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Writing</h2>
+            <p class="section-subtitle">Recent pieces translating neuroscience and genomics research for diverse audiences</p>
+        </div>
+        
+        <div class="writing-tiles-grid">
+            <!-- Tile 1: Neurons Behind Skilled Movement -->
+            <article class="writing-tile">
+                <div class="tile-image">
+                    <img src="/images/neurons.jpg" alt="Neurons research illustration">
+                </div>
+                <div class="tile-content">
+                    <div class="tile-meta">
+                        <span class="publication">The Pipette Pen</span>
+                        <span class="topic-tag">Neuroscience</span>
+                    </div>
+                    <h3 class="tile-title">
+                        <a href="https://www.thepipettepen.com/when-practice-makes-perfect-the-neurons-behind-skilled-movement/" target="_blank">
+                            When Practice Makes Perfect: The Neurons Behind Skilled Movement
+                        </a>
+                    </h3>
+                    <p class="tile-excerpt">
+                        Meet the UNC graduate student uncovering the mysteries behind how our brains control movement. Her work studying a rare type of neuron reveals surprising evidence about motor skill recovery after injury.
+                    </p>
+                    <div class="tile-footer">
+                        <a href="https://www.thepipettepen.com/when-practice-makes-perfect-the-neurons-behind-skilled-movement/" target="_blank" class="read-link">Read Full Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tile 2: Diversity in Genetic Studies -->
+            <article class="writing-tile">
+                <div class="tile-image">
+                    <img src="/images/DNA.webp" alt="DNA and genetic diversity illustration">
+                </div>
+                <div class="tile-content">
+                    <div class="tile-meta">
+                        <span class="publication">The Pipette Pen</span>
+                        <span class="topic-tag">Genomics</span>
+                    </div>
+                    <h3 class="tile-title">
+                        <a href="https://www.thepipettepen.com/the-need-for-diversity-in-large-scale-genetic-studies/" target="_blank">
+                            The Need for Diversity in Large-Scale Genetic Studies
+                        </a>
+                    </h3>
+                    <p class="tile-excerpt">
+                        Discover why the lack of diversity in Genome-wide Association Studies (GWAS) is more than a social issue—it's a scientific blind spot that could be missing key insights into human genetics.
+                    </p>
+                    <div class="tile-footer">
+                        <a href="https://www.thepipettepen.com/the-need-for-diversity-in-large-scale-genetic-studies/" target="_blank" class="read-link">Read Full Article →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Call to action for more writing -->
+        <div class="writing-cta">
+            <p>Interested in my approach to science communication?</p>
+            <a href="/science-communication" class="secondary-cta">Explore All My Writing</a>
+            <span class="divider">|</span>
+            <a href="/about-me" class="secondary-cta">Learn About My Background</a>
+        </div>
+    </section>
     
     <!-- Footer -->
     <div class="home-footer">
-        <p>© {{ now.Format "2006" }} Rachel Sharp | Made with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://github.com/adityatelange/hugo-PaperMod" target="_blank">PaperMod</a></p>
+        <p>© {{ now.Format "2006" }} Rachel Sharp | Science Communicator & Researcher</p>
         <div class="footer-links">
-            <a href="/license">License</a>
-            <a href="/contact">Contact</a>
+            <a href="/contact">Get In Touch</a>
+            <a href="/cv">CV & Experience</a>
         </div>
     </div>
 </div>
-
-<style>
-    /* Inline styles for homepage elements */
-    .main-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        min-height: calc(100vh - 200px);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-intro-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 80px 0;
-        flex: 1;
-    }
-
-    .intro-content {
-        flex: 1;
-        padding-right: 40px;
-    }
-
-    .main-name {
-        font-size: 4.5rem;
-        line-height: 1.1;
-        margin-bottom: 20px;
-        font-weight: 400;
-        letter-spacing: -1px;
-        color: var(--text-color);
-        text-transform: lowercase;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: var(--text-color);
-    }
-
-    .profile-image-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .home-profile-image {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 0px;
-        object-fit: cover;
-    }
-
-    .social-icons {
-        display: flex;
-        gap: 16px;
-        margin: 30px 0;
-    }
-
-    .social-icons a {
-        color: var(--text-color);
-        font-size: 20px;
-        transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-        color: var(--primary-color);
-    }
-
-    .read-more-link {
-        display: inline-block;
-        font-size: 0.9rem;
-        text-decoration: none;
-        color: var(--text-color);
-        letter-spacing: 1px;
-        margin-top: 20px;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-
-    .read-more-link:hover {
-        color: var(--primary-color);
-    }
-
-    .home-footer {
-        margin-top: auto;
-        padding: 20px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.8rem;
-        color: var(--text-color);
-        opacity: 0.7;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 15px;
-    }
-
-    .footer-links a {
-        color: var(--text-color);
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-        color: var(--primary-color);
-    }
-
-    /* Media queries for responsive design */
-    @media (max-width: 900px) {
-        .home-intro-section {
-            flex-direction: column-reverse;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .intro-content {
-            padding-right: 0;
-            margin-top: 40px;
-        }
-
-        .main-name {
-            font-size: 3.5rem;
-        }
-
-        .social-icons {
-            justify-content: center;
-        }
-
-        .home-profile-image {
-            max-width: 300px;
-        }
-
-        .home-footer {
-            flex-direction: column;
-            gap: 10px;
-            text-align: center;
-        }
-
-        .footer-links {
-            justify-content: center;
-        }
-    }
-</style>
 
 {{- end }}

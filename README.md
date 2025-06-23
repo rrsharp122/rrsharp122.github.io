@@ -2,6 +2,12 @@
 
 This repository contains the source code for my personal academic website, built with Hugo and the PaperMod theme.
 
+```bash
+cd /home/bgural/my-website
+
+hugo server -D
+```
+
 ## About This Site
 
 This website serves as a platform to share my research, science communication work, and professional background. It's designed to be clean, visually appealing, and easy to update.

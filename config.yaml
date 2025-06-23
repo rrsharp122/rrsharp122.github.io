@@ -20,15 +20,17 @@ params:
   
   # Social icons
   socialIcons:
-    - name: github
-      url: "https://github.com/rrsharp122"
+    - name: cv
+      url: "/pdfs/Sharp_CV.pdf"
     - name: linkedin
       url: "https://www.linkedin.com/in/rachel-sharp-a07b69272"
+    - name: orcid
+      url: "https://orcid.org/0000-0002-3070-9200"
     - name: email
       url: "mailto:rsharp@unc.edu"
 
   # SEO and metadata
-  description: "Neuroscience PhD Candidate specializing in psychiatric genetics and bioinformatics"
+  description: "Science communicator and neuroscience PhD candidate making complex research accessible through compelling storytelling"
   keywords: 
     - neuroscience
     - psychiatric genetics
@@ -42,17 +44,17 @@ params:
 # Menu configuration
 menu:
   main:
+    - identifier: writing
+      name: Writing
+      url: /science-communication/
+      weight: 10
     - identifier: about
       name: About
-      url: /about/
-      weight: 10
+      url: /about-me/
+      weight: 20
     - identifier: research
       name: Research
-      url: /research/
-      weight: 20
-    - identifier: writing
-      name: Science Communication
-      url: /writing/
+      url: /research-background/
       weight: 30
     - identifier: contact
       name: Contact

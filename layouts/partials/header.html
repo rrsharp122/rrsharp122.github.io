@@ -1,12 +1,12 @@
 <header class="header">
     <nav class="nav">
         <div class="nav-left">
-            <a href="/" class="site-name">home</a>
+            <a href="/" class="site-name">Home</a>
         </div>
         
         <div class="nav-right">
             {{- range site.Menus.main }}
-            <a href="{{ .URL }}" class="nav-link">{{ .Name | upper }}</a>
+            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
             {{- end }}
         </div>
     </nav>
@@ -38,7 +38,7 @@
         text-decoration: none;
         color: var(--text-color);
         transition: color 0.3s;
-        text-transform: lowercase;
+        /* text-transform: lowercase; */
     }
     
     .site-name:hover {

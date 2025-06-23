@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d8d3fd9b3c83f877",
+        "id": "f715eaacc8bfe909",
         "type": "tabs",
         "children": [
           {
-            "id": "260264fee285ecf8",
+            "id": "5951b04a4062f05f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/Science Communication.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Science Communication"
+              "title": "New tab"
             }
           }
         ]
@@ -168,8 +164,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "459efdda7babb71b",
+  "active": "5951b04a4062f05f",
   "lastOpenFiles": [
+    "layouts/README.md",
+    "layouts/partials/README.md",
+    "content/Science Communication.md",
     "layouts/_default/contact.html",
     "public/research-background/index.html",
     "public/research-background",
@@ -181,11 +180,9 @@
     "content/CV.md",
     "content/Contact.md",
     "content/About Me.md",
-    "content/Science Communication.md",
     "public/css/custom.css",
     "static/css/custom.css",
     "static/css",
-    "public/assets/css/stylesheet.54f59c8625057fda6bf2da9d9623b2557126b76c6d6cfe3f9136ca60106b7cf8.css",
     "public/images/DNA.webp",
     "public/images/neurons.jpg",
     "static/images/neurons.jpg",

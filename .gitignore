@@ -26,3 +26,15 @@ Thumbs.db
 
 # Node modules if any
 node_modules/
+
+# Private files and folders
+_private/
+*.Zone.Identifier
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Hugo extended installers
+*.deb
