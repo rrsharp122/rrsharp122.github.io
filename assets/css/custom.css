@@ -1482,33 +1482,26 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  border: 3px solid var(--primary-color);
-  border-left: none;
-  border-right: none;
+  border-top: 3px solid var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
 }
 
 /* Add responsive padding (buffer) around hero section */
-@media (min-width: 768px) {
-  .hero-section {
-    padding: 4rem 0;
-    width: calc(100vw - 2rem);
-    margin-left: calc(-50vw + 50% + 1rem);
-    border-left: 3px solid var(--primary-color);
-    border-right: 3px solid var(--primary-color);
-    border-radius: 12px;
-  }
-}
-
 @media (min-width: 1000px) {
   .hero-section {
+    min-height: 90vh; /* Reduce height on wider screens */
+    padding: 3rem 0;
     width: calc(100vw - 4rem);
     margin-left: calc(-50vw + 50% + 2rem);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-section {
-    padding: 4rem 0;
+    min-height: 85vh; /* Further reduce height */
+    padding: 3rem 0;
     width: calc(100vw - 6rem);
     margin-left: calc(-50vw + 50% + 3rem);
   }
@@ -1516,6 +1509,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1400px) {
   .hero-section {
+    min-height: 80vh; /* Minimum height on largest screens */
     width: calc(100vw - 8rem);
     margin-left: calc(-50vw + 50% + 4rem);
   }
@@ -2208,5 +2202,36 @@ main {
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+/* Float image styling for content pages */
+figure.float-left {
+  float: left;
+  margin: 0 2rem 1rem 0;
+  max-width: 300px;
+}
+
+figure.float-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-subtle);
+}
+
+figure.float-left figcaption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  figure.float-left {
+    float: none;
+    margin: 2rem auto;
+    display: block;
+    text-align: center;
   }
 }

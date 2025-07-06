@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset show more state when filter changes
             showAllItems = false;
+            // Reset button text when filter changes
+            const showMoreBtn = document.querySelector('.show-more-button');
+            if (showMoreBtn) {
+                showMoreBtn.textContent = 'Show More';
+                showMoreBtn.classList.remove('show-less');
+            }
             updateItemVisibility();
         });
     });
