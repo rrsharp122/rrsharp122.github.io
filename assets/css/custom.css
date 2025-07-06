@@ -555,36 +555,48 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 20px var(--shadow-subtle);
     z-index: 1000;
-    padding: 10px 0;
+    padding: 0 !important; /* Remove all padding */
   }
   
   .main {
-    padding-top: 70px; /* Add padding to prevent content hiding under fixed header */
+    padding-top: 45px; /* Reduce padding since header is smaller */
   }
   
   .nav {
-    padding: 0 15px;
+    padding: 8px 15px; /* Add minimal padding to nav instead */
+    flex-direction: row !important; /* Keep horizontal layout */
+    gap: 0 !important;
   }
   
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 6px 10px;
-  }
-  
-  .site-name {
-    font-size: 1rem;
+  .nav-left {
+    display: none !important; /* Hide "Home" text on mobile */
   }
   
   .nav-right {
-    gap: 10px;
+    width: 100% !important;
+    justify-content: space-around !important;
+    gap: 5px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
   
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 3px 6px; /* Reduce padding on links */
+    white-space: nowrap;
+  }
+  
   .nav-right::-webkit-scrollbar {
     display: none;
+  }
+  
+  /* Override any styles from header partial */
+  .header {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
   }
   
   /* Smooth scroll indicator */
