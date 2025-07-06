@@ -184,6 +184,12 @@
     </footer>
 </div>
 
+<!-- Hero CSS -->
+{{ $heroCSS := resources.Get "css/hero.css" }}
+{{ if $heroCSS }}
+    <link rel="stylesheet" href="{{ $heroCSS.RelPermalink }}">
+{{ end }}
+
 <!-- Portfolio CSS and JS -->
 {{ $portfolioCSS := resources.Get "css/portfolio.css" }}
 {{ if $portfolioCSS }}

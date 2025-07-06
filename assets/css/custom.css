@@ -507,12 +507,19 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
   margin: 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Thin black border */
 }
 
 @media (prefers-color-scheme: dark) {
   .header {
     background-color: rgba(13, 17, 23, 0.95);
     border-bottom-color: var(--border);
+  }
+  
+  /* Dark mode nav styling */
+  .nav {
+    background-color: rgba(26, 28, 30, 0.95); /* Dark equivalent of off-white cream */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border for dark mode */
   }
   
   /* Ensure proper contrast for form elements in dark mode */
@@ -542,7 +549,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
 .nav-left {
