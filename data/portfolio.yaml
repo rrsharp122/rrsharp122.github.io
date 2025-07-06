@@ -18,11 +18,20 @@ items:
     publication: "The Pipette Pen"
     featured: true
 
+  - title: "The Myth of Prestige: Does Where You Attend School Truly Matter?"
+    category: journalism
+    date: 2024-03-22
+    description: "Explore the myth of institutional prestige through one graduate student's journey, revealing insights that challenge conventional beliefs about success and education. Uncover surprising data that questions the correlation between prestigious universities and future earnings."
+    image: "/images/pipettepen-doesSchoolMatter.png"
+    link: "https://www.thepipettepen.com/the-myth-of-prestige-does-where-you-attend-school-truly-matter/"
+    publication: "The Pipette Pen"
+    featured: true
+
   - title: "Firing in Rhythm: Simultaneous Ripples Across Distant Brain Regions Facilitate the Integration of Brain Signals"
     category: journalism
     date: 2024-01-20
     description: "When high-frequency brain waves, known as 'ripples', occur simultaneously across distant brain regions, they facilitate the integration of brain signals—revealing new insights into how the brain coordinates complex cognitive processes."
-    image: "/images/research-banner.jpg"
+    image: "/images/brainpost-firingInRhythm.jpg"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
 
@@ -30,16 +39,16 @@ items:
     category: journalism
     date: 2023-12-15
     description: "The orbitofrontal cortex (OFC) plays a crucial role in adaptive learning, helping us understand how the brain develops strategies for acquiring new information and adjusting behavior based on experience."
-    image: "/images/neurons.jpg"
+    image: "/images/brainpost-learnToLearn.jpg"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
 
   - title: "Modelling Human Psychological Responses to Robots: The Positive, the Negative, and the Competent"
     category: journalism
-    date: 2023-11-10
-    description: "As robots become increasingly present in our everyday lives, understanding our psychological responses to them becomes crucial for designing effective human-robot interactions and predicting social acceptance."
-    image: "/images/research-banner.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    date: 2023-10-10
+    description: "Human responses to robots can be categorized into three dimensions – positive, negative, and competence-related. Understanding these responses helps inform how we incorporate robots into pre-existing social structures and design better human-robot interactions."
+    image: "/images/brainpost-humanResponse.jpg"
+    link: "https://www.brainpost.co/weekly-brainpost/2023/10/10/modelling-human-psychological-responses-to-robots-the-positive-the-negative-and-the-competent"
     publication: "BrainPost"
 
   - title: "Neuroscience-Backed Strategies to Help You Learn More Effectively"
