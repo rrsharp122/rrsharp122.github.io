@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "rachel_sharp_portfolio",
+  "name_for_human": "Rachel Sharp - Science Communicator & Neuroscience Researcher",
+  "description_for_model": "Portfolio website for Rachel Sharp, a neuroscience PhD candidate and science communicator. Contains research publications, science writing samples, CV, and contact information. Specializes in computational genomics, neuropsychiatric disorders, and making complex science accessible.",
+  "description_for_human": "Rachel Sharp's portfolio showcasing neuroscience research and science communication work",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "website",
+    "url": "https://rachelsharp.io"
+  },
+  "logo_url": "https://rachelsharp.io/images/profilePic.jpeg",
+  "contact_email": "rrsharp122@gmail.com",
+  "legal_info_url": "https://rachelsharp.io/license"
+}

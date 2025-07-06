@@ -1,0 +1,21 @@
+/* TEAM */
+    Researcher & Science Communicator: Rachel Sharp
+    Contact: rrsharp122@gmail.com
+    LinkedIn: https://www.linkedin.com/in/rachel-sharp-a07b69272
+    From: Chapel Hill, North Carolina, USA
+
+/* THANKS */
+    Hugo Static Site Generator: https://gohugo.io
+    PaperMod Theme: https://github.com/adityatelange/hugo-PaperMod
+    Font Awesome Icons: https://fontawesome.com
+
+/* SITE */
+    Last update: 2025/01/06
+    Language: English
+    Standards: HTML5, CSS3
+    Software: Hugo, GitHub Pages
+    
+/* RESEARCH FOCUS */
+    Areas: Computational Genomics, Neuropsychiatric Disorders, Bipolar Disorder
+    Methods: GWAS, MPRA, Statistical Validation
+    Institution: University of North Carolina at Chapel Hill
