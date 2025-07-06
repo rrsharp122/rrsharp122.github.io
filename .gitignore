@@ -38,3 +38,20 @@ __pycache__/
 
 # Hugo extended installers
 *.deb
+
+# Backup directories
+_backups/
+.backups/
+
+# Obsidian configuration
+.obsidian/
+
+# Build and resource directories
+/resources/
+
+# Environment files
+.env
+.env.local
+
+# Log files
+*.log

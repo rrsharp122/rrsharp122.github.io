@@ -1,51 +1,46 @@
-# Rachel Sharp's Personal Academic Website
+# Rachel Sharp - Portfolio Website
 
-This repository contains the source code for Rachel Sharp's personal academic website, built with Hugo and the PaperMod theme. The site showcases research work, science communication pieces, and professional background.
+A professional portfolio website for Rachel Sharp, showcasing neuroscience research and science communication work.
 
-🌐 **Live Site**: [https://rrsharp122.github.io/](https://rrsharp122.github.io/)
+## 🌐 Live Site
 
-## About This Site
+Visit the live website at: [https://rrsharp122.github.io/](https://rrsharp122.github.io/)
 
-This website serves as a platform to share research in neuroscience, science communication work, and professional background. It features a clean, academic design optimized for readability and professional presentation.
+## 🚀 Technology Stack
 
-## Technologies Used
+- **Static Site Generator**: [Hugo](https://gohugo.io/) (Extended v0.146.0)
+- **Theme**: [PaperMod](https://github.com/adityatelange/hugo-PaperMod) (customized)
+- **Hosting**: GitHub Pages
+- **CI/CD**: GitHub Actions
+- **Styling**: Custom CSS with responsive design
+- **Contact Form**: Formspree
 
-- **[Hugo](https://gohugo.io/)**: Fast static site generator (v0.146.0+)
-- **[PaperMod Theme](https://github.com/adityatelange/hugo-PaperMod)**: Clean, responsive Hugo theme
-- **GitHub Pages**: Hosting platform with automatic deployment
-- **GitHub Actions**: CI/CD pipeline for building and deploying
-
-## Repository Structure
-
-```
-├── content/                    # Site content (Markdown files)
-│   ├── About Me.md            # About page
-│   ├── Research Background.md  # Research portfolio
-│   ├── Science Communication.md# Writing and outreach
-│   ├── Contact.md             # Contact information
-│   └── CV.md                  # Curriculum Vitae
-├── layouts/                   # Custom HTML templates
-│   ├── _default/              # Page templates
-│   └── partials/              # Reusable template components
-├── assets/css/                # Custom styling
-├── static/                    # Static assets
-│   ├── images/                # Images and graphics
-│   └── pdfs/                  # Downloadable documents
-├── themes/PaperMod/           # Hugo theme (git submodule)
-└── config.yaml               # Site configuration
+## 📁 Project Structure
 
 ```
+my-website/
+├── assets/           # CSS and JavaScript files
+│   ├── css/         # Custom stylesheets
+│   └── js/          # JavaScript files
+├── content/         # Markdown content files
+├── data/            # Data files for portfolio items
+├── layouts/         # Custom Hugo templates
+├── static/          # Static assets (images, PDFs)
+├── themes/          # Hugo themes (PaperMod)
+└── config.yaml      # Hugo configuration
+```
 
-## Local Development
+## 🛠️ Development
 
 ### Prerequisites
 
-- [Hugo Extended](https://gohugo.io/installation/) (version 0.146.0 or later)
+- Hugo Extended (v0.146.0 or later)
 - Git
+- Node.js (optional, for additional tooling)
 
-### Running the Site Locally
+### Local Development
 
-1. Clone this repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/rrsharp122/rrsharp122.github.io.git
    cd rrsharp122.github.io
@@ -56,73 +51,84 @@ This website serves as a platform to share research in neuroscience, science com
    hugo server -D
    ```
 
-3. View the site at http://localhost:1313/
+3. View the site at `http://localhost:1313`
 
-### Making Changes
-
-#### Content Updates
-
-All content is written in Markdown and located in the `content/` directory:
-
-- **About page**: `content/About Me.md`
-- **Research page**: `content/Research Background.md`
-- **Science Communication page**: `content/Science Communication.md`
-- **Contact page**: `content/Contact.md`
-- **CV page**: `content/CV.md`
-
-#### Adding New Content
-
-To add new pages or posts:
-
-1. Create a new markdown file in the `content/` directory
-2. Add appropriate front matter (title, date, etc.)
-3. Write your content in Markdown format
-
-#### Adding Assets
-
-- **Images**: Place in `static/images/` directory and reference as `/images/filename.jpg`
-- **PDFs**: Place in `static/pdfs/` directory and reference as `/pdfs/filename.pdf`
-- **Thumbnails**: Use descriptive names for paper thumbnails and writing previews
-
-#### Styling Changes
-
-Custom CSS is located in `assets/css/custom.css`
-
-## Deployment
-
-The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the main branch. The deployment workflow:
-
-1. **Build**: Uses Hugo v0.146.0 to build the static site
-2. **Deploy**: Automatically publishes to GitHub Pages
-3. **Live**: Site is available at https://rrsharp122.github.io/
-
-### Manual Deployment
-
-For local testing or alternative hosting:
+### Building for Production
 
 ```bash
-# Build the site
-hugo --minify --baseURL "https://rrsharp122.github.io/"
-
-# Output will be in the public/ directory
+hugo --minify
 ```
 
-## Site Features
+The built site will be in the `public/` directory.
 
-- **Responsive Design**: Mobile-friendly layout
-- **Academic Focus**: Optimized for research and academic content
-- **Fast Loading**: Static site generation for optimal performance
-- **SEO Optimized**: Proper meta tags and structured data
-- **Custom Styling**: Academic-themed color scheme and typography
+## 📝 Content Management
 
-## Development Notes
+### Adding New Portfolio Items
 
-- Uses Hugo Extended for SCSS processing
-- PaperMod theme integrated as git submodule
-- Custom partials override theme defaults
-- GitHub Actions workflow handles deployment automatically
-- All content written in Markdown for easy editing
+Portfolio items are managed through the `data/portfolio.yaml` file. Each item should include:
+- Title
+- Description
+- Category (articles/journalism)
+- Publication details
+- Date
+- Link
 
-## Contact
+### Updating Content Pages
 
-For questions about this website or its content, please visit the [Contact page](https://rrsharp122.github.io/contact/) or reach out through the links provided there.
+Main content pages are in the `content/` directory:
+- `about-me.md` - About section
+- `research-background.md` - Research information
+- `science-communication.md` - Writing portfolio
+- `contact.md` - Contact information
+
+## 🎨 Customization
+
+### Styling
+
+Custom styles are in `assets/css/custom.css` and `assets/css/portfolio.css`.
+
+Key features:
+- Responsive grid layout for portfolio items
+- Mobile-optimized navigation
+- Dark mode support
+- Accessibility-focused design
+
+### Configuration
+
+Site configuration is in `config.yaml`, including:
+- Site metadata
+- Menu structure
+- Social links
+- SEO settings
+
+## 🚀 Deployment
+
+The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch. The deployment workflow is defined in `.github/workflows/hugo.yml`.
+
+## 📧 Contact Form
+
+The contact form uses Formspree. To update the form endpoint, modify the action URL in `layouts/index.html` and `layouts/_default/contact.html`.
+
+## 🔍 SEO & Accessibility
+
+The site includes:
+- Comprehensive meta tags
+- Open Graph tags for social sharing
+- Structured data (JSON-LD)
+- Robots.txt with sitemap
+- AI/LLM accessibility features
+- Semantic HTML structure
+
+## 📄 License
+
+This project is private. All rights reserved.
+
+## 🤝 Contributing
+
+This is a personal portfolio website. Pull requests are not accepted, but feel free to fork for your own use (with appropriate attribution).
+
+## 📞 Contact
+
+- Email: rrsharp122@gmail.com
+- LinkedIn: [Rachel Sharp](https://www.linkedin.com/in/rachel-sharp-a07b69272)
+- Google Scholar: [Rachel R Sharp](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)
