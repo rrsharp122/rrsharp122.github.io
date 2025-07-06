@@ -1,0 +1,71 @@
+{{ $portfolio := .Site.Data.portfolio }}
+
+<div class="portfolio-container">
+  <!-- Filter buttons -->
+  <div class="portfolio-filters">
+    {{ range $portfolio.categories }}
+      <button class="filter-btn{{ if .default }} active{{ end }}" data-filter="{{ .id }}">
+        {{ .name }}
+      </button>
+    {{ end }}
+  </div>
+
+  <!-- Portfolio grid -->
+  <div class="portfolio-grid" id="portfolio-grid">
+    {{ range $index, $item := $portfolio.items }}
+      <div class="portfolio-item {{ $item.category }}" data-category="{{ $item.category }}" data-index="{{ $index }}">
+        <div class="portfolio-tile">
+          {{ if $item.image }}
+            <div class="portfolio-image">
+              <img src="{{ $item.image }}" alt="{{ $item.title }}" loading="lazy">
+            </div>
+          {{ end }}
+          
+          <div class="portfolio-content">
+            <div class="portfolio-meta">
+              <span class="portfolio-category">{{ $item.category | title }}</span>
+              {{ if $item.publication }}
+                <span class="portfolio-publication">{{ $item.publication }}</span>
+              {{ end }}
+            </div>
+            
+            <h3 class="portfolio-title">
+              {{ if $item.link }}
+                <a href="{{ $item.link }}" target="_blank" rel="noopener noreferrer">
+                  {{ $item.title }}
+                </a>
+              {{ else }}
+                {{ $item.title }}
+              {{ end }}
+            </h3>
+            
+            <p class="portfolio-description">{{ $item.description }}</p>
+            
+            {{ if $item.date }}
+              <time class="portfolio-date" datetime="{{ $item.date }}">
+                {{ dateFormat "January 2, 2006" $item.date }}
+              </time>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <!-- Loading indicator for continuous scroll -->
+  <div class="portfolio-loading" id="portfolio-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p>Loading more items...</p>
+  </div>
+</div>
+
+<!-- Include portfolio CSS and JS -->
+{{ $portfolioCSS := resources.Get "css/portfolio.css" }}
+{{ if $portfolioCSS }}
+  <link rel="stylesheet" href="{{ $portfolioCSS.RelPermalink }}">
+{{ end }}
+
+{{ $portfolioJS := resources.Get "js/portfolio.js" }}
+{{ if $portfolioJS }}
+  <script src="{{ $portfolioJS.RelPermalink }}" defer></script>
+{{ end }}

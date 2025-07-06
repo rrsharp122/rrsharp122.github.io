@@ -35,3 +35,11 @@ Have questions about graduate school, research, or career paths in computational
 **Response Time:** I typically respond to emails within 48 hours during weekdays.
 
 **Preferred Contact:** For research-related inquiries, please use the form below or email directly. For quick questions, LinkedIn messages work great too.
+
+### Connect With Me
+
+📧 **Email:** rrsharp122@gmail.com  
+🔗 **LinkedIn:** [Rachel Sharp](https://www.linkedin.com/in/rachel-sharp-a07b69272)  
+📄 **CV:** [Download CV](/pdfs/Sharp_SciComResume_2025.pdf)  
+📚 **Google Scholar:** [Rachel R Sharp](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)  
+✍️ **Science Writing:** [BrainPost Articles](https://www.brainpost.co/search?q=rachel%20sharp) | [The Pipette Pen](https://www.thepipettepen.com/author/rsharpunc-edu/)

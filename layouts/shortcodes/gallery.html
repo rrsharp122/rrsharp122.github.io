@@ -1,0 +1,15 @@
+{{ $images := .Get "images" | split "," }}
+{{ $caption := .Get "caption" }}
+{{ $columns := .Get "columns" | default "3" }}
+
+<div class="photo-gallery" data-columns="{{ $columns }}">
+  {{ range $index, $image := $images }}
+    <div class="gallery-item">
+      <img src="{{ $image | safeURL }}" alt="Gallery image {{ add $index 1 }}" loading="lazy">
+    </div>
+  {{ end }}
+</div>
+
+{{ if $caption }}
+<p class="gallery-caption">{{ $caption }}</p>
+{{ end }}

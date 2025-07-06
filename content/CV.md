@@ -9,7 +9,7 @@ description: "Academic and professional experience"
 ---
 
 <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="/pdfs/Sharp_CV.pdf" download class="download-cv-btn" style="background-color: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+    <a href="/pdfs/Sharp_SciComCV_2025.pdf" download class="download-cv-btn" style="background-color: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
         📄 Download CV as PDF
     </a>
 </div>
@@ -162,7 +162,7 @@ Principal Investigator: Dr. Michael Wenger
 
 ## Contact
 
-📧 Email: rsharp@unc.edu  
+📧 Email: rrsharp122@gmail.com  
 📱 Phone: (918) 729-0468  
 🔗 [LinkedIn](https://www.linkedin.com/in/rachel-sharp-a07b69272)  
 🆔 [ORCID](https://orcid.org/0000-0002-3070-9200)

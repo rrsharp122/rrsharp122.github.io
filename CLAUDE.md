@@ -63,3 +63,34 @@ The site extends the PaperMod theme with custom layouts and styles:
 - Custom header and footer in `layouts/partials/`
 - Extended CSS in `assets/css/custom.css` and `assets/css/extended/custom.css`
 - Custom contact page template at `layouts/_default/contact.html`
+
+## Planned Features (Implementation in Progress)
+
+### Interactive Portfolio Section
+Inspired by BMSchilder's website design, implementing:
+- Filterable research portfolio with panel-like display
+- Data structure: `data/portfolio.yaml` with publications, articles, presentations
+- Categories: publications, articles, preprints, presentations
+- Implementation via Hugo shortcode `{{< portfolio >}}`
+- Files to create:
+  - `data/portfolio.yaml` - Portfolio data
+  - `layouts/shortcodes/portfolio.html` - Portfolio grid template
+  - `assets/css/portfolio.css` - Portfolio styling
+  - `assets/js/portfolio.js` - Filtering JavaScript
+
+### Interactive Timeline
+Professional timeline for career milestones:
+- Data structure: `data/timeline.yaml` with career events
+- Custom Hugo timeline with CSS animations
+- Implementation via Hugo shortcode `{{< timeline >}}`
+- Files to create:
+  - `data/timeline.yaml` - Timeline data
+  - `layouts/shortcodes/timeline.html` - Timeline template
+  - `assets/css/timeline.css` - Timeline styling
+  - `assets/js/timeline.js` - Interactive features
+
+### Example Website Analysis
+Reference site analyzed: `_private/BMSchilder-master/`
+- Framework: Pure HTML/CSS/JS with Bootstrap 4
+- Key features: particle.js background, D3.js portfolio, embedded visualizations
+- Adaptation strategy: Hugo-native approach with shortcodes for better content management

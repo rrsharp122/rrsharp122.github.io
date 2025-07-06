@@ -1,0 +1,268 @@
+/* Portfolio Container */
+.portfolio-container {
+  margin: 2rem 0;
+}
+
+/* Filter Buttons */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+.filter-btn {
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Portfolio Item (Tile) */
+.portfolio-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.portfolio-item.hidden {
+  display: none;
+}
+
+.portfolio-item.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.portfolio-tile {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-tile:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Portfolio Image */
+.portfolio-image {
+  aspect-ratio: 16 / 9;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.portfolio-tile:hover .portfolio-image img {
+  transform: scale(1.05);
+}
+
+/* Portfolio Content */
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.portfolio-meta {
+  display: flex;
+  font-size: 0.85rem;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-category {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  color: #666;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+}
+
+.portfolio-publication {
+  color: #999;
+  font-style: italic;
+}
+
+.portfolio-title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+}
+
+.portfolio-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.portfolio-title a:hover {
+  color: var(--primary-color);
+}
+
+.portfolio-description {
+  color: #666;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.portfolio-date {
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+/* Loading Indicator */
+.portfolio-loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid var(--primary-color);
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Continuous Scroll Animation */
+.portfolio-item.new-item {
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .portfolio-filters {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .portfolio-content {
+    padding: 1rem;
+  }
+  
+  .portfolio-title {
+    font-size: 1.1rem;
+  }
+  
+  .portfolio-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .portfolio-tile {
+    background: #1a1a1a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .portfolio-tile:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .portfolio-title a {
+    color: #e0e0e0;
+  }
+  
+  .portfolio-title a:hover {
+    color: #4db8ff;
+  }
+  
+  .portfolio-description {
+    color: #b0b0b0;
+  }
+  
+  .filter-btn {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .filter-btn:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .portfolio-category {
+    background-color: #2a2a2a;
+    color: #b0b0b0;
+  }
+}

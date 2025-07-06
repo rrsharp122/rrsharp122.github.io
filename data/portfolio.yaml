@@ -1,0 +1,76 @@
+items:
+  - title: "When Practice Makes Perfect: The Neurons Behind Skilled Movement"
+    category: articles
+    date: 2024-03-15
+    description: "Meet the UNC graduate student uncovering the mysteries behind how our brains control movement. Her work studying a rare type of neuron reveals surprising evidence that stimulating these cells not only improves precise movements, but could potentially help restore motor skills after injury."
+    image: "/images/neurons.jpg"
+    link: "https://www.thepipettepen.com/when-practice-makes-perfect-the-neurons-behind-skilled-movement/"
+    publication: "The Pipette Pen"
+    featured: true
+
+  - title: "The Need for Diversity in Large-Scale Genetic Studies"
+    category: articles
+    date: 2024-02-28
+    description: "Discover why the lack of diversity in Genome-wide Association Studies (GWAS) is more than a social issue—it's a scientific blind spot that could be missing key insights into human genetics."
+    image: "/images/DNA.webp"
+    link: "https://www.thepipettepen.com/the-need-for-diversity-in-large-scale-genetic-studies/"
+    publication: "The Pipette Pen"
+    featured: true
+
+  - title: "Firing in Rhythm: Simultaneous Ripples Across Distant Brain Regions Facilitate the Integration of Brain Signals"
+    category: articles
+    date: 2024-01-20
+    description: "When high-frequency brain waves, known as 'ripples', occur simultaneously across distant brain regions, they facilitate the integration of brain signals—revealing new insights into how the brain coordinates complex cognitive processes."
+    image: "/images/research-banner.jpg"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+  - title: "How the Orbitofrontal Cortex Learns How to Learn"
+    category: articles
+    date: 2023-12-15
+    description: "The orbitofrontal cortex (OFC) plays a crucial role in adaptive learning, helping us understand how the brain develops strategies for acquiring new information and adjusting behavior based on experience."
+    image: "/images/neurons.jpg"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+  - title: "Modelling Human Psychological Responses to Robots: The Positive, the Negative, and the Competent"
+    category: articles
+    date: 2023-11-10
+    description: "As robots become increasingly present in our everyday lives, understanding our psychological responses to them becomes crucial for designing effective human-robot interactions and predicting social acceptance."
+    image: "/images/research-banner.jpg"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+  - title: "Neuroscience-Backed Strategies to Help You Learn More Effectively"
+    category: articles
+    date: 2023-10-05
+    description: "Whether we are in school, with our friends, or pursuing new skills, understanding how our brains learn can help us develop more effective strategies for acquiring and retaining new information."
+    image: "/images/writing-header.jpg"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+  - title: "Cracking the Serotonin Code: How Your Brain Predicts Future Rewards"
+    category: articles
+    date: 2023-09-20
+    description: "Serotonin neurons signal a prospective code for value—revealing how our brains don't just respond to rewards we receive, but actively predict and prepare for future rewards."
+    image: "/images/neurons.jpg"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+  - title: "Neural Economics: Understanding the Brain's Energy Budget"
+    category: articles
+    date: 2023-08-15
+    description: "How much of your body's energy does your brain use? The average adult brain consumes about 20% of our total energy, revealing fascinating insights into the metabolic demands of cognition."
+    image: "/images/DNA.webp"
+    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    publication: "BrainPost"
+
+# Categories for filtering
+categories:
+  - id: all
+    name: All
+    default: true
+  - id: articles
+    name: Research Articles
+  - id: journalism
+    name: Science Journalism

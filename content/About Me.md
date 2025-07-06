@@ -46,14 +46,3 @@ When I step away from research, I love exploring new music (always open to recom
 ### Looking Forward
 
 As I work toward completing my PhD, I'm excited about the possibilities ahead. Whether in academia, industry, or science communication, I want to continue working at the intersection of genetics, mental health, and public engagement. The questions we're asking in genomics today will shape how we understand and treat mental health conditions tomorrow.
-
-## Contact & Connect
-
-Feel free to reach out if you're interested in collaborating or just want to chat about science, music, or anything in between!
-
-📧 Email: rsharp@unc.edu  
-🔗 LinkedIn: [Rachel Sharp](https://www.linkedin.com/in/rachel-sharp-a07b69272)  
-📄 CV: [Download CV](/cv/)  
-🔬 ORCID: [0000-0002-3070-9200](https://orcid.org/0000-0002-3070-9200)  
-📚 Google Scholar: [Rachel R Sharp](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)  
-✍️ Science Writing: [BrainPost Articles](https://www.brainpost.co/search?q=rachel%20sharp) | [The Pipette Pen](https://www.thepipettepen.com/author/rsharpunc-edu/)

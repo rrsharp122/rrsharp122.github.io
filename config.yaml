@@ -1,4 +1,4 @@
-baseURL: "https://rrsharp122.github.io/"
+baseURL: "https://rachelsharp.io/"
 languageCode: en-us
 title: "Rachel Sharp - Neuroscience Research & Communication"
 theme: "PaperMod"
@@ -21,13 +21,15 @@ params:
   # Social icons
   socialIcons:
     - name: cv
-      url: "/pdfs/Sharp_CV.pdf"
+      url: "/pdfs/Sharp_SciComResume_2025.pdf"
+      title: "Resume"
     - name: linkedin
       url: "https://www.linkedin.com/in/rachel-sharp-a07b69272"
-    - name: orcid
-      url: "https://orcid.org/0000-0002-3070-9200"
+    - name: googlescholar
+      url: "https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra"
     - name: email
-      url: "mailto:rsharp@unc.edu"
+      url: "mailto:rrsharp122@gmail.com"
+      display: "rrsharp122@gmail.com"
 
   # SEO and metadata
   description: "Science communicator and neuroscience PhD candidate making complex research accessible through compelling storytelling"
@@ -46,19 +48,19 @@ menu:
   main:
     - identifier: writing
       name: Writing
-      url: /science-communication/
+      url: /#writing
       weight: 10
     - identifier: about
       name: About
-      url: /about-me/
+      url: /#about
       weight: 20
     - identifier: research
       name: Research
-      url: /research-background/
+      url: /#research
       weight: 30
     - identifier: contact
       name: Contact
-      url: /contact/
+      url: /#contact
       weight: 40
 
 # Build settings
