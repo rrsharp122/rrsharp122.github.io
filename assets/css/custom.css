@@ -105,7 +105,24 @@ html {
 .main {
   overflow: visible !important;
   width: 100%;
-  max-width: 100%;
+  max-width: 100% !important; /* Override theme max-width */
+  padding: 0 !important; /* Remove theme padding */
+  margin: 0 !important; /* Remove auto margin */
+  position: static !important; /* Remove any positioning constraints */
+}
+
+/* Fix narrow viewport issues */
+@media (max-width: 768px) {
+  .main {
+    min-height: auto !important;
+  }
+  
+  /* Center align headers on narrow viewports */
+  h1, h2, h3, h4, h5, h6,
+  .section-title,
+  .main-name {
+    text-align: center;
+  }
 }
 
 body {
@@ -482,6 +499,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
   transition: all 0.25s ease;
   border-bottom: 1px solid transparent;
+}
+
+/* Light mode nav styling with off-white cream */
+.nav {
+  background-color: #FBF8F4; /* Off-white cream */
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  margin: 0 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1673,6 +1698,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   overflow: visible !important; /* Prevent internal scrolling */
   height: auto !important; /* Allow natural height */
+  position: relative; /* Ensure proper stacking context */
 }
 
 .section-title {
@@ -1697,12 +1723,17 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--light-background);
 }
 
-/* Main element overrides */
+/* Main element overrides - force full width */
 .main,
-main {
+main,
+main.main {
   max-width: 100% !important;
   width: 100% !important;
   background-color: var(--background-color) !important;
+  overflow: visible !important;
+  position: static !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* Main content container global padding */

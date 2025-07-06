@@ -10,6 +10,8 @@ layout: "research"
 
 ## Statistical Validation and Pipeline Development for Neuropsychiatric Genomics
 
+{{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting research poster" class="float-right" >}}
+
 My research focuses on how social risk factors, such as neighborhood safety or perceived stress, impacts genetic risk for bipolar disorder. 
 
 ### Past Areas of Research

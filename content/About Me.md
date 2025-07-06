@@ -20,6 +20,8 @@ I am a science writer and Neuroscience PhD candidate passionate about the inters
 
 ### My Research Journey
 
+{{< figure src="/images/rachel-chili.jpg" alt="Rachel in the lab" class="float-left" width="300px" >}}
+
 I have always been torn between writing and science. In college, I chose to pursue research-oriented classes, but worked as a tutor in the writing center to keep writing in my life. It wasn't until graduate school that I realized I could write ABOUT science, and start combinging my passions. 
 
 Now, I study how social factors impact the genetic risk for bipolar disorder using large-scale genetic datasets.
