@@ -31,8 +31,8 @@
 }
 
 .filter-btn.active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: white;
 }
 
@@ -111,9 +111,9 @@
 }
 
 .portfolio-category {
-  background-color: #f0f0f0;
+  background-color: var(--accent-color);
   border-radius: 4px;
-  color: #666;
+  color: white;
   font-weight: 500;
   padding: 0.25rem 0.75rem;
   text-transform: uppercase;
