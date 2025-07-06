@@ -55,7 +55,7 @@ items:
     category: journalism
     date: 2023-10-05
     description: "Whether we are in school, with our friends, or pursuing new skills, understanding how our brains learn can help us develop more effective strategies for acquiring and retaining new information."
-    image: "/images/writing-header.jpg"
+    image: "/images/brainpost-neuroscienceBackedLearning.jpg"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
 
@@ -63,7 +63,7 @@ items:
     category: journalism
     date: 2023-09-20
     description: "Serotonin neurons signal a prospective code for value—revealing how our brains don't just respond to rewards we receive, but actively predict and prepare for future rewards."
-    image: "/images/neurons.jpg"
+    image: "/images/brainpost-serotoninCode.jpg"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
 
@@ -80,7 +80,7 @@ items:
     category: articles
     date: 2025-01-06
     description: "A comprehensive review examining psychiatric genomics in Latin America and the Caribbean, addressing the critical underrepresentation of these diverse populations in genetic studies and proposing strategies to promote equity in precision psychiatry."
-    image: "/images/DNA.webp"
+    image: "/images/research-psychiatricGWAS.png"
     link: "https://www.nature.com/articles/s41588-025-02127-z"
     publication: "Nature Genetics"
     featured: true
@@ -89,7 +89,7 @@ items:
     category: articles
     date: 2023-07-24
     description: "The IGVF Consortium combines single-cell mapping, genomic perturbations, and predictive modeling to create comprehensive maps of how genetic variants affect genome function and human phenotypes across hundreds of cell types."
-    image: "/images/DNA.webp"
+    image: "/images/research-IGVF.png"
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10402186/"
     publication: "ArXiv Preprint"
 
@@ -97,7 +97,7 @@ items:
     category: articles
     date: 2023-05-15
     description: "Single-cell RNA sequencing reveals that Cx3cr1 governs the spatial distribution and heterogeneity of kidney resident macrophages, with implications for understanding cortex-specific disease progression in cystic kidney disease."
-    image: "/images/neurons.jpg"
+    image: "/images/research-Cx3cr1.png"
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1082078/full"
     publication: "Frontiers in Immunology"
 
@@ -105,7 +105,7 @@ items:
     category: articles
     date: 2023-03-27
     description: "Integrated pathway analysis identifies Hippo signaling as a key regulator of CSPG4 expression, the receptor for C. difficile toxin B, and demonstrates that targeting this pathway provides protection in a mouse model of the disease."
-    image: "/images/research-banner.jpg"
+    image: "/images/research-hippoSignalling.png"
     link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011272"
     publication: "PLOS Pathogens"
 

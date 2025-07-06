@@ -36,10 +36,18 @@ document.addEventListener('DOMContentLoaded', function() {
             item.style.display !== 'none'
         );
         
-        if (!showAllItems && visibleItems.length > 4) {
-            // Hide items beyond the first 4 (2 rows)
+        // Determine how many items to show based on viewport width
+        let itemsToShow = 3; // Default for widest view (3 columns)
+        const viewportWidth = window.innerWidth;
+        
+        if (viewportWidth <= 950) {
+            itemsToShow = 2; // 2 columns or less
+        }
+        
+        if (!showAllItems && visibleItems.length > itemsToShow) {
+            // Hide items beyond the initial set
             visibleItems.forEach((item, index) => {
-                if (index >= 4) {
+                if (index >= itemsToShow) {
                     item.style.display = 'none';
                 }
             });
@@ -85,4 +93,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial setup
     updateItemVisibility();
+    
+    // Update on window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (!showAllItems) {
+                updateItemVisibility();
+            }
+        }, 250);
+    });
 });
