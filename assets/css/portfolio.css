@@ -204,19 +204,27 @@
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 0 1.5rem; /* Increase padding to prevent edge overflow */
+    padding: 0;
+    margin: 0;
+    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    box-sizing: border-box;
   }
   
   .portfolio-item {
+    width: 100%;
     max-width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 1rem; /* Add padding to the item instead */
   }
   
   .portfolio-tile {
+    width: 100%;
     max-width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
   }
   
   .portfolio-content {
@@ -225,10 +233,12 @@
   
   .portfolio-title {
     font-size: 1.1rem; /* Slightly smaller title */
+    word-wrap: break-word;
   }
   
   .portfolio-description {
     font-size: 0.9rem; /* Slightly smaller description */
+    word-wrap: break-word;
   }
   
   .portfolio-filters {
@@ -242,10 +252,19 @@
   }
   
   /* Ensure section container doesn't overflow */
+  .writing-section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
   .writing-section .section-container {
+    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     padding: 0 1rem;
+    box-sizing: border-box;
   }
   
   .portfolio-title {
