@@ -1610,6 +1610,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   width: 100%;
   max-width: 100%;
+  overflow: visible !important; /* Prevent internal scrolling */
+  height: auto !important; /* Ensure sections expand to content */
 }
 
 @media (min-width: 768px) {
@@ -1649,6 +1651,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
+  overflow: visible !important; /* Prevent internal scrolling */
+  height: auto !important; /* Allow natural height */
 }
 
 .section-title {

@@ -1,6 +1,7 @@
 items:
+  # Science Journalism Articles
   - title: "When Practice Makes Perfect: The Neurons Behind Skilled Movement"
-    category: articles
+    category: journalism
     date: 2024-03-15
     description: "Meet the UNC graduate student uncovering the mysteries behind how our brains control movement. Her work studying a rare type of neuron reveals surprising evidence that stimulating these cells not only improves precise movements, but could potentially help restore motor skills after injury."
     image: "/images/neurons.jpg"
@@ -9,7 +10,7 @@ items:
     featured: true
 
   - title: "The Need for Diversity in Large-Scale Genetic Studies"
-    category: articles
+    category: journalism
     date: 2024-02-28
     description: "Discover why the lack of diversity in Genome-wide Association Studies (GWAS) is more than a social issue—it's a scientific blind spot that could be missing key insights into human genetics."
     image: "/images/DNA.webp"
@@ -18,7 +19,7 @@ items:
     featured: true
 
   - title: "Firing in Rhythm: Simultaneous Ripples Across Distant Brain Regions Facilitate the Integration of Brain Signals"
-    category: articles
+    category: journalism
     date: 2024-01-20
     description: "When high-frequency brain waves, known as 'ripples', occur simultaneously across distant brain regions, they facilitate the integration of brain signals—revealing new insights into how the brain coordinates complex cognitive processes."
     image: "/images/research-banner.jpg"
@@ -26,7 +27,7 @@ items:
     publication: "BrainPost"
 
   - title: "How the Orbitofrontal Cortex Learns How to Learn"
-    category: articles
+    category: journalism
     date: 2023-12-15
     description: "The orbitofrontal cortex (OFC) plays a crucial role in adaptive learning, helping us understand how the brain develops strategies for acquiring new information and adjusting behavior based on experience."
     image: "/images/neurons.jpg"
@@ -34,7 +35,7 @@ items:
     publication: "BrainPost"
 
   - title: "Modelling Human Psychological Responses to Robots: The Positive, the Negative, and the Competent"
-    category: articles
+    category: journalism
     date: 2023-11-10
     description: "As robots become increasingly present in our everyday lives, understanding our psychological responses to them becomes crucial for designing effective human-robot interactions and predicting social acceptance."
     image: "/images/research-banner.jpg"
@@ -42,7 +43,7 @@ items:
     publication: "BrainPost"
 
   - title: "Neuroscience-Backed Strategies to Help You Learn More Effectively"
-    category: articles
+    category: journalism
     date: 2023-10-05
     description: "Whether we are in school, with our friends, or pursuing new skills, understanding how our brains learn can help us develop more effective strategies for acquiring and retaining new information."
     image: "/images/writing-header.jpg"
@@ -50,7 +51,7 @@ items:
     publication: "BrainPost"
 
   - title: "Cracking the Serotonin Code: How Your Brain Predicts Future Rewards"
-    category: articles
+    category: journalism
     date: 2023-09-20
     description: "Serotonin neurons signal a prospective code for value—revealing how our brains don't just respond to rewards we receive, but actively predict and prepare for future rewards."
     image: "/images/neurons.jpg"
@@ -58,12 +59,86 @@ items:
     publication: "BrainPost"
 
   - title: "Neural Economics: Understanding the Brain's Energy Budget"
-    category: articles
+    category: journalism
     date: 2023-08-15
     description: "How much of your body's energy does your brain use? The average adult brain consumes about 20% of our total energy, revealing fascinating insights into the metabolic demands of cognition."
     image: "/images/DNA.webp"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
+
+  # Research Articles
+  - title: "Psychiatric genetics in the diverse landscape of Latin American populations"
+    category: articles
+    date: 2025-01-06
+    description: "A comprehensive review examining psychiatric genomics in Latin America and the Caribbean, addressing the critical underrepresentation of these diverse populations in genetic studies and proposing strategies to promote equity in precision psychiatry."
+    image: "/images/DNA.webp"
+    link: "https://www.nature.com/articles/s41588-025-02127-z"
+    publication: "Nature Genetics"
+    featured: true
+
+  - title: "The Impact of Genomic Variation on Function (IGVF) Consortium"
+    category: articles
+    date: 2023-07-24
+    description: "The IGVF Consortium combines single-cell mapping, genomic perturbations, and predictive modeling to create comprehensive maps of how genetic variants affect genome function and human phenotypes across hundreds of cell types."
+    image: "/images/DNA.webp"
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10402186/"
+    publication: "ArXiv Preprint"
+
+  - title: "Cx3cr1 controls kidney resident macrophage heterogeneity"
+    category: articles
+    date: 2023-05-15
+    description: "Single-cell RNA sequencing reveals that Cx3cr1 governs the spatial distribution and heterogeneity of kidney resident macrophages, with implications for understanding cortex-specific disease progression in cystic kidney disease."
+    image: "/images/neurons.jpg"
+    link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1082078/full"
+    publication: "Frontiers in Immunology"
+
+  - title: "Discovery of Hippo signaling as a regulator of CSPG4 expression and as a therapeutic target for Clostridioides difficile disease"
+    category: articles
+    date: 2023-03-27
+    description: "Integrated pathway analysis identifies Hippo signaling as a key regulator of CSPG4 expression, the receptor for C. difficile toxin B, and demonstrates that targeting this pathway provides protection in a mouse model of the disease."
+    image: "/images/research-banner.jpg"
+    link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011272"
+    publication: "PLOS Pathogens"
+
+  - title: "Protective interaction of human phagocytic APC subsets with Cryptococcus neoformans induces genes associated with metabolism and antigen presentation"
+    category: articles
+    date: 2022-11-15
+    description: "Single-cell RNA sequencing of human lung phagocytes reveals that protective antifungal responses against Cryptococcus involve metabolic shifts to fatty acid metabolism and enhanced TNF-α signaling across multiple immune cell clusters."
+    image: "/images/neurons.jpg"
+    link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.1054477/full"
+    publication: "Frontiers in Immunology"
+
+  - title: "Short-Term Adaptations in Skeletal Muscle Mitochondrial Oxidative Capacity and Metabolic Pathways to Breaking up Sedentary Behaviors"
+    category: articles
+    date: 2022-01-22
+    description: "Breaking up sedentary behavior with frequent short bouts of physical activity triggers molecular adaptations favoring oxidative capacity in skeletal muscle, though mitochondrial function improvements require longer interventions."
+    image: "/images/research-banner.jpg"
+    link: "https://www.mdpi.com/2072-6643/14/3/454"
+    publication: "Nutrients"
+
+  - title: "Breast Cancer Endocrine Therapy Promotes Weight Gain With Distinct Adipose Tissue Effects in Lean and Obese Female Mice"
+    category: articles
+    date: 2021-11-01
+    description: "Endocrine therapies for breast cancer disrupt adipocyte progenitors and promote adipocyte hypertrophy, particularly in obesity, leading to hepatic steatosis and glucose intolerance that may explain increased diabetes risk in patients."
+    image: "/images/research-banner.jpg"
+    link: "https://academic.oup.com/endo/article/162/11/bqab174/6354857"
+    publication: "Endocrinology"
+
+  - title: "Physical Confinement Induces Diverse Transcriptomic Changes and Chemoresistance in Migrating Glioblastoma Cells"
+    category: articles
+    date: 2021-07-05
+    description: "Glioblastoma cells migrating through physically confined spaces show altered gene expression in cholesterol biosynthesis and cell cycle pathways, revealing mechanical stress as a novel mechanism for chemotherapy resistance."
+    image: "/images/neurons.jpg"
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8255428/"
+    publication: "Neuro-Oncology Advances"
+
+  - title: "Combined ASBT Inhibitor and FGF15 Treatment Improves Therapeutic Efficacy in Experimental Nonalcoholic Steatohepatitis"
+    category: articles
+    date: 2021-05-07
+    description: "Combining bile acid transporter inhibition with FGF15 signaling activation produces synergistic therapeutic effects against NASH by reducing hepatic bile acid burden while minimizing adverse effects seen with single treatments."
+    image: "/images/research-banner.jpg"
+    link: "https://pubmed.ncbi.nlm.nih.gov/33965587/"
+    publication: "Cellular and Molecular Gastroenterology and Hepatology"
 
 # Categories for filtering
 categories:
