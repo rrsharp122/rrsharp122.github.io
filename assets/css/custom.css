@@ -1482,28 +1482,43 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  border: 3px solid var(--primary-color);
+  border-left: none;
+  border-right: none;
 }
 
+/* Add responsive padding (buffer) around hero section */
 @media (min-width: 768px) {
   .hero-section {
     padding: 4rem 0;
+    width: calc(100vw - 2rem);
+    margin-left: calc(-50vw + 50% + 1rem);
+    border-left: 3px solid var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero-section {
+    width: calc(100vw - 4rem);
+    margin-left: calc(-50vw + 50% + 2rem);
   }
 }
 
 @media (min-width: 1200px) {
   .hero-section {
     padding: 4rem 0;
+    width: calc(100vw - 6rem);
+    margin-left: calc(-50vw + 50% + 3rem);
   }
 }
 
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary-color);
+@media (min-width: 1400px) {
+  .hero-section {
+    width: calc(100vw - 8rem);
+    margin-left: calc(-50vw + 50% + 4rem);
+  }
 }
 
 .hero-container {
