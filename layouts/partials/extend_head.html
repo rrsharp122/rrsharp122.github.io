@@ -7,3 +7,59 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Additional custom CSS for rendered markdown content -->
 <link rel="stylesheet" href="/css/custom.css">
+
+<!-- Enhanced SEO Meta Tags -->
+<meta name="author" content="Rachel Sharp">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="en_US">
+{{ if .Params.image }}
+<meta property="og:image" content="{{ .Params.image | absURL }}">
+{{ else }}
+<meta property="og:image" content="{{ "images/rachel-sharp-profile.jpg" | absURL }}">
+{{ end }}
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ if .Params.image }}
+<meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{ else }}
+<meta name="twitter:image" content="{{ "images/rachel-sharp-profile.jpg" | absURL }}">
+{{ end }}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rachel Sharp",
+  "jobTitle": "Neuroscience PhD Candidate & Science Communicator",
+  "description": "{{ .Site.Params.description }}",
+  "url": "{{ .Site.BaseURL }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/rachel-sharp-a07b69272",
+    "https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra"
+  ],
+  "email": "rrsharp122@gmail.com",
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Columbia University"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Icahn School of Medicine at Mount Sinai"
+  }
+}
+</script>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">

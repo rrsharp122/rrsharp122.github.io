@@ -42,6 +42,16 @@ params:
     - computational genomics
     - R programming
     - data analysis
+  
+  # Additional SEO settings
+  author: "Rachel Sharp"
+  images: ["/images/rachel-sharp-profile.jpg"]
+  DateFormat: "January 2, 2006"
+  
+  # Open Graph and Twitter settings
+  opengraph:
+    site_name: "Rachel Sharp - Neuroscience Research & Communication"
+    locale: "en_US"
 
 # Menu configuration
 menu:
