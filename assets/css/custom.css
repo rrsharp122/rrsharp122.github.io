@@ -18,6 +18,10 @@
   --shadow-strong: rgba(67, 83, 52, 0.15); /* Strong shadow */
   --font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --heading-font: 'Lora', Georgia, serif;  /* Serif font for headings */
+  
+  /* Consistent border style */
+  --border-interactive: 3px solid var(--primary-color);
+  --border-radius: 8px;
 }
 
 /* Dark Mode */
@@ -515,7 +519,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-name {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
   font-weight: 500;
   text-decoration: none;
   color: var(--text-color) !important;
@@ -531,11 +535,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-right {
   display: flex;
-  gap: 30px;
+  gap: clamp(20px, 2vw, 35px);
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.8rem + 0.4vw, 1.1rem);
   text-decoration: none;
   color: var(--text-color) !important;
   transition: all 0.25s ease;
@@ -2212,14 +2216,23 @@ figure.float-left {
   max-width: 300px;
 }
 
-figure.float-left img {
+figure.float-right {
+  float: right;
+  margin: 0 0 1rem 2rem;
+  max-width: 300px;
+}
+
+figure.float-left img,
+figure.float-right img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px var(--shadow-subtle);
+  border: 3px solid var(--primary-color);
 }
 
-figure.float-left figcaption {
+figure.float-left figcaption,
+figure.float-right figcaption {
   font-size: 0.85rem;
   color: var(--text-muted);
   text-align: center;
@@ -2228,7 +2241,8 @@ figure.float-left figcaption {
 }
 
 @media (max-width: 768px) {
-  figure.float-left {
+  figure.float-left,
+  figure.float-right {
     float: none;
     margin: 2rem auto;
     display: block;

@@ -43,11 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         
         // Determine how many items to show based on viewport width
-        let itemsToShow = 3; // Default for widest view (3 columns)
+        let itemsToShow = 2; // Default for medium screens (2 columns)
         const viewportWidth = window.innerWidth;
         
-        if (viewportWidth <= 950) {
-            itemsToShow = 2; // 2 columns or less
+        if (viewportWidth < 768) {
+            itemsToShow = 2; // Mobile: still show 2
+        } else if (viewportWidth >= 1200) {
+            itemsToShow = 3; // Large screens: show 3
         }
         
         if (!showAllItems && visibleItems.length > itemsToShow) {

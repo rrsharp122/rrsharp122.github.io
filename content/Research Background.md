@@ -14,8 +14,8 @@ My research focuses on how social risk factors, such as neighborhood safety or p
 
 ### Past Areas of Research
 
-	- Statistical Validation of GWAS-Identified Neuropsychiatric Variants
-	- Standardized pipeline development for MPRA data analysis within the IGVF Consortium
+- Statistical Validation of GWAS-Identified Neuropsychiatric Variants
+- Standardized pipeline development for MPRA data analysis within the IGVF Consortium
 
 #### Statistical Validation of GWAS-Identified Neuropsychiatric Variants
 
@@ -29,9 +29,9 @@ I'm developing standardized computational pipelines for analyzing MPRA data acro
 
 ### For a complete list of publications and citation metrics, please see my:
 
-	- [CV (PDF)](/pdfs/Sharp_SciComCV_2025.pdf)
-	- [ORCID profile](https://orcid.org/0000-0002-3070-9200)
-	- [Google Scholar profile](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)
+- [CV (PDF)](/pdfs/Sharp_SciComCV_2025.pdf)
+- [ORCID profile](https://orcid.org/0000-0002-3070-9200)
+- [Google Scholar profile](https://scholar.google.com/citations?user=ppl5OrIAAAAJ&hl=en&oi=sra)
 
 ## Funding
 

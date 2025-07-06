@@ -27,7 +27,7 @@ Now, I study how social factors impact the genetic risk for bipolar disorder usi
 
 ### Beyond the Lab
 
-{{< figure src="/images/rachel-organizingMarch.jpg" alt="Rachel organizing at the March for Science" class="float-left" width="300px" >}}
+{{< figure src="/images/rachel-organizingMarch.jpg" alt="Rachel organizing at the March for Science" class="float-right" width="300px" >}}
 
 I'm passionate about communicating science in fun and engaging ways. I believe that science is for our communities, and I want to work to bring our communities closer to the science that we do for them. When I'm not analyzing data or reading papers, you might find me developing new ways to explain complex genomics concepts or working on science outreach projects.
 
