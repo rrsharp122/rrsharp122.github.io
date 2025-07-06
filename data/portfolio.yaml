@@ -71,7 +71,7 @@ items:
     category: journalism
     date: 2023-08-15
     description: "How much of your body's energy does your brain use? The average adult brain consumes about 20% of our total energy, revealing fascinating insights into the metabolic demands of cognition."
-    image: "/images/DNA.webp"
+    image: "/images/brainpost-neuralEconomics.jpg"
     link: "https://www.brainpost.co/search?q=rachel%20sharp"
     publication: "BrainPost"
 
@@ -113,7 +113,7 @@ items:
     category: articles
     date: 2022-11-15
     description: "Single-cell RNA sequencing of human lung phagocytes reveals that protective antifungal responses against Cryptococcus involve metabolic shifts to fatty acid metabolism and enhanced TNF-α signaling across multiple immune cell clusters."
-    image: "/images/neurons.jpg"
+    image: "/images/research-phagocyticAPC.jpg"
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.1054477/full"
     publication: "Frontiers in Immunology"
 
@@ -121,7 +121,7 @@ items:
     category: articles
     date: 2022-01-22
     description: "Breaking up sedentary behavior with frequent short bouts of physical activity triggers molecular adaptations favoring oxidative capacity in skeletal muscle, though mitochondrial function improvements require longer interventions."
-    image: "/images/research-banner.jpg"
+    image: "/images/research-skeletalObese.jpg"
     link: "https://www.mdpi.com/2072-6643/14/3/454"
     publication: "Nutrients"
 
@@ -129,17 +129,9 @@ items:
     category: articles
     date: 2021-11-01
     description: "Endocrine therapies for breast cancer disrupt adipocyte progenitors and promote adipocyte hypertrophy, particularly in obesity, leading to hepatic steatosis and glucose intolerance that may explain increased diabetes risk in patients."
-    image: "/images/research-banner.jpg"
+    image: "/images/research-breastCancer.jpg"
     link: "https://academic.oup.com/endo/article/162/11/bqab174/6354857"
     publication: "Endocrinology"
-
-  - title: "Physical Confinement Induces Diverse Transcriptomic Changes and Chemoresistance in Migrating Glioblastoma Cells"
-    category: articles
-    date: 2021-07-05
-    description: "Glioblastoma cells migrating through physically confined spaces show altered gene expression in cholesterol biosynthesis and cell cycle pathways, revealing mechanical stress as a novel mechanism for chemotherapy resistance."
-    image: "/images/neurons.jpg"
-    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8255428/"
-    publication: "Neuro-Oncology Advances"
 
   - title: "Combined ASBT Inhibitor and FGF15 Treatment Improves Therapeutic Efficacy in Experimental Nonalcoholic Steatohepatitis"
     category: articles

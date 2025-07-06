@@ -101,6 +101,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent main element from cutting off content */
+.main {
+  overflow: visible !important;
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
