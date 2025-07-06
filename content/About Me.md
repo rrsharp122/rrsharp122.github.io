@@ -15,34 +15,18 @@ links:
     url: /cv
 ---
 
-## Welcome!
 
-🌴 My name is Rachel Sharp (she/her), and I am a PhD candidate in Neuroscience & Computational Genomics at the University of North Carolina at Chapel Hill.
+I am a science writer and Neuroscience PhD candidate passionate about the intersection of science and society. I believe in deeply collaborate and community-driven research, and love writing about topics in neuroscience, genetics, and social issues in...
 
 ### My Research Journey
 
-🧠 Currently, I study how social and environmental factors impact the genetic risk for bipolar disorder using computational genomics approaches and large-scale genetic datasets. This work sits at the fascinating intersection of genetics, psychology, and data science—allowing me to explore how our environments interact with our biology to influence mental health outcomes.
+I have always been torn between writing and science. In college, I chose to pursue research-oriented classes, but worked as a tutor in the writing center to keep writing in my life. It wasn't until graduate school that I realized I could write ABOUT science, and start combinging my passions. 
 
-🎓 I graduated Summa Cum Laude from the University of Oklahoma in 2019, with a B.S. in Psychology and a minor in Criminology. My undergraduate years were formative in shaping my understanding of human behavior and the complex factors that influence psychological well-being.
+Now, I study how social factors impact the genetic risk for bipolar disorder using large-scale genetic datasets.
 
-🧪 During my undergraduate studies, I conducted research on the neural mechanisms of decision-making and reward processing in addiction. This early research experience taught me the importance of rigorous methodology and sparked my interest in how biological systems underlie complex behaviors.
-
-### Research Philosophy
-
-My approach to science is deeply collaborative and community-focused. I believe that the most impactful research happens when we bring together diverse perspectives and expertise. Whether I'm analyzing genomic data or designing experiments, I'm always thinking about how our findings can translate into real-world applications that benefit communities.
-
-I'm particularly drawn to computational approaches because they allow us to find patterns in vast datasets that would be impossible to detect otherwise. There's something magical about writing code that reveals new insights about human biology and behavior.
 
 ### Beyond the Lab
 
-✨ I'm passionate about communicating science in fun and engaging ways. I believe that science is for our communities, and I want to work to bring our communities closer to the science that we do for them. When I'm not analyzing data or reading papers, you might find me developing new ways to explain complex genomics concepts or working on science outreach projects.
+I'm passionate about communicating science in fun and engaging ways. I believe that science is for our communities, and I want to work to bring our communities closer to the science that we do for them. When I'm not analyzing data or reading papers, you might find me developing new ways to explain complex genomics concepts or working on science outreach projects.
 
 I'm also deeply committed to making academia more inclusive and accessible. Having navigated graduate school myself, I understand the challenges that students face, particularly those from underrepresented backgrounds. I try to mentor and support other students whenever possible.
-
-### Personal Interests
-
-When I step away from research, I love exploring new music (always open to recommendations!), trying new restaurants, and spending time outdoors. I find that these activities help me return to my research with fresh perspectives and renewed creativity.
-
-### Looking Forward
-
-As I work toward completing my PhD, I'm excited about the possibilities ahead. Whether in academia, industry, or science communication, I want to continue working at the intersection of genetics, mental health, and public engagement. The questions we're asking in genomics today will shape how we understand and treat mental health conditions tomorrow.
