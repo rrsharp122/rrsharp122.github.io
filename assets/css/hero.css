@@ -57,6 +57,9 @@
 
 .hero-image {
   position: relative;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .hero-image img {

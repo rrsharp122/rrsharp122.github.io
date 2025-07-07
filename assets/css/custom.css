@@ -1569,6 +1569,11 @@ header,
   margin-top: 12px;
 }
 
+/* Global h2#my-research styling (works everywhere) */
+h2#my-research {
+  margin-top: 12px !important;
+}
+
 .research-page h3 {
   clear: both;
   margin-top: 2.5rem;
@@ -2634,4 +2639,72 @@ figure.float-right + p {
   content: "";
   display: table;
   clear: both;
+}
+
+/* Enhanced styling for About Me and Research sections */
+.about-section .section-content-collapsible,
+.research-section .section-content-collapsible {
+  padding: 2rem;
+  background-color: rgba(254, 246, 236, 0.3);
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px var(--shadow-subtle);
+}
+
+/* Better image-text alignment for floated images */
+.content-body figure.float-right {
+  float: right;
+  margin: 0 0 2rem 2.5rem;
+  max-width: 300px;
+}
+
+.content-body figure.float-right img {
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
+  box-shadow: 0 3px 10px var(--shadow-medium);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+/* Visual separator for h2 headers */
+.content-body h2:not(#my-research) {
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.75rem;
+  margin-top: 3rem;
+}
+
+/* Style h3 headers with accent color */
+.content-body h3 {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 2.5rem;
+}
+
+/* Improve paragraph spacing in research content */
+.research-section .content-body p,
+.about-section .content-body p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Add padding to lists for better readability */
+.content-body ul,
+.content-body ol {
+  padding-left: 2rem;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 600px) {
+  .content-body figure.float-right {
+    float: none;
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+  
+  .research-section .content-body p,
+  .about-section .content-body p {
+    text-align: left;
+  }
 }
