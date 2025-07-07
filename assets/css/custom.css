@@ -1506,7 +1506,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  border-top: 3px solid var(--primary-color);
+  border-top: 5px solid var(--primary-color);
 }
 
 /* Override any list backgrounds */
@@ -1525,7 +1525,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   margin-left: 0;
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 5px solid var(--primary-color);
 }
 
 /* Add responsive padding (buffer) around hero section */
@@ -1762,6 +1762,11 @@ main.main {
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    min-height: calc(100vh + 300px);
+    padding: 3rem 0 5rem 0;
+  }
+  
   .main > * {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -1860,7 +1865,8 @@ main.main {
 /* Responsive */
 @media (max-width: 900px) {
   .hero-section {
-    min-height: calc(100vh + 80px);
+    min-height: calc(100vh + 200px);
+    padding: 6rem 0;
   }
   
   .hero-container {
@@ -1887,6 +1893,11 @@ main.main {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: calc(100vh + 250px);
+    padding: 4rem 0 6rem 0;
+  }
+  
   /* Prevent horizontal overflow on iOS */
   .home-container {
     width: 100%;
@@ -1944,6 +1955,7 @@ main.main {
   
   .hero-container {
     padding: 0 1rem;
+    gap: 2rem;
   }
 }
 
