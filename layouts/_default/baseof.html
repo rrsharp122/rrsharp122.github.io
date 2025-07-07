@@ -17,6 +17,9 @@
 {{- print " dark" }}
 {{- end -}}
 " id="top">
+    {{/* Skip to main content link for accessibility */}}
+    <a class="skip-link visually-hidden-focusable" href="#main-content">Skip to main content</a>
+    
     {{/* Header with proper semantic markup */}}
     <header role="banner">
         {{- partialCached "header.html" . .Page -}}

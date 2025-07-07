@@ -97,6 +97,19 @@
   border-width: 0;
 }
 
+/* Visually hidden but becomes visible on focus */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* iOS-specific fixes to prevent horizontal overflow */
 html {
   -webkit-text-size-adjust: 100%;
@@ -140,12 +153,12 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
+  font-family: var(--font-family) !important;
+  background-color: var(--background-color) !important;
   background-image: 
     radial-gradient(circle at 20% 80%, rgba(15, 118, 110, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(15, 118, 110, 0.03) 0%, transparent 50%);
-  color: var(--text-color);
+  color: var(--text-color) !important;
   line-height: 1.7;
   margin: 0;
   padding: 0;
@@ -525,8 +538,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation styles */
+header,
 .header {
-  padding: 20px 0;
+  padding: 0;
   width: 100%;
   max-width: 100%;
   margin: 0;
