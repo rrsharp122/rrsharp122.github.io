@@ -83,6 +83,40 @@
   box-sizing: border-box;
 }
 
+/* Skip to main content link - visually hidden but accessible */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* iOS-specific fixes to prevent horizontal overflow */
 html {
   -webkit-text-size-adjust: 100%;
@@ -148,6 +182,30 @@ a {
 a:hover {
   color: var(--primary-color);
   text-decoration: underline;
+}
+
+/* Enhanced focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast focus for better visibility */
+@media (prefers-contrast: high) {
+  a:focus,
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus,
+  [tabindex]:focus {
+    outline: 4px solid currentColor;
+    outline-offset: 4px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1835,13 +1893,20 @@ main.main {
   cursor: pointer;
 }
 
-.section-header-collapsible {
+button.section-header-collapsible {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   user-select: none;
   min-height: 60px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
 }
 
 .section-header-collapsible .section-title {

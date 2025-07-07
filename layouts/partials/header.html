@@ -1,16 +1,14 @@
-<header class="header">
-    <nav class="nav">
-        <div class="nav-left">
-            <a href="/" class="site-name">Home</a>
-        </div>
-        
-        <div class="nav-right">
-            {{- range site.Menus.main }}
-            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-            {{- end }}
-        </div>
-    </nav>
-</header>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-left">
+        <a href="/" class="site-name" aria-label="Home - Rachel Sharp">Home</a>
+    </div>
+    
+    <div class="nav-right">
+        {{- range site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-link"{{ if eq $.Page.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{- end }}
+    </div>
+</nav>
 
 <style>
     .header {

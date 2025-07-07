@@ -11,9 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const filter = this.getAttribute('data-filter');
             currentFilter = filter;
             
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Update active button and ARIA states
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
             
             // Reset all items first
             portfolioItems.forEach(item => {

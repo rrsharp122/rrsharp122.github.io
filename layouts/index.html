@@ -36,7 +36,7 @@
             </div>
             
             <div class="hero-image">
-                <img src="/images/profilePic.jpeg" alt="Rachel Sharp" loading="eager">
+                <img src="/images/profilePic.jpeg" alt="Rachel Sharp - Science Communicator and PhD Candidate in Neuroscience" loading="eager">
             </div>
         </div>
     </section>
@@ -49,9 +49,9 @@
             
             <!-- Portfolio grid using the portfolio data -->
             {{ $portfolio := .Site.Data.portfolio }}
-            <div class="portfolio-filters">
+            <div class="portfolio-filters" role="group" aria-label="Filter portfolio items by category">
                 {{ range $portfolio.categories }}
-                    <button class="filter-btn{{ if .default }} active{{ end }}" data-filter="{{ .id }}">
+                    <button class="filter-btn{{ if .default }} active{{ end }}" data-filter="{{ .id }}" aria-pressed="{{ if .default }}true{{ else }}false{{ end }}" aria-label="Filter by {{ .name }}">
                         {{ .name }}
                     </button>
                 {{ end }}
@@ -63,7 +63,7 @@
                         <div class="portfolio-tile">
                             {{ if $item.image }}
                                 <div class="portfolio-image">
-                                    <img src="{{ $item.image }}" alt="{{ $item.title }}" loading="lazy">
+                                    <img src="{{ $item.image }}" alt="Article thumbnail: {{ $item.title }}" loading="lazy">
                                 </div>
                             {{ end }}
                             
@@ -77,7 +77,7 @@
                                 
                                 <h3 class="portfolio-title">
                                     {{ if $item.link }}
-                                        <a href="{{ $item.link }}" target="_blank" rel="noopener noreferrer">
+                                        <a href="{{ $item.link }}" target="_blank" rel="noopener noreferrer" aria-label="Read article: {{ $item.title }} (opens in new tab)">
                                             {{ $item.title }}
                                         </a>
                                     {{ else }}
@@ -108,11 +108,11 @@
     <!-- About Section -->
     <section id="about" class="section about-section section-collapsible collapsed">
         <div class="section-container">
-            <div class="section-header-collapsible">
+            <button class="section-header-collapsible" aria-expanded="false" aria-controls="about-content">
                 <h2 class="section-title">About Me</h2>
-                <span class="collapse-icon">▲</span>
-            </div>
-            <div class="section-content-collapsible">
+                <span class="collapse-icon" aria-hidden="true">▲</span>
+            </button>
+            <div class="section-content-collapsible" id="about-content">
                 <div class="about-content">
                     {{ $aboutPage := .Site.GetPage "/about-me" }}
                     {{ if $aboutPage }}
@@ -128,11 +128,11 @@
     <!-- Research Section -->
     <section id="research" class="section research-section section-collapsible collapsed">
         <div class="section-container">
-            <div class="section-header-collapsible">
+            <button class="section-header-collapsible" aria-expanded="false" aria-controls="research-content">
                 <h2 class="section-title">Research Background</h2>
-                <span class="collapse-icon">▲</span>
-            </div>
-            <div class="section-content-collapsible">
+                <span class="collapse-icon" aria-hidden="true">▲</span>
+            </button>
+            <div class="section-content-collapsible" id="research-content">
                 <div class="research-content">
                     {{ $researchPage := .Site.GetPage "/research-background" }}
                     {{ if $researchPage }}
@@ -164,24 +164,27 @@
                     <form action="https://formspree.io/f/mvgrndyl" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-desc">
+                            <span id="name-desc" class="visually-hidden">Enter your full name</span>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-desc">
+                            <span id="email-desc" class="visually-hidden">Enter your email address for response</span>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-desc"></textarea>
+                            <span id="message-desc" class="visually-hidden">Enter your message or question</span>
                         </div>
                         
-                        <button type="submit" class="submit-button">Send Message</button>
+                        <button type="submit" class="submit-button" aria-label="Send contact message">Send Message</button>
                     </form>
                     
                     <p class="form-footer">
-                        <em>Powered by <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a></em>
+                        <em>Powered by <a href="https://formspree.io" target="_blank" rel="noopener" aria-label="Formspree - form handling service (opens in new tab)">Formspree</a></em>
                     </p>
                 </div>
             </div>
@@ -254,14 +257,24 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
     
-    // Collapsible sections functionality
+    // Collapsible sections functionality with ARIA support
     const collapsibleSections = document.querySelectorAll('.section-collapsible');
     
     collapsibleSections.forEach(section => {
         const header = section.querySelector('.section-header-collapsible');
         
         header.addEventListener('click', function() {
+            const isCollapsed = section.classList.contains('collapsed');
             section.classList.toggle('collapsed');
+            this.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
+        });
+        
+        // Allow keyboard activation with Enter/Space
+        header.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
         });
     });
 });
