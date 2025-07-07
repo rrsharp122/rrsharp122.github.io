@@ -15,13 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            // Filter items
+            // Reset all items first
             portfolioItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+                item.style.display = 'none';
             });
             
             // Reset show more state when filter changes
@@ -38,25 +34,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show more functionality
     function updateItemVisibility() {
-        const visibleItems = Array.from(portfolioItems).filter(item => 
-            item.style.display !== 'none'
-        );
+        const visibleItems = Array.from(portfolioItems).filter(item => {
+            if (currentFilter === 'all') {
+                return true;
+            }
+            return item.getAttribute('data-category') === currentFilter;
+        });
         
         // Determine how many items to show based on viewport width
-        let itemsToShow = 2; // Default for medium screens (2 columns)
+        let itemsToShow = 4; // Default to show 4 items initially
         const viewportWidth = window.innerWidth;
         
         if (viewportWidth < 768) {
-            itemsToShow = 2; // Mobile: still show 2
+            itemsToShow = 3; // Mobile: show 3
         } else if (viewportWidth >= 1200) {
-            itemsToShow = 3; // Large screens: show 3
+            itemsToShow = 6; // Large screens: show 6
         }
+        
+        // First, show all items that match the filter
+        portfolioItems.forEach(item => {
+            if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
         
         if (!showAllItems && visibleItems.length > itemsToShow) {
             // Hide items beyond the initial set
-            visibleItems.forEach((item, index) => {
-                if (index >= itemsToShow) {
-                    item.style.display = 'none';
+            let shown = 0;
+            portfolioItems.forEach(item => {
+                if (item.style.display === 'block') {
+                    if (shown >= itemsToShow) {
+                        item.style.display = 'none';
+                    }
+                    shown++;
                 }
             });
             
