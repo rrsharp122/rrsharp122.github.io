@@ -167,6 +167,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Remove padding for list pages */
+body#top.list {
+  padding: 0 !important;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -1560,6 +1565,10 @@ header,
   margin-bottom: 1.5rem;
 }
 
+.research-page h2#my-research {
+  margin-top: 12px;
+}
+
 .research-page h3 {
   clear: both;
   margin-top: 2.5rem;
@@ -1586,7 +1595,7 @@ header,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 80px 2rem;
   background-color: var(--light-background) !important;
   position: relative;
   width: 100%;
@@ -1693,6 +1702,9 @@ header,
   max-width: 400px;
   animation: fadeInRight 0.8s ease-out 0.2s both;
   margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 4px;
 }
 
 @media (min-width: 901px) {
