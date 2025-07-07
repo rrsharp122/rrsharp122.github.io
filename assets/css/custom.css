@@ -1586,8 +1586,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Add responsive padding (buffer) around hero section */
 @media (min-width: 1000px) {
   .hero-section {
-    min-height: 90vh; /* Reduce height on wider screens */
-    padding: 3rem 2rem;
+    min-height: 100vh; /* Full height on wider screens */
+    padding: 4rem 2rem;
     width: 100%;
     margin: 0;
     border: 3px solid var(--primary-color);
@@ -1597,8 +1597,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1200px) {
   .hero-section {
-    min-height: 85vh; /* Further reduce height */
-    padding: 3rem 2rem;
+    min-height: 100vh; /* Maintain full height */
+    padding: 5rem 2rem;
     width: 100%;
     margin: 0;
   }
@@ -1606,7 +1606,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1400px) {
   .hero-section {
-    min-height: 80vh; /* Minimum height on largest screens */
+    min-height: 100vh; /* Full viewport height on largest screens */
+    padding: 6rem 2rem;
     width: 100%;
     margin-left: 0;
   }
@@ -1910,6 +1911,17 @@ button.section-header-collapsible {
   font: inherit;
   color: inherit;
   text-align: left;
+  outline: none;
+}
+
+button.section-header-collapsible:focus {
+  outline: none;
+}
+
+button.section-header-collapsible:hover {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
 .section-header-collapsible .section-title {
@@ -2441,6 +2453,10 @@ figure.float-right {
 /* Specific styling for images with width attribute */
 figure[width="210px"] {
   max-width: 210px !important;
+}
+
+figure[width="250px"] {
+  max-width: 250px !important;
 }
 
 figure[width="280px"] {
