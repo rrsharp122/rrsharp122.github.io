@@ -1652,7 +1652,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 .section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   position: relative;
   border: 1px solid var(--border);
   border-left: 3px solid var(--primary-color);
@@ -1666,13 +1666,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 768px) {
   .section {
-    padding: 6rem 3rem;
+    padding: 4rem 2.5rem;
   }
 }
 
 @media (min-width: 1000px) {
   .section {
-    padding: 6rem 4rem;
+    padding: 5rem 3rem;
   }
 }
 
@@ -1749,22 +1749,27 @@ main.main {
 
 @media (max-width: 1200px) {
   .main > * {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .main > * {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
+@media (max-width: 768px) {
+  .main > * {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-section {
-    min-height: calc(100vh + 300px);
-    padding: 3rem 0 5rem 0;
+    min-height: auto;
+    padding: 5rem 0 3rem 0;
+    margin-top: 60px;
+  }
+  
+  .section {
+    padding: 2.5rem 1rem;
   }
   
   .main > * {
@@ -1865,8 +1870,9 @@ main.main {
 /* Responsive */
 @media (max-width: 900px) {
   .hero-section {
-    min-height: calc(100vh + 200px);
-    padding: 6rem 0;
+    min-height: auto;
+    padding: 8rem 0 6rem 0;
+    margin-top: 60px;
   }
   
   .hero-container {
@@ -1894,8 +1900,9 @@ main.main {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: calc(100vh + 250px);
-    padding: 4rem 0 6rem 0;
+    min-height: auto;
+    padding: 6rem 0 4rem 0;
+    margin-top: 60px;
   }
   
   /* Prevent horizontal overflow on iOS */
@@ -1908,7 +1915,7 @@ main.main {
   .section {
     width: 100%;
     max-width: 100vw;
-    padding: 3rem 1rem;
+    padding: 3rem 1.5rem;
     overflow-x: hidden;
     box-sizing: border-box;
   }
