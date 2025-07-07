@@ -8,27 +8,11 @@ description: "Overview of my research in neuroscience and genomics"
 layout: "research"
 ---
 
-## My Thesis Project
+## My Research
 
-{{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting research poster" class="float-right" >}}
+{{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting a research poster. She gestures, mid-sentence, to a man standing his back to you." class="float-right" >}}
 
-My research focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder.
-
-### Past areas of research
-
-- Statistical Validation of GWAS-Identified Neuropsychiatric Variants
-- Standardized pipeline development for MPRA data analysis within the IGVF Consortium
-- As an undergraduate, I studied how Iron deficiency affects memory speed and accuracy in college-aged women.
-
-#### Statistical Validation of GWAS-Identified Neuropsychiatric Variants
-
-I'm investigating the statistical validity of genetic variants identified in genome-wide association studies (GWAS) for neuropsychiatric disorders, particularly bipolar disorder and schizophrenia. My work involves integrating GWAS data with Massively Parallel Reporter Assay (MPRA) datasets and Quantitative Trait Loci (QTL) data to validate genetic mechanisms contributing to disease risk.
-
-A key finding from my research has been demonstrating the statistical failure of commonly used algorithms to prioritize causal variants - a significant contribution that challenges current methodological approaches in the field.
-
-#### MPRA Data Analysis Pipeline Development
-
-I'm developing standardized computational pipelines for analyzing MPRA data across five internationally funded centers as part of the International Impact of Genomic Variation on Function (IGVF) Consortium. This collaborative effort aims to create reproducible, systematic approaches to functional genomics analysis that can be implemented across different research institutions.
+My current project focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder. This work allows me to draw on my background in neuroscience, genetics, computational biology, and social sciences to explore how social and biological factors interact to influence mental health outcomes.
 
 ### For a complete list of publications and citation metrics, please see my:
 
