@@ -1844,6 +1844,12 @@ main.main {
   min-height: 60px;
 }
 
+.section-header-collapsible .section-title {
+  flex: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
 .collapse-icon {
   font-size: 1.5rem;
   transition: transform 0.3s ease;
@@ -1928,6 +1934,10 @@ main.main {
     box-sizing: border-box;
   }
   
+  .writing-section .section-container {
+    padding-top: 5rem;
+  }
+  
   .hero-container {
     flex-direction: column;
     text-align: center;
@@ -1963,6 +1973,10 @@ main.main {
     border-radius: 0;
     border-width: 5px 3px;
     box-sizing: border-box;
+  }
+  
+  .writing-section .section-container {
+    padding-top: 6rem;
   }
   
   /* Prevent horizontal overflow on iOS */
@@ -2131,7 +2145,7 @@ main.main {
 
 .show-more-button {
   display: block;
-  margin: 3rem auto 0;
+  margin: 3rem auto 3rem;
   padding: 0.75rem 2.5rem;
   background-color: var(--accent-color);
   color: white;
@@ -2142,6 +2156,8 @@ main.main {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-family);
+  z-index: 10;
+  position: relative;
 }
 
 .show-more-button:hover {
