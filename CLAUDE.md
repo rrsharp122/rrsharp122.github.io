@@ -64,6 +64,44 @@ The site extends the PaperMod theme with custom layouts and styles:
 - Extended CSS in `assets/css/custom.css` and `assets/css/extended/custom.css`
 - Custom contact page template at `layouts/_default/contact.html`
 
+### CSS Architecture
+
+The site uses a layered CSS approach:
+1. **Base Theme CSS**: PaperMod theme styles (constraints: `--main-width: 720px`)
+2. **hero.css**: Hero section specific styles with media queries
+3. **custom.css**: Main customization file (2700+ lines) with:
+   - WCAG AA compliant color scheme
+   - Bootstrap 5 navbar integration
+   - Responsive breakpoints at 600px, 992px
+   - Accessibility enhancements (skip links, ARIA labels)
+   - Enhanced image styling with shadows and borders
+   - Improved typography and spacing
+
+### Recent Improvements (January 2025)
+
+#### Accessibility Enhancements
+- Implemented Bootstrap 5 responsive navbar with hamburger menu
+- Added skip-to-main-content link for keyboard navigation
+- Enhanced form labels with ARIA descriptions
+- Improved color contrast ratios (all text ≥4.5:1 for WCAG AA)
+- Made navbar sticky on mobile devices
+- Added proper heading hierarchy
+
+#### Visual Improvements
+- Hero section padding increased to 80px at 841px+ breakpoint
+- Added subtle backgrounds to About Me and Research sections
+- Enhanced image borders and shadows
+- Added visual separators to h2 headers
+- Styled h3 headers with primary color accent
+- Improved text-image alignment with better float rules
+- Added text justification for better readability
+
+#### CSS Fixes Applied
+- Global `h2#my-research` margin with `!important` flag
+- Fixed hero.css media query conflicts
+- Improved specificity for reliable style application
+- Added responsive rules for mobile layouts
+
 ## Planned Features (Implementation in Progress)
 
 ### Interactive Portfolio Section

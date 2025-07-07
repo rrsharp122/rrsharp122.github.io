@@ -85,13 +85,18 @@ Main content pages are in the `content/` directory:
 
 ### Styling
 
-Custom styles are in `assets/css/custom.css` and `assets/css/portfolio.css`.
+Custom styles are organized in multiple CSS files:
+- `assets/css/custom.css` - Main customization file (2700+ lines)
+- `assets/css/hero.css` - Hero section specific styles
+- `assets/css/portfolio.css` - Portfolio grid and filtering
 
 Key features:
-- Responsive grid layout for portfolio items
-- Mobile-optimized navigation
-- Dark mode support
-- Accessibility-focused design
+- WCAG AA compliant color scheme (contrast ratios ≥4.5:1)
+- Bootstrap 5 responsive navbar with hamburger menu
+- Mobile-optimized sticky navigation
+- Responsive breakpoints at 600px and 992px
+- Enhanced image styling with shadows and borders
+- Accessibility-focused design with skip links and ARIA labels
 
 ### Configuration
 
@@ -118,6 +123,15 @@ The site includes:
 - Robots.txt with sitemap
 - AI/LLM accessibility features
 - Semantic HTML structure
+
+### Recent Accessibility Improvements (January 2025)
+- Bootstrap 5 navbar with proper ARIA labels
+- Skip-to-main-content link for keyboard navigation
+- Enhanced form labels with ARIA descriptions
+- WCAG AA compliant color contrast (≥4.5:1)
+- Proper heading hierarchy (h1 → h2 → h3)
+- Mobile-friendly sticky navigation
+- Keyboard-accessible collapsible sections
 
 ## 📄 License
 
