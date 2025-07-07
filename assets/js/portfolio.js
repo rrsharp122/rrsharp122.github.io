@@ -79,28 +79,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 showMoreBtn.className = 'show-more-button';
                 showMoreBtn.textContent = 'Show More';
                 portfolioGrid.parentElement.appendChild(showMoreBtn);
-                
-                showMoreBtn.addEventListener('click', function() {
-                    showAllItems = !showAllItems;
-                    updateItemVisibility();
-                    
-                    if (showAllItems) {
-                        this.textContent = 'Show Less';
-                        this.classList.add('show-less');
-                        // Show all filtered items
-                        portfolioItems.forEach(item => {
-                            if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
-                                item.style.display = 'block';
-                            }
-                        });
-                    } else {
-                        this.textContent = 'Show More';
-                        this.classList.remove('show-less');
-                        // Scroll back to the top of the portfolio section
-                        document.getElementById('writing').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
             }
+            
+            // Update button text based on state
+            if (showAllItems) {
+                showMoreBtn.textContent = 'Show Less';
+                showMoreBtn.classList.add('show-less');
+            } else {
+                showMoreBtn.textContent = 'Show More';
+                showMoreBtn.classList.remove('show-less');
+            }
+            
             showMoreBtn.style.display = 'block';
         } else {
             // Hide show more button if not needed
@@ -113,6 +102,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial setup
     updateItemVisibility();
+    
+    // Show more button click handler
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('show-more-button')) {
+            showAllItems = !showAllItems;
+            
+            if (showAllItems) {
+                // Show all filtered items
+                portfolioItems.forEach(item => {
+                    if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
+                        item.style.display = 'block';
+                    }
+                });
+            }
+            
+            updateItemVisibility();
+            
+            if (!showAllItems) {
+                // Scroll back to the top of the portfolio section
+                document.getElementById('writing').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
     
     // Update on window resize
     let resizeTimer;

@@ -1517,17 +1517,18 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   margin-left: 0;
-  border-bottom: 5px solid var(--primary-color);
+  border: 5px solid var(--primary-color);
 }
 
 /* Add responsive padding (buffer) around hero section */
 @media (min-width: 1000px) {
   .hero-section {
     min-height: 90vh; /* Reduce height on wider screens */
-    padding: 3rem 0;
-    width: 100%;
-    margin-left: 0;
-    border-bottom: 3px solid var(--primary-color);
+    padding: 3rem 2rem;
+    width: calc(100% - 4rem);
+    margin: 0 2rem;
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
   }
 }
 
@@ -1719,6 +1720,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Writing Section */
 .writing-section {
   background-color: var(--light-background);
+  padding: 0 !important;
+}
+
+.writing-section .section-container {
+  padding: 4rem 2rem;
 }
 
 /* Main element overrides - force full width */
@@ -1905,6 +1911,9 @@ main.main {
     min-height: auto;
     padding: 8rem 0 6rem 0;
     margin-top: 60px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
   }
   
   .hero-container {
@@ -1936,6 +1945,9 @@ main.main {
     min-height: auto;
     padding: 6rem 0 4rem 0;
     margin-top: 60px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border-radius: 0;
   }
   
   /* Prevent horizontal overflow on iOS */
