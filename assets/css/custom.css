@@ -732,15 +732,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer styling */
 .home-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  color: var(--text-color);
-  opacity: 0.7;
-  border-top: 1px solid var(--border-light);
+  display: none;
 }
 
 .footer-links {
@@ -1520,7 +1512,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   background-color: var(--light-background);
   position: relative;
   width: 100%;
@@ -1819,6 +1811,44 @@ main.main {
 /* Contact Section */
 .contact-section {
   background-color: var(--card-background);
+}
+
+/* Collapsible Section Styles */
+.section-collapsible {
+  position: relative;
+  cursor: pointer;
+}
+
+.section-header-collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapse-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
+}
+
+.section-collapsible.collapsed .collapse-icon {
+  transform: rotate(180deg);
+}
+
+.section-content-collapsible {
+  max-height: 2000px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.section-collapsible.collapsed .section-content-collapsible {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .contact-content {

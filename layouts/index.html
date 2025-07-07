@@ -106,31 +106,41 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about-section">
+    <section id="about" class="section about-section section-collapsible collapsed">
         <div class="section-container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                {{ $aboutPage := .Site.GetPage "/about-me" }}
-                {{ if $aboutPage }}
-                    {{ $aboutPage.Content }}
-                {{ else }}
-                    <p>I'm a PhD candidate in the Genetics and Molecular Biology Curriculum at UNC Chapel Hill, where I work in the lab of Dr. Hyejung Won. My research focuses on understanding the genetic basis of psychiatric disorders through computational genomics approaches.</p>
-                {{ end }}
+            <div class="section-header-collapsible">
+                <h2 class="section-title">About Me</h2>
+                <span class="collapse-icon">▲</span>
+            </div>
+            <div class="section-content-collapsible">
+                <div class="about-content">
+                    {{ $aboutPage := .Site.GetPage "/about-me" }}
+                    {{ if $aboutPage }}
+                        {{ $aboutPage.Content }}
+                    {{ else }}
+                        <p>I'm a PhD candidate in the Genetics and Molecular Biology Curriculum at UNC Chapel Hill, where I work in the lab of Dr. Hyejung Won. My research focuses on understanding the genetic basis of psychiatric disorders through computational genomics approaches.</p>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="section research-section">
+    <section id="research" class="section research-section section-collapsible collapsed">
         <div class="section-container">
-            <h2 class="section-title">Research Background</h2>
-            <div class="research-content">
-                {{ $researchPage := .Site.GetPage "/research-background" }}
-                {{ if $researchPage }}
-                    {{ $researchPage.Content }}
-                {{ else }}
-                    <p>My research integrates computational genomics, neuroscience, and psychiatric genetics to understand how genetic variations contribute to brain disorders.</p>
-                {{ end }}
+            <div class="section-header-collapsible">
+                <h2 class="section-title">Research Background</h2>
+                <span class="collapse-icon">▲</span>
+            </div>
+            <div class="section-content-collapsible">
+                <div class="research-content">
+                    {{ $researchPage := .Site.GetPage "/research-background" }}
+                    {{ if $researchPage }}
+                        {{ $researchPage.Content }}
+                    {{ else }}
+                        <p>My research integrates computational genomics, neuroscience, and psychiatric genetics to understand how genetic variations contribute to brain disorders.</p>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </section>
@@ -243,6 +253,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
+    
+    // Collapsible sections functionality
+    const collapsibleSections = document.querySelectorAll('.section-collapsible');
+    
+    collapsibleSections.forEach(section => {
+        const header = section.querySelector('.section-header-collapsible');
+        
+        header.addEventListener('click', function() {
+            section.classList.toggle('collapsed');
+        });
+    });
 });
 </script>
 
