@@ -2439,14 +2439,14 @@ button.section-header-collapsible:hover {
 figure.float-left {
   float: left;
   margin: 0 2rem 1.5rem 0;
-  max-width: 210px;
+  max-width: 200px;
   clear: left;
 }
 
 figure.float-right {
   float: right;
   margin: 0 0 1.5rem 2rem;
-  max-width: 280px;
+  max-width: 200px;
   clear: right;
 }
 
@@ -2492,7 +2492,7 @@ figure.float-right figcaption {
     margin: 2rem auto;
     display: block;
     text-align: center;
-    max-width: 280px !important;
+    max-width: 200px !important;
   }
 }
 
