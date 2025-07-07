@@ -83,26 +83,6 @@
   box-sizing: border-box;
 }
 
-/* Skip to main content link - visually hidden but accessible */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 0 0 4px 0;
-  font-weight: 600;
-  z-index: 10000;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 0;
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
 
 /* Visually hidden but accessible to screen readers */
 .visually-hidden {
@@ -169,6 +149,7 @@ body {
   line-height: 1.7;
   margin: 0;
   padding: 0;
+  padding-top: 80px; /* Account for fixed header */
   min-width: 320px;
   overflow-x: hidden;
 }
@@ -547,14 +528,16 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   padding: 20px 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: sticky;
+  max-width: 100%;
+  margin: 0;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   background-color: rgba(254, 254, 254, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 100;
+  z-index: 1000;
   transition: all 0.25s ease;
   border-bottom: 1px solid transparent;
 }
@@ -564,7 +547,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FBF8F4; /* Off-white cream */
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
-  margin: 0 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
   border: 1px solid rgba(0, 0, 0, 0.1); /* Thin black border */
 }
 
@@ -1585,19 +1569,19 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     min-height: 90vh; /* Reduce height on wider screens */
     padding: 3rem 2rem;
-    width: calc(100% - 4rem);
-    margin: 0 2rem;
+    width: 100%;
+    margin: 0;
     border: 3px solid var(--primary-color);
-    border-radius: 12px;
+    border-radius: 0;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-section {
     min-height: 85vh; /* Further reduce height */
-    padding: 3rem 0;
+    padding: 3rem 2rem;
     width: 100%;
-    margin-left: 0;
+    margin: 0;
   }
 }
 
@@ -1825,7 +1809,7 @@ main.main {
   .hero-section {
     min-height: auto;
     padding: 5rem 1rem 3rem 1rem;
-    margin-top: 60px;
+    margin-top: 0;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -1913,6 +1897,7 @@ button.section-header-collapsible {
   flex: 1;
   text-align: center;
   padding: 0 1rem;
+  margin-bottom: 0;
 }
 
 .collapse-icon {
@@ -1990,7 +1975,7 @@ button.section-header-collapsible {
   .hero-section {
     min-height: auto;
     padding: 8rem 2rem 6rem 2rem;
-    margin-top: 60px;
+    margin-top: 0;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -2031,7 +2016,7 @@ button.section-header-collapsible {
   .hero-section {
     min-height: auto;
     padding: 6rem 1.5rem 4rem 1.5rem;
-    margin-top: 60px;
+    margin-top: 0;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
