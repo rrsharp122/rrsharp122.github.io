@@ -1506,6 +1506,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  border-top: 3px solid var(--primary-color);
 }
 
 /* Override any list backgrounds */
@@ -1522,9 +1523,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4rem 0;
   background-color: var(--light-background);
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  border-top: 3px solid var(--primary-color);
+  width: 100%;
+  margin-left: 0;
   border-bottom: 3px solid var(--primary-color);
 }
 
@@ -1533,10 +1533,9 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     min-height: 90vh; /* Reduce height on wider screens */
     padding: 3rem 0;
-    width: calc(100vw - 4rem);
-    margin-left: calc(-50vw + 50% + 2rem);
-    border: 3px solid var(--primary-color);
-    border-radius: 12px;
+    width: 100%;
+    margin-left: 0;
+    border-bottom: 3px solid var(--primary-color);
   }
 }
 
@@ -1544,16 +1543,16 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     min-height: 85vh; /* Further reduce height */
     padding: 3rem 0;
-    width: calc(100vw - 6rem);
-    margin-left: calc(-50vw + 50% + 3rem);
+    width: 100%;
+    margin-left: 0;
   }
 }
 
 @media (min-width: 1400px) {
   .hero-section {
     min-height: 80vh; /* Minimum height on largest screens */
-    width: calc(100vw - 8rem);
-    margin-left: calc(-50vw + 50% + 4rem);
+    width: 100%;
+    margin-left: 0;
   }
 }
 
@@ -1860,6 +1859,10 @@ main.main {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .hero-section {
+    min-height: calc(100vh + 80px);
+  }
+  
   .hero-container {
     flex-direction: column;
     text-align: center;
