@@ -796,7 +796,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-single {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px 40px;
 }
 
 .post-header {
@@ -885,8 +885,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.8rem;
   font-size: 1rem;
   line-height: 1.8;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .content-body h2 {
@@ -988,8 +987,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Consistent heading styles for post content */
 .post-content h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
   font-size: 1.75rem;
   font-weight: 600;
   text-transform: capitalize;
@@ -1016,8 +1015,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-content p {
   margin-bottom: 1.8rem;
   line-height: 1.8;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 /* Better spacing for sections */
@@ -1773,6 +1771,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -1px;
 }
 
+/* Science Communication section specific */
+.writing-section .section-title {
+  margin-top: 48px;
+}
+
+/* About Me and Research section title spacing */
+.about-section .section-title,
+.research-section .section-title {
+  margin-bottom: 48px;
+}
+
 .section-intro {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -1854,7 +1863,7 @@ main.main {
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.8;
@@ -1880,7 +1889,7 @@ main.main {
 }
 
 .research-content {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.8;
