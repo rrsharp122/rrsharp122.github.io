@@ -23,7 +23,7 @@
 @media (min-width: 841px) { /* 809.333px + 32px padding */
   .hero-section {
     max-height: 580px;
-    padding: 15px 1rem;
+    padding: 80px 1rem;
   }
 }
 
