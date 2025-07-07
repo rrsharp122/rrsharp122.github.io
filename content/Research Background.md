@@ -10,7 +10,7 @@ layout: "research"
 
 ## My Research
 
-{{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting a research poster. She gestures, mid-sentence, to a man standing his back to you." class="float-right" >}}
+{{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting a research poster. She gestures, mid-sentence, to a man standing his back to you." class="float-right" width="280px" >}}
 
 My current project focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder. This work allows me to draw on my background in neuroscience, genetics, computational biology, and social sciences to explore how social and biological factors interact to influence mental health outcomes.
 

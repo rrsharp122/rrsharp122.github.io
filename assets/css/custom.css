@@ -882,9 +882,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-body p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .content-body h2 {
@@ -1012,8 +1014,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-content p {
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Better spacing for sections */
@@ -1528,11 +1532,26 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
-  margin-right: 120px;
 }
 
 .research-page .content-body {
   max-width: none;
+}
+
+.research-page figure.float-right {
+  margin-bottom: 2rem;
+}
+
+.research-page h2 {
+  clear: both;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.research-page h3 {
+  clear: both;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Continuous Scroll Home Page Styles */
@@ -2407,14 +2426,25 @@ button.section-header-collapsible {
 /* Float image styling for content pages */
 figure.float-left {
   float: left;
-  margin: 0 2rem 1rem 0;
-  max-width: 300px;
+  margin: 0 2rem 1.5rem 0;
+  max-width: 210px;
+  clear: left;
 }
 
 figure.float-right {
   float: right;
-  margin: 0 0 1rem 2rem;
-  max-width: 300px;
+  margin: 0 0 1.5rem 2rem;
+  max-width: 280px;
+  clear: right;
+}
+
+/* Specific styling for images with width attribute */
+figure[width="210px"] {
+  max-width: 210px !important;
+}
+
+figure[width="280px"] {
+  max-width: 280px !important;
 }
 
 figure.float-left img,
@@ -2442,5 +2472,54 @@ figure.float-right figcaption {
     margin: 2rem auto;
     display: block;
     text-align: center;
+    max-width: 280px !important;
   }
+}
+
+/* Ensure consistent content styling across all pages */
+.post-single .content-body,
+.post-single .post-content,
+article .content-body,
+article .post-content {
+  overflow: visible;
+}
+
+/* Clear floats properly */
+.post-single h2,
+.post-single h3,
+.post-content h2,
+.post-content h3,
+.content-body h2,
+.content-body h3 {
+  clear: both;
+}
+
+/* Consistent list styling */
+.post-single ul,
+.post-content ul,
+.content-body ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.post-single ul li,
+.post-content ul li,
+.content-body ul li {
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+}
+
+/* Ensure proper spacing after floated images */
+figure.float-left + p,
+figure.float-right + p {
+  margin-top: 0;
+}
+
+/* Fix alignment issues with floated content */
+.clearfix::after,
+.post-content::after,
+.content-body::after {
+  content: "";
+  display: table;
+  clear: both;
 }
