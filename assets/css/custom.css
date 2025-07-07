@@ -2451,6 +2451,10 @@ figure.float-right {
 }
 
 /* Specific styling for images with width attribute */
+figure[width="200px"] {
+  max-width: 200px !important;
+}
+
 figure[width="210px"] {
   max-width: 210px !important;
 }

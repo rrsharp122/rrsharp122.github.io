@@ -8,7 +8,6 @@ description: "Examples of my science communication and writing"
 layout: "single"
 ---
 
-I'm passionate about making complex scientific concepts accessible to diverse audiences. My science communication work spans several formats and audiences, from lay explanations of recent research to technical explainers for scientific peers.
 
 ## Featured Pieces
 
