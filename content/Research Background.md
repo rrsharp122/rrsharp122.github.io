@@ -8,16 +8,17 @@ description: "Overview of my research in neuroscience and genomics"
 layout: "research"
 ---
 
-## Statistical Validation and Pipeline Development for Neuropsychiatric Genomics
+## My Thesis Project
 
 {{< figure src="/images/rachel-poster.jpg" alt="Rachel presenting research poster" class="float-right" >}}
 
-My research focuses on how social risk factors, such as neighborhood safety or perceived stress, impacts genetic risk for bipolar disorder. 
+My research focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder.
 
-### Past Areas of Research
+### Past areas of research
 
 - Statistical Validation of GWAS-Identified Neuropsychiatric Variants
 - Standardized pipeline development for MPRA data analysis within the IGVF Consortium
+- As an undergraduate, I studied how Iron deficiency affects memory speed and accuracy in college-aged women.
 
 #### Statistical Validation of GWAS-Identified Neuropsychiatric Variants
 
