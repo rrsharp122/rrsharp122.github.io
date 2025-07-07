@@ -1499,6 +1499,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
   overflow-x: hidden;
   border-top: 5px solid var(--primary-color);
+  background-color: var(--background-color);
 }
 
 /* Override any list backgrounds */
@@ -1587,7 +1588,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-name {
   font-size: 4rem;
   font-weight: 300;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   letter-spacing: -2px;
   line-height: 1.1;
 }
@@ -1763,8 +1764,14 @@ main.main {
 @media (max-width: 480px) {
   .hero-section {
     min-height: auto;
-    padding: 5rem 0 3rem 0;
+    padding: 5rem 1rem 3rem 1rem;
     margin-top: 60px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .section {
@@ -1909,11 +1916,14 @@ main.main {
 @media (max-width: 900px) {
   .hero-section {
     min-height: auto;
-    padding: 8rem 0 6rem 0;
+    padding: 8rem 2rem 6rem 2rem;
     margin-top: 60px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .hero-container {
@@ -1943,11 +1953,14 @@ main.main {
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    padding: 6rem 0 4rem 0;
+    padding: 6rem 2rem 4rem 2rem;
     margin-top: 60px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   /* Prevent horizontal overflow on iOS */
