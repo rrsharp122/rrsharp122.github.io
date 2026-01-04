@@ -26,7 +26,7 @@
 }
 
 .filter-btn:hover {
-  background-color: #e0e0e0;
+  background-color: var(--light-background);
   transform: translateY(-2px);
 }
 
@@ -75,10 +75,10 @@
 }
 
 .portfolio-tile {
-  background: white;
+  background: var(--card-background);
   border-radius: var(--border-radius);
   border: var(--border-interactive);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow-medium);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -87,14 +87,14 @@
 }
 
 .portfolio-tile:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px var(--shadow-strong);
   transform: translateY(-4px);
 }
 
 /* Portfolio Image */
 .portfolio-image {
   aspect-ratio: 16 / 9;
-  background-color: #f5f5f5;
+  background-color: var(--light-background);
   overflow: hidden;
   position: relative;
   border-bottom: var(--border-interactive);
@@ -136,7 +136,7 @@
 }
 
 .portfolio-publication {
-  color: #999;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .portfolio-title a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -157,7 +157,7 @@
 }
 
 .portfolio-description {
-  color: #666;
+  color: var(--text-muted);
   flex-grow: 1;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -165,7 +165,7 @@
 }
 
 .portfolio-date {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: auto;
 }
@@ -183,7 +183,7 @@
 
 .loading-spinner {
   animation: spin 1s linear infinite;
-  border: 3px solid #f3f3f3;
+  border: 3px solid var(--border-light);
   border-radius: 50%;
   border-top: 3px solid var(--primary-color);
   height: 40px;
@@ -292,40 +292,40 @@
   }
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support - uses CSS variables from custom.css :root dark mode */
 @media (prefers-color-scheme: dark) {
   .portfolio-tile {
-    background: #1a1a1a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: var(--card-background);
+    box-shadow: 0 4px 6px var(--shadow-medium);
   }
-  
+
   .portfolio-tile:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px var(--shadow-strong);
   }
-  
+
   .portfolio-title a {
-    color: #e0e0e0;
+    color: var(--text-color);
   }
-  
+
   .portfolio-title a:hover {
-    color: #4db8ff;
+    color: var(--accent-color);
   }
-  
+
   .portfolio-description {
-    color: #b0b0b0;
+    color: var(--text-muted);
   }
-  
+
   .filter-btn {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
+    background-color: var(--light-background);
+    color: var(--text-color);
   }
-  
+
   .filter-btn:hover {
-    background-color: #3a3a3a;
+    background-color: var(--border);
   }
-  
+
   .portfolio-category {
-    background-color: #2a2a2a;
-    color: #b0b0b0;
+    background-color: var(--light-background);
+    color: var(--text-muted);
   }
 }

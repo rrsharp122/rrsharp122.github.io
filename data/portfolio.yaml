@@ -1,5 +1,14 @@
 items:
   # Science Journalism Articles
+  - title: "Finding Humanity in Health Data"
+    category: journalism
+    date: 2025-12-08
+    description: "An exploration of how intersectional frameworks can transform biomedical informatics, moving beyond demographic checkboxes to capture the complex lived realities and systemic barriers that shape individual health outcomes."
+    image: "/images/americanscientist-healthdata.jpg"
+    link: "https://www.americanscientist.org/blog/macroscope/finding-humanity-in-health-data"
+    publication: "American Scientist"
+    featured: true
+
   - title: "When Practice Makes Perfect: The Neurons Behind Skilled Movement"
     category: journalism
     date: 2024-03-15
