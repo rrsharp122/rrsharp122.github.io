@@ -44,10 +44,10 @@
   margin-bottom: 3rem;
 }
 
-/* Force 2 columns max at medium screens */
+/* 3 columns on standard laptops/desktops */
 @media (min-width: 768px) and (max-width: 1199px) {
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

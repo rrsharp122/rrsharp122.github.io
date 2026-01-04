@@ -16,7 +16,7 @@ params:
   
   # Appearance customizations
   defaultTheme: light  # light, dark, or auto
-  disableThemeToggle: true  # Disable theme toggle
+  disableThemeToggle: false  # Enable theme toggle
   
   # Social icons
   socialIcons:

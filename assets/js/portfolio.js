@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Determine how many items to show based on viewport width
-        let itemsToShow = 4; // Default to show 4 items initially
+        let itemsToShow = 9; // Default to show 9 items (3 rows of 3)
         const viewportWidth = window.innerWidth;
-        
+
         if (viewportWidth < 768) {
-            itemsToShow = 3; // Mobile: show 3
+            itemsToShow = 6; // Mobile: show 6
         } else if (viewportWidth >= 1200) {
-            itemsToShow = 6; // Large screens: show 6
+            itemsToShow = 9; // Large screens: show 9
         }
         
         // First, show all items that match the filter
