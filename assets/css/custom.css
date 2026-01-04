@@ -1863,6 +1863,11 @@ main.main {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  .section {
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1874,17 +1879,17 @@ main.main {
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;
-    border-width: 5px 3px;
+    border-width: 5px 1px;
     box-sizing: border-box;
   }
-  
+
   .section {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 0.75rem;
   }
-  
+
   .main > * {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -2088,10 +2093,10 @@ button.section-header-collapsible:hover {
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;
-    border-width: 5px 3px;
+    border-width: 5px 1px;
     box-sizing: border-box;
   }
-  
+
   .writing-section .section-container {
     padding-top: 5rem;
   }
@@ -2129,10 +2134,10 @@ button.section-header-collapsible:hover {
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;
-    border-width: 5px 3px;
+    border-width: 5px 1px;
     box-sizing: border-box;
   }
-  
+
   .writing-section .section-container {
     padding-top: 6rem;
   }
@@ -2147,9 +2152,11 @@ button.section-header-collapsible:hover {
   .section {
     width: 100%;
     max-width: 100vw;
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
     overflow-x: hidden;
     box-sizing: border-box;
+    border-left-width: 1px;
+    border-right-width: 1px;
   }
   
   .section-container {
