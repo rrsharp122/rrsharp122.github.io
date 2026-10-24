@@ -2,7 +2,7 @@
     Researcher & Science Communicator: Rachel Sharp
     Contact: rrsharp122@gmail.com
     LinkedIn: https://www.linkedin.com/in/rachel-sharp-a07b69272
-    From: Chapel Hill, North Carolina, USA
+    From: Copenhagen, Denmark
 
 /* THANKS */
     Hugo Static Site Generator: https://gohugo.io
