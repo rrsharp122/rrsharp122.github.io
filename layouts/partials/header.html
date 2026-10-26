@@ -12,7 +12,7 @@
                 {{- range site.Menus.main }}
                 <li class="nav-item">
                     {{- if .Params.button }}
-                    <a class="nav-link nav-button" href="{{ .URL }}" target="_blank" rel="noopener">
+                    <a class="nav-link nav-button" href="{{ .Params.href | default .URL }}" target="_blank" rel="noopener">
                         {{ .Name }}<span class="visually-hidden"> (PDF, opens in new tab)</span>
                     </a>
                     {{- else }}

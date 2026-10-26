@@ -92,6 +92,9 @@ menu:
       weight: 50
       params:
         button: true
+        # Hugo lowercases menu URLs, but the PDF's filename is case-sensitive on
+        # GitHub Pages, so the header uses this exact path instead
+        href: /pdfs/Sharp_Resume_2026.pdf
 
 # Build settings
 buildDates: true
