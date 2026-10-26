@@ -12,9 +12,7 @@ build:
   list: never
 ---
 
-For my PhD in Neuroscience at UNC Chapel Hill, completed in 2026 in the lab of Dr. Michael Love, I studied how genetic and social risk combine in bipolar disorder, and what polygenic risk scores can and cannot tell us about psychiatric risk.
-
-I also coordinated a shared analysis pipeline across five centers of the international IGVF genomics consortium. Before graduate school, I analyzed sequencing data for more than 20 labs as a bioinformatic analyst at the OU Health Sciences Center.
+My current project focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder. This work allows me to draw on my background in neuroscience, genetics, computational biology, and social sciences to explore how social and biological factors interact to influence mental health outcomes.
 
 My graduate research was supported by an NSF Graduate Research Fellowship and the UNC Department of Neuroscience T32 Training Grant.
 
