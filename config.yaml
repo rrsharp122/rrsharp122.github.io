@@ -1,6 +1,6 @@
 baseURL: "https://rachelsharp.io/"
 languageCode: en-us
-title: "Rachel Sharp - Neuroscience Research & Communication"
+title: "Rachel Sharp, PhD | Science Communicator & Neuroscientist"
 theme: "PaperMod"
 
 params:
@@ -11,12 +11,24 @@ params:
   ShowToc: false
   ShowShareButtons: false
   
-  # Custom Color Scheme
-  themeColor: "#6a4c93"
-  
   # Appearance customizations
   defaultTheme: light  # light, dark, or auto
   disableThemeToggle: false  # Enable theme toggle
+
+  # Favicons and browser UI color (files live in static/)
+  assets:
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    theme_color: "#FAF1E4"
+    msapplication_TileColor: "#3A4A2D"
+
+  # Search engine verification: paste the code from Google Search Console here
+  # (Settings > Ownership verification > HTML tag, the value of content="...")
+  analytics:
+    google:
+      SiteVerificationTag: ""
   
   # Social icons
   socialIcons:
@@ -32,25 +44,27 @@ params:
       display: "rrsharp122@gmail.com"
 
   # SEO and metadata
-  description: "Science communicator and neuroscientist making complex research accessible through compelling storytelling"
+  description: "Rachel Sharp, PhD, is a science communicator and neuroscientist in Copenhagen, writing about neuroscience, genetics, and health for broad audiences."
   keywords: 
+    - Rachel Sharp
+    - science communication
+    - science writing
     - neuroscience
     - psychiatric genetics
     - bioinformatics
     - genetic research
-    - science communication
     - computational genomics
     - R programming
     - data analysis
   
   # Additional SEO settings
   author: "Rachel Sharp"
-  images: ["/images/rachel-sharp-profile.jpg"]
+  images: ["/images/og-card.png"]  # 1200x630 link-preview image
   DateFormat: "January 2, 2006"
   
   # Open Graph and Twitter settings
   opengraph:
-    site_name: "Rachel Sharp - Neuroscience Research & Communication"
+    site_name: "Rachel Sharp"
     locale: "en_US"
 
 # Menu configuration
@@ -72,11 +86,42 @@ menu:
       name: Contact
       url: /#contact
       weight: 40
+    - identifier: resume
+      name: Resume
+      url: /pdfs/Sharp_Resume_2026.pdf
+      weight: 50
+      params:
+        button: true
 
 # Build settings
 buildDates: true
 enableRobotsTXT: true
 enableEmoji: true
+
+# No tag/category listing pages (the site has no tagged posts)
+disableKinds: ["taxonomy", "term"]
+
+# Make static/images available to Hugo's image processing (card thumbnails are
+# resized at build time) while still publishing the originals as-is
+# (declaring any mount replaces Hugo's defaults, so they are all listed here)
+module:
+  mounts:
+    - source: archetypes
+      target: archetypes
+    - source: assets
+      target: assets
+    - source: content
+      target: content
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: layouts
+      target: layouts
+    - source: static
+      target: static
+    - source: static/images
+      target: assets/images
 
 # Markdown rendering
 markup:

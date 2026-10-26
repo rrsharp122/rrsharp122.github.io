@@ -6,37 +6,39 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-name">Rachel Sharp</h1>
-                <p class="hero-subtitle">SCIENCE COMMUNICATOR & NEUROSCIENTIST</p>
+                <p class="hero-subtitle"><span class="subtitle-phrase">Science Communicator &</span> <span class="subtitle-phrase"><span class="keep-case">PhD</span> in Neuroscience</span></p>
                 <p class="hero-tagline">Making complex science accessible through compelling storytelling</p>
                 
                 <!-- Social icons -->
                 <div class="social-icons">
                     {{- range site.Params.socialIcons }}
                         {{- if eq .name "cv" }}
-                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="Resume" class="social-link">
-                                <i class="fas fa-file-pdf"></i>
+                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in new tab)" class="social-link">
+                                {{ partial "icon.html" "file-pdf" }}
                                 <span>Resume</span>
                             </a>
                         {{- else if eq .name "linkedin" }}
-                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
-                                <i class="fab fa-linkedin"></i>
+                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)" class="social-link">
+                                {{ partial "icon.html" "linkedin" }}
+                                <span>LinkedIn</span>
                             </a>
                         {{- else if eq .name "googlescholar" }}
-                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" class="social-link">
-                                <i class="fas fa-graduation-cap"></i>
+                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar (opens in new tab)" class="social-link">
+                                {{ partial "icon.html" "graduation-cap" }}
+                                <span>Scholar</span>
                             </a>
                         {{- else if eq .name "email" }}
-                            <span class="social-link email-display">
-                                <i class="fas fa-envelope"></i>
+                            <a href="{{ .url }}" class="social-link email-display">
+                                {{ partial "icon.html" "envelope" }}
                                 <span>{{ .display }}</span>
-                            </span>
+                            </a>
                         {{- end }}
                     {{- end }}
                 </div>
             </div>
             
             <div class="hero-image">
-                <img src="/images/profilePic.jpeg" alt="Rachel Sharp - Science Communicator and Neuroscientist" loading="eager">
+                <img src="/images/profilePic.jpeg" alt="Rachel Sharp - Science Communicator and PhD in Neuroscience" loading="eager">
             </div>
         </div>
     </section>
@@ -44,35 +46,58 @@
     <!-- Writing Section with Portfolio -->
     <section id="writing" class="section writing-section">
         <div class="section-container">
-            <h2 class="section-title">Science Communication</h2>
-            
+            <h2 class="section-title">Writing</h2>
+
             <!-- Portfolio grid using the portfolio data -->
             {{ $portfolio := .Site.Data.portfolio }}
             <div class="portfolio-filters" role="group" aria-label="Filter portfolio items by category">
                 {{ range $portfolio.categories }}
-                    <button class="filter-btn{{ if .default }} active{{ end }}" data-filter="{{ .id }}" aria-pressed="{{ if .default }}true{{ else }}false{{ end }}" aria-label="Filter by {{ .name }}">
-                        {{ .name }}
+                    {{ $count := len $portfolio.items }}
+                    {{ if ne .id "all" }}{{ $count = len (where $portfolio.items "category" .id) }}{{ end }}
+                    <button class="filter-btn{{ if .default }} active{{ end }}" data-filter="{{ .id }}" aria-pressed="{{ if .default }}true{{ else }}false{{ end }}">
+                        {{ .name }} <span class="filter-count">{{ $count }}</span>
                     </button>
                 {{ end }}
             </div>
 
+            {{ $badges := dict }}
+            {{ range $portfolio.categories }}{{ $badges = merge $badges (dict .id (.badge | default .name)) }}{{ end }}
+
             <div class="portfolio-grid" id="portfolio-grid">
-                {{ range $index, $item := $portfolio.items }}
+                {{/* Featured pieces first (newest first), then everything else newest first */}}
+                {{ $items := slice }}
+                {{ range sort (where $portfolio.items "featured" true) "date" "desc" }}{{ $items = $items | append . }}{{ end }}
+                {{ range sort (where $portfolio.items "featured" "!=" true) "date" "desc" }}{{ $items = $items | append . }}{{ end }}
+                {{ range $index, $item := $items }}
                     <div class="portfolio-item {{ $item.category }}" data-category="{{ $item.category }}" data-index="{{ $index }}">
                         <div class="portfolio-tile">
                             {{ if $item.image }}
-                                <div class="portfolio-image">
-                                    <img src="{{ $item.image }}" alt="Article thumbnail: {{ $item.title }}" loading="lazy">
+                                {{/* Serve resized WebP thumbnails; static/images is mounted into assets (see config.yaml) */}}
+                                {{ $src := $item.image }}
+                                {{ $srcset := "" }}
+                                {{ with resources.Get (strings.TrimPrefix "/" $item.image) }}
+                                    {{ $large := . }}
+                                    {{ if gt .Width 800 }}{{ $large = .Resize "800x webp q80" }}{{ else }}{{ $large = .Process "webp q80" }}{{ end }}
+                                    {{ $small := $large }}
+                                    {{ if gt .Width 400 }}{{ $small = .Resize "400x webp q80" }}{{ end }}
+                                    {{ $src = $large.RelPermalink }}
+                                    {{ $srcset = printf "%s %dw, %s %dw" $small.RelPermalink $small.Width $large.RelPermalink $large.Width }}
+                                {{ end }}
+                                <div class="portfolio-image{{ if eq $item.image_fit "contain" }} is-contain{{ end }}">
+                                    <img src="{{ $src }}"{{ with $srcset }} srcset="{{ . }}" sizes="(max-width: 768px) 100vw, 400px"{{ end }} alt="" loading="lazy" decoding="async"{{ with $item.image_position }} style="object-position: {{ . }}"{{ end }}>
                                 </div>
                             {{ end }}
                             
                             <div class="portfolio-content">
                                 <div class="portfolio-meta">
-                                    <span class="portfolio-category">{{ $item.category | title }}</span>
+                                    <span class="portfolio-category">{{ index $badges $item.category | default ($item.category | title) }}</span>
                                     {{ if $item.publication }}
                                         <span class="portfolio-publication">{{ $item.publication }}</span>
                                     {{ end }}
                                 </div>
+                                {{ with $item.role }}
+                                    <p class="portfolio-role">{{ . }}</p>
+                                {{ end }}
                                 
                                 <h3 class="portfolio-title">
                                     {{ if $item.link }}
@@ -85,12 +110,20 @@
                                 </h3>
                                 
                                 <p class="portfolio-description">{{ $item.description }}</p>
-                                
-                                {{ if $item.date }}
-                                    <time class="portfolio-date" datetime="{{ $item.date }}">
-                                        {{ dateFormat "January 2, 2006" $item.date }}
-                                    </time>
+                                {{ with $item.contribution }}
+                                    <p class="portfolio-contribution"><span class="portfolio-contribution-label">My role</span> {{ . }}</p>
                                 {{ end }}
+
+                                <div class="portfolio-footer">
+                                    {{ if $item.date }}
+                                        <time class="portfolio-date" datetime="{{ $item.date }}">
+                                            {{ dateFormat "January 2, 2006" $item.date }}
+                                        </time>
+                                    {{ end }}
+                                    {{ if $item.link }}
+                                        <span class="portfolio-cta" aria-hidden="true">{{ if eq $item.category "articles" }}Read paper{{ else }}Read article{{ end }} ↗</span>
+                                    {{ end }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,32 +138,35 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about-section section-collapsible collapsed">
+    <section id="about" class="section about-section section-collapsible">
         <div class="section-container">
-            <button class="section-header-collapsible" aria-expanded="false" aria-controls="about-content">
-                <h2 class="section-title">About Me</h2>
-                <span class="collapse-icon" aria-hidden="true">▲</span>
-            </button>
+            <h2 class="section-title">
+                <button class="section-header-collapsible" aria-expanded="true" aria-controls="about-content">
+                    About Me<span class="collapse-icon" aria-hidden="true">▲</span>
+                </button>
+            </h2>
             <div class="section-content-collapsible" id="about-content">
                 <div class="about-content">
                     {{ $aboutPage := .Site.GetPage "/about-me" }}
                     {{ if $aboutPage }}
                         {{ $aboutPage.Content }}
                     {{ else }}
-                        <p>I'm a PhD candidate in the Genetics and Molecular Biology Curriculum at UNC Chapel Hill, where I work in the lab of Dr. Hyejung Won. My research focuses on understanding the genetic basis of psychiatric disorders through computational genomics approaches.</p>
+                        <p>I'm a science writer and neuroscientist with a PhD in Neuroscience from UNC Chapel Hill, where I studied how genetic and social risk combine in bipolar disorder.</p>
                     {{ end }}
                 </div>
             </div>
+            <button class="read-more-button" hidden aria-expanded="true" aria-controls="about-content">Show less</button>
         </div>
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="section research-section section-collapsible collapsed">
+    <section id="research" class="section research-section section-collapsible">
         <div class="section-container">
-            <button class="section-header-collapsible" aria-expanded="false" aria-controls="research-content">
-                <h2 class="section-title">Research Background</h2>
-                <span class="collapse-icon" aria-hidden="true">▲</span>
-            </button>
+            <h2 class="section-title">
+                <button class="section-header-collapsible" aria-expanded="true" aria-controls="research-content">
+                    Research Background<span class="collapse-icon" aria-hidden="true">▲</span>
+                </button>
+            </h2>
             <div class="section-content-collapsible" id="research-content">
                 <div class="research-content">
                     {{ $researchPage := .Site.GetPage "/research-background" }}
@@ -141,6 +177,7 @@
                     {{ end }}
                 </div>
             </div>
+            <button class="read-more-button" hidden aria-expanded="true" aria-controls="research-content">Show less</button>
         </div>
     </section>
 
@@ -150,17 +187,14 @@
             <h2 class="section-title">Contact</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <p>I'd love to hear from you! Whether you're interested in collaborating on science communication projects, discussing research, or exploring potential opportunities, please don't hesitate to reach out.</p>
-                    <div class="contact-methods">
-                        <a href="mailto:rrsharp122@gmail.com" class="contact-link">
-                            <span class="contact-icon">✉</span>
-                            rrsharp122@gmail.com
-                        </a>
-                    </div>
+                    <p>I'd love to hear from you! Whether you're interested in collaborating on science communication projects, discussing research, or exploring potential opportunities, send me a message below or email me at <a href="mailto:rrsharp122@gmail.com" class="contact-inline-link">rrsharp122@gmail.com</a>.</p>
                 </div>
                 
                 <div class="contact-form-container">
-                    <form action="https://formspree.io/f/mvgrndyl" method="POST" class="contact-form">
+                    <form action="https://formspree.io/f/mvgrndyl" method="POST" class="contact-form" id="contact-form">
+                        <input type="hidden" name="_subject" value="New message from your website">
+                        {{/* Spam trap: hidden from people, filled in by bots; Formspree discards those submissions */}}
+                        <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-desc">
@@ -179,7 +213,8 @@
                             <span id="message-desc" class="visually-hidden">Enter your message or question</span>
                         </div>
                         
-                        <button type="submit" class="submit-button" aria-label="Send contact message">Send Message</button>
+                        <button type="submit" class="submit-button">Send Message</button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     </form>
                     
                     <p class="form-footer">
@@ -213,68 +248,123 @@
     <script src="{{ $portfolioJS.RelPermalink }}" defer></script>
 {{ end }}
 
-<!-- Smooth scroll script -->
+<!-- Section navigation and collapsible sections -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    // Update active nav item on scroll
+    // Highlight the nav link for the section currently in view
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.menu a[href^="/#"]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="/#"]');
     
     function updateActiveNav() {
-        const scrollY = window.pageYOffset;
+        const offset = window.scrollY + window.innerHeight / 3;
+        let currentId = null;
         
         sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `/#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+            if (section.offsetTop <= offset) {
+                currentId = section.id;
+            }
+        });
+        
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === `/#${currentId}`;
+            link.classList.toggle('active', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
             }
         });
     }
     
-    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
     
-    // Collapsible sections functionality with ARIA support
-    const collapsibleSections = document.querySelectorAll('.section-collapsible');
-    
-    collapsibleSections.forEach(section => {
-        const header = section.querySelector('.section-header-collapsible');
+    // Collapsible sections: collapsed shows a short preview, expanded shows everything
+    document.querySelectorAll('.section-collapsible').forEach(section => {
+        const content = section.querySelector('.section-content-collapsible');
+        const toggles = section.querySelectorAll('[aria-controls="' + content.id + '"]');
+        const readMore = section.querySelector('.read-more-button');
         
-        header.addEventListener('click', function() {
-            const isCollapsed = section.classList.contains('collapsed');
-            section.classList.toggle('collapsed');
-            this.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
-        });
+        function setExpanded(expand, animate) {
+            if (expand) {
+                // Measure after un-collapsing, since collapsed styles can hide content (e.g. photos on mobile)
+                const startHeight = content.getBoundingClientRect().height;
+                section.classList.remove('collapsed');
+                content.style.maxHeight = startHeight + 'px';
+                content.offsetHeight; // force reflow so the expand animates from the preview height
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (!animate || reduceMotion.matches) {
+                    content.style.maxHeight = 'none';
+                }
+            } else {
+                if (animate) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.offsetHeight; // force reflow so the collapse animates from the full height
+                }
+                section.classList.add('collapsed');
+                content.style.maxHeight = '';
+            }
+            content.inert = !expand;
+            toggles.forEach(toggle => toggle.setAttribute('aria-expanded', expand ? 'true' : 'false'));
+            readMore.textContent = expand ? 'Show less' : 'Read more';
+        }
         
-        // Allow keyboard activation with Enter/Space
-        header.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
+        content.addEventListener('transitionend', function(e) {
+            if (e.propertyName === 'max-height' && !section.classList.contains('collapsed')) {
+                content.style.maxHeight = 'none';
             }
         });
+        
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const expand = section.classList.contains('collapsed');
+                setExpanded(expand, true);
+                
+                // Collapsing from the bottom button would leave the reader far below the section
+                if (!expand && section.getBoundingClientRect().top < 0) {
+                    section.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+                }
+            });
+        });
+        
+        readMore.hidden = false;
+        setExpanded(false, false);
+    });
+    
+    // Contact form: submit in the background and confirm on the page.
+    // Without JavaScript the form still posts to Formspree normally.
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitButton = form.querySelector('.submit-button');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (!response.ok) {
+                throw new Error('Formspree returned ' + response.status);
+            }
+            form.reset();
+            formStatus.classList.add('is-success');
+            formStatus.textContent = "Thanks for reaching out! Your message was sent, and I'll get back to you soon.";
+        } catch (error) {
+            formStatus.classList.add('is-error');
+            formStatus.innerHTML = 'Sorry, something went wrong sending your message. Please try again or email me at <a href="mailto:rrsharp122@gmail.com">rrsharp122@gmail.com</a>.';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+        }
     });
 });
 </script>

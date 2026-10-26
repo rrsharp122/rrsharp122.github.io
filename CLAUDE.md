@@ -41,28 +41,29 @@ This is a Hugo-based static website using the PaperMod theme. Key directories:
 ## Key Configuration
 
 - **config.yaml**: Main Hugo configuration
-  - Base URL: `https://rrsharp122.github.io/`
+  - Base URL: config.yaml says `https://rachelsharp.io/`, but that domain does not currently resolve. The live site is `https://rrsharp122.github.io/`; the deploy workflow overrides baseURL with the GitHub Pages URL, so avoid hardcoding either domain (use `absURL`)
   - Theme: PaperMod
   - Menu structure defined here
   - Social links and SEO metadata
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the main branch. The workflow is defined in `.github/workflows/hugo.yml` and uses Hugo Extended version 0.121.0.
+The site automatically deploys to GitHub Pages via GitHub Actions when changes are pushed to the main branch. The workflow is defined in `.github/workflows/hugo.yml` and uses Hugo Extended version 0.146.0.
 
 ## Content Guidelines
 
 - All content pages use standard Hugo front matter
 - Images should be placed in `static/images/` and referenced as `/images/filename.jpg`
 - Custom styling goes in `assets/css/custom.css`
-- The site uses a light theme only (theme toggle is disabled)
+- Light theme by default; the site also follows the visitor's system dark-mode setting (`prefers-color-scheme`, dark palette in the `:root` block of `custom.css`)
+- The home page is the only rendered page. `content/About Me.md` and `content/Research Background.md` feed its About and Research sections (`build.render: never`); their old URLs redirect home via `content/_index.md`
+- Writing/publication cards come from `data/portfolio.yaml` (sorted newest first). Thumbnails in `static/images/` are resized at build time (see the `module.mounts` note in `config.yaml`)
 
 ## Theme Customizations
 
 The site extends the PaperMod theme with custom layouts and styles:
 - Custom header and footer in `layouts/partials/`
 - Extended CSS in `assets/css/custom.css` and `assets/css/extended/custom.css`
-- Custom contact page template at `layouts/_default/contact.html`
 
 ### CSS Architecture
 

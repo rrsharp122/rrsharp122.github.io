@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Main navigation">
     <div class="container-fluid">
-        {{/* Brand/Home link */}}
-        <a class="navbar-brand site-name" href="/" aria-label="Home - Rachel Sharp">Home</a>
-        
         {{/* Hamburger toggle button */}}
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,9 +11,15 @@
             <ul class="navbar-nav ms-auto">
                 {{- range site.Menus.main }}
                 <li class="nav-item">
+                    {{- if .Params.button }}
+                    <a class="nav-link nav-button" href="{{ .URL }}" target="_blank" rel="noopener">
+                        {{ .Name }}<span class="visually-hidden"> (PDF, opens in new tab)</span>
+                    </a>
+                    {{- else }}
                     <a class="nav-link" href="{{ .URL }}"{{ if eq $.Page.RelPermalink .URL }} aria-current="page"{{ end }}>
                         {{ .Name }}
                     </a>
+                    {{- end }}
                 </li>
                 {{- end }}
             </ul>
@@ -29,25 +32,19 @@
     .navbar {
         background-color: var(--background-color);
         padding: 1rem 0;
-        border-bottom: 1px solid var(--border-light);
-        box-shadow: 0 2px 4px var(--shadow-subtle);
+        /* Single rule under the nav; the home page frame hangs from it */
+        border-bottom: 3px solid var(--primary-color);
     }
     
-    .navbar-brand {
-        font-size: 1rem;
-        font-weight: 400;
-        color: var(--text-color) !important;
-        text-decoration: none;
-        transition: color 0.3s;
-        margin-right: 2rem;
-    }
-    
-    .navbar-brand:hover {
-        color: var(--primary-color) !important;
+    /* Line the nav up with the edges of the page frame */
+    .navbar > .container-fluid {
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
     }
     
     .navbar-nav {
         gap: 1.5rem;
+        align-items: center;
     }
     
     .navbar-nav .nav-link {
@@ -64,6 +61,26 @@
     .navbar-nav .nav-link:focus {
         color: var(--primary-color) !important;
         background-color: var(--light-background);
+    }
+    
+    .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+        background-color: var(--light-background);
+    }
+    
+    /* Resume link: outlined pill, matching the filter buttons */
+    .navbar-nav .nav-link.nav-button {
+        border: 2px solid var(--primary-color);
+        border-radius: 30px;
+        padding: 0.4rem 1.1rem;
+        font-weight: 600;
+        color: var(--primary-color) !important;
+    }
+    
+    .navbar-nav .nav-link.nav-button:hover,
+    .navbar-nav .nav-link.nav-button:focus {
+        background-color: var(--primary-color);
+        color: var(--background-color) !important;
     }
     
     .navbar-nav .nav-link[aria-current="page"] {
@@ -104,12 +121,6 @@
     
     /* Responsive adjustments */
     @media (max-width: 991px) {
-        .navbar {
-            position: sticky !important;
-            top: 0;
-            z-index: 1020;
-        }
-        
         .navbar-collapse {
             margin-top: 1rem;
             padding-top: 1rem;
@@ -118,6 +129,12 @@
         
         .navbar-nav {
             gap: 0.5rem;
+            align-items: stretch;
+        }
+        
+        .navbar-nav .nav-link.nav-button {
+            display: inline-block;
+            margin-top: 0.25rem;
         }
         
         .navbar-nav .nav-item {
@@ -129,9 +146,11 @@
         }
     }
     
-    /* Ensure proper stacking */
-    header {
-        position: relative;
+    /* Keep the nav visible while scrolling (the sticky element must be the
+       outer header, since the navbar fills it exactly) */
+    body > header {
+        position: sticky;
+        top: 0;
         z-index: 1000;
     }
 </style>

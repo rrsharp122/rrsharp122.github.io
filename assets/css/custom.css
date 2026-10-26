@@ -22,6 +22,27 @@
   /* Consistent border style */
   --border-interactive: 3px solid var(--primary-color);
   --border-radius: 8px;
+
+  /* Side gutter around the page frame (also used to align the nav) */
+  --page-gutter: 4rem;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-gutter: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-gutter: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-gutter: 0.75rem;
+  }
 }
 
 /* Dark Mode */
@@ -113,19 +134,46 @@
 /* iOS-specific fixes to prevent horizontal overflow */
 html {
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip, not hidden: hidden breaks the sticky header */
 }
 
 body {
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   width: 100%;
 }
 
 /* Global styles */
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Respect reduced-motion preferences for hover lifts, zooms, and animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .social-link:hover,
+  .filter-btn:hover,
+  .portfolio-tile:hover,
+  .portfolio-tile:hover .portfolio-image img,
+  .hero-image img:hover,
+  .show-more-button:hover,
+  .submit-button:hover {
+    transform: none !important;
+  }
 }
 
 /* Prevent main element from cutting off content */
@@ -164,7 +212,7 @@ body {
   padding: 0;
   padding-top: 80px; /* Account for fixed header */
   min-width: 320px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Remove padding for list pages */
@@ -779,8 +827,19 @@ header,
   font-size: 1.2rem;
 }
 
+/* Inline SVG icons (layouts/partials/icon.html) */
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.social-link .icon {
+  font-size: 1.2rem;
+}
+
 .email-display {
-  cursor: default;
   border-color: var(--border);
   padding: 8px 16px;
   background-color: var(--card-background);
@@ -788,7 +847,7 @@ header,
 
 .email-display:hover {
   transform: none;
-  border-color: var(--border);
+  border-color: var(--primary-color);
 }
 
 /* Footer styling */
@@ -1046,6 +1105,7 @@ header,
 .contact-form-container {
   max-width: 600px;
   margin-top: 40px;
+  text-align: left;
 }
 
 .contact-form {
@@ -1110,7 +1170,7 @@ header,
   margin-top: 20px;
   font-size: 0.85rem;
   color: var(--text-muted);
-  text-align: right;
+  text-align: left;
 }
 
 .form-footer a {
@@ -1585,7 +1645,6 @@ h2#my-research {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  border-top: 5px solid var(--primary-color);
   background-color: var(--background-color);
 }
 
@@ -1802,15 +1861,10 @@ h2#my-research {
   letter-spacing: -1px;
 }
 
-/* Science Communication section specific */
-.writing-section .section-title {
-  margin-top: 48px;
-}
-
 /* About Me and Research section title spacing */
 .about-section .section-title,
 .research-section .section-title {
-  margin-bottom: 48px;
+  margin-bottom: 2rem;
 }
 
 .section-intro {
@@ -1847,23 +1901,11 @@ main.main {
 
 /* Main content container global padding */
 .main > * {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-@media (max-width: 1200px) {
-  .main > * {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 @media (max-width: 768px) {
-  .main > * {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
   .section {
     border-left-width: 1px;
     border-right-width: 1px;
@@ -1886,11 +1928,6 @@ main.main {
   .section {
     padding: 2.5rem 0.75rem;
   }
-
-  .main > * {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
 }
 
 /* About Section */
@@ -1907,6 +1944,12 @@ main.main {
 
 .about-content p {
   margin-bottom: 1.5rem;
+}
+
+/* Links in the About and Research text (Bootstrap's blue link color otherwise wins) */
+.about-content a,
+.research-content a {
+  color: var(--primary-color);
 }
 
 .about-content h2 {
@@ -1939,45 +1982,31 @@ main.main {
 /* Collapsible Section Styles */
 .section-collapsible {
   position: relative;
-  cursor: pointer;
 }
 
 button.section-header-collapsible {
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
+  gap: 0.75rem;
   cursor: pointer;
   user-select: none;
-  min-height: 60px;
-  width: 100%;
   background: none;
   border: none;
-  padding: 0;
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
   font: inherit;
   color: inherit;
-  text-align: left;
-  outline: none;
+  letter-spacing: inherit;
 }
 
-button.section-header-collapsible:focus {
-  outline: none;
-}
-
-button.section-header-collapsible:hover {
+button.section-header-collapsible:hover,
+button.section-header-collapsible:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 4px;
-  border-radius: 8px;
-}
-
-.section-header-collapsible .section-title {
-  flex: 1;
-  text-align: center;
-  padding: 0 1rem;
-  margin-bottom: 0;
 }
 
 .collapse-icon {
-  font-size: 1.5rem;
+  font-size: 0.45em;
   transition: transform 0.3s ease;
   color: var(--primary-color);
 }
@@ -1987,17 +2016,45 @@ button.section-header-collapsible:hover {
 }
 
 .section-content-collapsible {
-  max-height: 2000px;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
-  opacity: 1;
+  transition: max-height 0.5s ease-in-out;
 }
 
+/* Collapsed: show the opening lines, fading out */
 .section-collapsible.collapsed .section-content-collapsible {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  max-height: 16rem;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent);
+}
+
+/* On narrow screens photos stack above the text, so leave them out of the preview */
+@media (max-width: 768px) {
+  .section-collapsible.collapsed .section-content-collapsible figure {
+    display: none;
+  }
+}
+
+.read-more-button {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.read-more-button:hover {
+  background-color: var(--light-background);
+}
+
+.research-section .read-more-button:hover {
+  background-color: var(--card-background);
 }
 
 .contact-content {
@@ -2012,32 +2069,38 @@ button.section-header-collapsible:hover {
   margin-bottom: 2rem;
 }
 
-.contact-methods {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+/* Email link in the contact intro (Bootstrap's blue link color otherwise wins) */
+.contact-inline-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-underline-offset: 3px;
 }
 
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
+.contact-inline-link:hover {
+  color: var(--accent-color);
+}
+
+/* Confirmation / error message after sending the contact form */
+.form-status:empty {
+  display: none;
+}
+
+.form-status {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border-left: 4px solid var(--primary-color);
   background-color: var(--light-background);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  color: var(--text-color);
 }
 
-.contact-link:hover {
-  background-color: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
+.form-status.is-error {
+  border-left-color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
-.contact-icon {
-  font-size: 1.5rem;
+.form-status a {
+  color: var(--primary-color);
 }
 
 /* Update navigation for anchor scrolling */
@@ -2098,7 +2161,7 @@ button.section-header-collapsible:hover {
   }
 
   .writing-section .section-container {
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
   
   .hero-container {
@@ -2139,7 +2202,7 @@ button.section-header-collapsible:hover {
   }
 
   .writing-section .section-container {
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
   
   /* Prevent horizontal overflow on iOS */
@@ -2310,7 +2373,7 @@ button.section-header-collapsible:hover {
 
 .show-more-button {
   display: block;
-  margin: 3rem auto 3rem;
+  margin: 2rem auto 0;
   padding: 0.75rem 2.5rem;
   background-color: var(--accent-color);
   color: white;
@@ -2326,13 +2389,9 @@ button.section-header-collapsible:hover {
 }
 
 .show-more-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px var(--shadow-medium);
-}
-
-.show-more-button.show-less {
-  background-color: var(--secondary-color);
 }
 
 /* Responsive gallery */
@@ -2353,67 +2412,15 @@ button.section-header-collapsible:hover {
   }
 }
 
-/* Portfolio Grid Styles */
-.portfolio-filters {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  padding: 0.5rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-.filter-btn {
-  padding: 0.75rem 2rem;
-  background-color: transparent;
-  border: 2px solid var(--border);
-  border-radius: 30px;
-  color: var(--text-color);
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: var(--font-family);
-}
-
-.filter-btn:hover {
-  background-color: var(--light-background);
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-.filter-btn.active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 4px 12px var(--shadow-medium);
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding: 0;
-}
-
-/* Desktop breakpoint - optimal three-column layout */
+/* Desktop breakpoint */
 @media (min-width: 992px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
   .writing-tiles-grid {
     grid-template-columns: repeat(3, 1fr);
   }
   
   /* Ensure proper spacing on desktop */
   .section {
-    padding: 5rem 3rem;
+    padding: 4rem 3rem;
   }
   
   .hero-section {
@@ -2421,123 +2428,7 @@ button.section-header-collapsible:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.portfolio-item {
-  display: block;
-  transition: all 0.3s ease-in-out;
-  padding: 0;
-}
-
-.portfolio-tile {
-  background: var(--card-background);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px var(--shadow-subtle);
-  transition: all 0.3s ease-in-out;
-  border: 1px solid var(--border);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.portfolio-tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-color);
-}
-
-.portfolio-image {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-  border-radius: 8px 8px 0 0;
-}
-
-.portfolio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  border-radius: 8px 8px 0 0;
-}
-
-.portfolio-tile:hover .portfolio-image img {
-  transform: scale(1.08);
-}
-
-.portfolio-content {
-  padding: 1.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.portfolio-category {
-  background: var(--light-background);
-  color: var(--primary-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.portfolio-publication {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.portfolio-title {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.portfolio-title a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.portfolio-title a:hover {
-  color: var(--primary-color);
-}
-
-.portfolio-description {
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  flex: 1;
-}
-
-.portfolio-date {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
-@media (max-width: 849px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
+/* Portfolio grid, filter, and card styles live in portfolio.css */
 
 /* Float image styling for content pages */
 figure.float-left {
@@ -2692,8 +2583,6 @@ figure.float-right + p {
 .research-section .content-body p,
 .about-section .content-body p {
   margin-bottom: 1.5rem;
-  text-align: justify;
-  hyphens: auto;
 }
 
 /* Add padding to lists for better readability */
@@ -2708,10 +2597,5 @@ figure.float-right + p {
     float: none;
     margin: 1.5rem auto;
     text-align: center;
-  }
-  
-  .research-section .content-body p,
-  .about-section .content-body p {
-    text-align: left;
   }
 }

@@ -1,3 +1,6 @@
+# Optional per-item fields: role (e.g. "Co-author"), contribution (Rachel's own
+# line on her part, under ~15 words, shown below the description), image_fit,
+# image_position.
 items:
   # Science Journalism Articles
   - title: "Finding Humanity in Health Data"
@@ -5,26 +8,27 @@ items:
     date: 2025-12-08
     description: "An exploration of how intersectional frameworks can transform biomedical informatics, moving beyond demographic checkboxes to capture the complex lived realities and systemic barriers that shape individual health outcomes."
     image: "/images/americanscientist-healthdata.jpg"
+    image_fit: contain
     link: "https://www.americanscientist.org/blog/macroscope/finding-humanity-in-health-data"
     publication: "American Scientist"
     featured: true
 
   - title: "When Practice Makes Perfect: The Neurons Behind Skilled Movement"
     category: journalism
-    date: 2024-03-15
+    date: 2025-03-06
     description: "Meet the UNC graduate student uncovering the mysteries behind how our brains control movement. Her work studying a rare type of neuron reveals surprising evidence that stimulating these cells not only improves precise movements, but could potentially help restore motor skills after injury."
     image: "/images/neurons.jpg"
     link: "https://www.thepipettepen.com/when-practice-makes-perfect-the-neurons-behind-skilled-movement/"
-    publication: "The Pipette Pen"
+    publication: "The Pipettepen"
     featured: true
 
   - title: "The Need for Diversity in Large-Scale Genetic Studies"
     category: journalism
-    date: 2024-02-28
+    date: 2023-10-17
     description: "Discover why the lack of diversity in Genome-wide Association Studies (GWAS) is more than a social issue—it's a scientific blind spot that could be missing key insights into human genetics."
     image: "/images/DNA.webp"
     link: "https://www.thepipettepen.com/the-need-for-diversity-in-large-scale-genetic-studies/"
-    publication: "The Pipette Pen"
+    publication: "The Pipettepen"
     featured: true
 
   - title: "The Myth of Prestige: Does Where You Attend School Truly Matter?"
@@ -33,23 +37,24 @@ items:
     description: "Explore the myth of institutional prestige through one graduate student's journey, revealing insights that challenge conventional beliefs about success and education. Uncover surprising data that questions the correlation between prestigious universities and future earnings."
     image: "/images/pipettepen-doesSchoolMatter.png"
     link: "https://www.thepipettepen.com/the-myth-of-prestige-does-where-you-attend-school-truly-matter/"
-    publication: "The Pipette Pen"
-    featured: true
+    publication: "The Pipettepen"
 
   - title: "Firing in Rhythm: Simultaneous Ripples Across Distant Brain Regions Facilitate the Integration of Brain Signals"
     category: journalism
-    date: 2024-01-20
-    description: "When high-frequency brain waves, known as 'ripples', occur simultaneously across distant brain regions, they facilitate the integration of brain signals—revealing new insights into how the brain coordinates complex cognitive processes."
+    date: 2024-01-16
+    description: "When high-frequency brain waves, known as 'ripples', occur simultaneously across distant brain regions, they facilitate the integration of brain signals, revealing insights into how the brain coordinates complex cognitive processes."
     image: "/images/brainpost-firingInRhythm.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    image_fit: contain
+    link: "https://www.brainpost.co/weekly-brainpost/2024/1/16/firing-in-rhythm-simultaneous-ripples-across-distant-brain-regions-facilitate-the-integration-of-brain-signals"
     publication: "BrainPost"
 
   - title: "How the Orbitofrontal Cortex Learns How to Learn"
     category: journalism
-    date: 2023-12-15
+    date: 2023-11-21
     description: "The orbitofrontal cortex (OFC) plays a crucial role in adaptive learning, helping us understand how the brain develops strategies for acquiring new information and adjusting behavior based on experience."
     image: "/images/brainpost-learnToLearn.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    image_fit: contain
+    link: "https://www.brainpost.co/weekly-brainpost/2023/11/21/how-the-orbitofrontal-cortex-learns-how-to-learn"
     publication: "BrainPost"
 
   - title: "Modelling Human Psychological Responses to Robots: The Positive, the Negative, and the Competent"
@@ -57,58 +62,80 @@ items:
     date: 2023-10-10
     description: "Human responses to robots can be categorized into three dimensions – positive, negative, and competence-related. Understanding these responses helps inform how we incorporate robots into pre-existing social structures and design better human-robot interactions."
     image: "/images/brainpost-humanResponse.jpg"
+    image_fit: contain
     link: "https://www.brainpost.co/weekly-brainpost/2023/10/10/modelling-human-psychological-responses-to-robots-the-positive-the-negative-and-the-competent"
     publication: "BrainPost"
 
   - title: "Neuroscience-Backed Strategies to Help You Learn More Effectively"
     category: journalism
-    date: 2023-10-05
+    date: 2024-02-27
     description: "Whether we are in school, with our friends, or pursuing new skills, understanding how our brains learn can help us develop more effective strategies for acquiring and retaining new information."
     image: "/images/brainpost-neuroscienceBackedLearning.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    image_fit: contain
+    link: "https://www.brainpost.co/weekly-brainpost/2024/2/27/neuroscience-backed-strategies-to-help-you-learn-more-effectively"
     publication: "BrainPost"
 
   - title: "Cracking the Serotonin Code: How Your Brain Predicts Future Rewards"
     category: journalism
-    date: 2023-09-20
-    description: "Serotonin neurons signal a prospective code for value—revealing how our brains don't just respond to rewards we receive, but actively predict and prepare for future rewards."
+    date: 2025-04-01
+    description: "Serotonin neurons signal a prospective code for value, revealing how our brains don't just respond to rewards we receive, but actively predict and prepare for future rewards."
     image: "/images/brainpost-serotoninCode.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    image_fit: contain
+    link: "https://www.brainpost.co/weekly-brainpost/2025/4/1/cracking-the-serotonin-code-how-your-brain-predicts-future-rewards"
     publication: "BrainPost"
 
   - title: "Neural Economics: Understanding the Brain's Energy Budget"
     category: journalism
-    date: 2023-08-15
+    date: 2024-06-04
     description: "How much of your body's energy does your brain use? The average adult brain consumes about 20% of our total energy, revealing fascinating insights into the metabolic demands of cognition."
     image: "/images/brainpost-neuralEconomics.jpg"
-    link: "https://www.brainpost.co/search?q=rachel%20sharp"
+    image_fit: contain
+    link: "https://www.brainpost.co/weekly-brainpost/2024/6/4/neural-economics-understanding-the-brains-energy-budget"
     publication: "BrainPost"
 
   # Research Articles
-  - title: "Psychiatric genetics in the diverse landscape of Latin American populations"
+  - title: "Considering social risk alongside genetic risk for bipolar disorder in the All of Us Research Program"
     category: articles
-    date: 2025-01-06
-    description: "A comprehensive review examining psychiatric genomics in Latin America and the Caribbean, addressing the critical underrepresentation of these diverse populations in genetic studies and proposing strategies to promote equity in precision psychiatry."
-    image: "/images/research-psychiatricGWAS.png"
-    link: "https://www.nature.com/articles/s41588-025-02127-z"
-    publication: "Nature Genetics"
+    date: 2026-10-08
+    description: "In 115,275 All of Us participants, each of six social risk factors, from perceived stress to adverse childhood experiences, was more strongly associated with bipolar disorder than polygenic risk, supporting integrated genetic-social models of psychiatric risk."
+    image: "/images/research-hggAdvances.png"
+    image_fit: contain
+    link: "https://doi.org/10.1016/j.xhgg.2026.100665"
+    publication: "Human Genetics and Genomics Advances"
+    role: "First author · Dissertation research"
     featured: true
 
-  - title: "The Impact of Genomic Variation on Function (IGVF) Consortium"
+  - title: "Psychiatric genetics in the diverse landscape of Latin American populations"
     category: articles
-    date: 2023-07-24
+    date: 2025-04-02
+    description: "A comprehensive review examining psychiatric genomics in Latin America and the Caribbean, addressing the critical underrepresentation of these diverse populations in genetic studies and proposing strategies to promote equity in precision psychiatry."
+    image: "/images/research-psychiatricGWAS.png"
+    image_fit: contain
+    link: "https://www.nature.com/articles/s41588-025-02127-z"
+    publication: "Nature Genetics"
+    role: Co-author
+    contribution: "Provided perspectives and wrote sections on social risk factors and bipolar disorder"
+
+  - title: "Deciphering the impact of genomic variation on function"
+    category: articles
+    date: 2024-09-04
     description: "The IGVF Consortium combines single-cell mapping, genomic perturbations, and predictive modeling to create comprehensive maps of how genetic variants affect genome function and human phenotypes across hundreds of cell types."
     image: "/images/research-IGVF.png"
-    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10402186/"
-    publication: "ArXiv Preprint"
+    image_fit: contain
+    link: "https://doi.org/10.1038/s41586-024-07510-0"
+    publication: "Nature"
+    role: Consortium author
 
   - title: "Cx3cr1 controls kidney resident macrophage heterogeneity"
     category: articles
     date: 2023-05-15
     description: "Single-cell RNA sequencing reveals that Cx3cr1 governs the spatial distribution and heterogeneity of kidney resident macrophages, with implications for understanding cortex-specific disease progression in cystic kidney disease."
     image: "/images/research-Cx3cr1.png"
+    image_fit: contain
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1082078/full"
     publication: "Frontiers in Immunology"
+    role: Co-author
+    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Discovery of Hippo signaling as a regulator of CSPG4 expression and as a therapeutic target for Clostridioides difficile disease"
     category: articles
@@ -117,38 +144,49 @@ items:
     image: "/images/research-hippoSignalling.png"
     link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011272"
     publication: "PLOS Pathogens"
+    role: Co-author
+    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Protective interaction of human phagocytic APC subsets with Cryptococcus neoformans induces genes associated with metabolism and antigen presentation"
     category: articles
     date: 2022-11-15
     description: "Single-cell RNA sequencing of human lung phagocytes reveals that protective antifungal responses against Cryptococcus involve metabolic shifts to fatty acid metabolism and enhanced TNF-α signaling across multiple immune cell clusters."
     image: "/images/research-phagocyticAPC.jpg"
+    image_position: top
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.1054477/full"
     publication: "Frontiers in Immunology"
+    role: Co-author
+    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Short-Term Adaptations in Skeletal Muscle Mitochondrial Oxidative Capacity and Metabolic Pathways to Breaking up Sedentary Behaviors"
     category: articles
-    date: 2022-01-22
+    date: 2022-01-20
     description: "Breaking up sedentary behavior with frequent short bouts of physical activity triggers molecular adaptations favoring oxidative capacity in skeletal muscle, though mitochondrial function improvements require longer interventions."
     image: "/images/research-skeletalObese.jpg"
+    image_position: top
     link: "https://www.mdpi.com/2072-6643/14/3/454"
     publication: "Nutrients"
+    role: Co-author
 
   - title: "Breast Cancer Endocrine Therapy Promotes Weight Gain With Distinct Adipose Tissue Effects in Lean and Obese Female Mice"
     category: articles
-    date: 2021-11-01
+    date: 2021-08-19
     description: "Endocrine therapies for breast cancer disrupt adipocyte progenitors and promote adipocyte hypertrophy, particularly in obesity, leading to hepatic steatosis and glucose intolerance that may explain increased diabetes risk in patients."
     image: "/images/research-breastCancer.jpg"
+    image_fit: contain
     link: "https://academic.oup.com/endo/article/162/11/bqab174/6354857"
     publication: "Endocrinology"
+    role: Co-author
 
   - title: "Combined ASBT Inhibitor and FGF15 Treatment Improves Therapeutic Efficacy in Experimental Nonalcoholic Steatohepatitis"
     category: articles
     date: 2021-05-07
     description: "Combining bile acid transporter inhibition with FGF15 signaling activation produces synergistic therapeutic effects against NASH by reducing hepatic bile acid burden while minimizing adverse effects seen with single treatments."
     image: "/images/research-asbtInhibitor.jpeg"
-    link: "https://pubmed.ncbi.nlm.nih.gov/33965587/"
+    image_fit: contain
+    link: "https://doi.org/10.1016/j.jcmgh.2021.04.013"
     publication: "Cellular and Molecular Gastroenterology and Hepatology"
+    role: Co-author
 
 # Categories for filtering
 categories:
@@ -157,5 +195,7 @@ categories:
     default: true
   - id: articles
     name: Research Articles
+    badge: Research Article
   - id: journalism
     name: Science Journalism
+    badge: Science Journalism

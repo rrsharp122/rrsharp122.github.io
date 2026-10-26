@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const portfolioGrid = document.getElementById('portfolio-grid');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const portfolioItems = Array.from(document.querySelectorAll('.portfolio-item'));
     let currentFilter = 'all';
     let showAllItems = false;
+
+    // Show more button, created once and placed after the grid
+    const showMoreBtn = document.createElement('button');
+    showMoreBtn.type = 'button';
+    showMoreBtn.className = 'show-more-button';
+    showMoreBtn.setAttribute('aria-controls', 'portfolio-grid');
+    portfolioGrid.parentElement.appendChild(showMoreBtn);
 
     // Filter functionality
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-            currentFilter = filter;
-            
+            currentFilter = this.getAttribute('data-filter');
+
             // Update active button and ARIA states
             filterButtons.forEach(btn => {
                 btn.classList.remove('active');
@@ -18,118 +24,68 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             this.classList.add('active');
             this.setAttribute('aria-pressed', 'true');
-            
-            // Reset all items first
-            portfolioItems.forEach(item => {
-                item.style.display = 'none';
-            });
-            
+
             // Reset show more state when filter changes
             showAllItems = false;
-            // Reset button text when filter changes
-            const showMoreBtn = document.querySelector('.show-more-button');
-            if (showMoreBtn) {
-                showMoreBtn.textContent = 'Show More';
-                showMoreBtn.classList.remove('show-less');
-            }
             updateItemVisibility();
         });
     });
 
+    function matchingItems() {
+        return portfolioItems.filter(item =>
+            currentFilter === 'all' || item.getAttribute('data-category') === currentFilter
+        );
+    }
+
+    // Determine how many items to show based on viewport width
+    function initialItemCount() {
+        return window.innerWidth < 768 ? 3 : 6;
+    }
+
     // Show more functionality
     function updateItemVisibility() {
-        const visibleItems = Array.from(portfolioItems).filter(item => {
-            if (currentFilter === 'all') {
-                return true;
-            }
-            return item.getAttribute('data-category') === currentFilter;
-        });
-        
-        // Determine how many items to show based on viewport width
-        let itemsToShow = 6; // Default: 2 rows of 3
-        const viewportWidth = window.innerWidth;
+        const visibleItems = matchingItems();
+        const itemsToShow = showAllItems ? visibleItems.length : initialItemCount();
 
-        if (viewportWidth < 768) {
-            itemsToShow = 3; // Mobile: show 3
-        } else if (viewportWidth >= 1200) {
-            itemsToShow = 6; // Large screens: show 6
-        }
-        
-        // First, show all items that match the filter
         portfolioItems.forEach(item => {
-            if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
+            item.style.display = 'none';
         });
-        
-        if (!showAllItems && visibleItems.length > itemsToShow) {
-            // Hide items beyond the initial set
-            let shown = 0;
-            portfolioItems.forEach(item => {
-                if (item.style.display === 'block') {
-                    if (shown >= itemsToShow) {
-                        item.style.display = 'none';
-                    }
-                    shown++;
-                }
-            });
-            
-            // Show/create the show more button
-            let showMoreBtn = document.querySelector('.show-more-button');
-            if (!showMoreBtn) {
-                showMoreBtn = document.createElement('button');
-                showMoreBtn.className = 'show-more-button';
-                showMoreBtn.textContent = 'Show More';
-                portfolioGrid.parentElement.appendChild(showMoreBtn);
-            }
-            
-            // Update button text based on state
-            if (showAllItems) {
-                showMoreBtn.textContent = 'Show Less';
-                showMoreBtn.classList.add('show-less');
-            } else {
-                showMoreBtn.textContent = 'Show More';
-                showMoreBtn.classList.remove('show-less');
-            }
-            
+        visibleItems.forEach((item, index) => {
+            item.style.display = index < itemsToShow ? 'block' : 'none';
+        });
+
+        if (visibleItems.length > initialItemCount()) {
+            showMoreBtn.textContent = showAllItems ? 'Show fewer' : `Show all ${visibleItems.length}`;
+            showMoreBtn.setAttribute('aria-expanded', showAllItems ? 'true' : 'false');
             showMoreBtn.style.display = 'block';
         } else {
-            // Hide show more button if not needed
-            const showMoreBtn = document.querySelector('.show-more-button');
-            if (showMoreBtn) {
-                showMoreBtn.style.display = 'none';
-            }
+            showMoreBtn.style.display = 'none';
         }
     }
 
     // Initial setup
     updateItemVisibility();
-    
+
     // Show more button click handler
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('show-more-button')) {
-            showAllItems = !showAllItems;
-            
-            if (showAllItems) {
-                // Show all filtered items
-                portfolioItems.forEach(item => {
-                    if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
-                        item.style.display = 'block';
-                    }
-                });
+    showMoreBtn.addEventListener('click', function() {
+        const firstHiddenIndex = initialItemCount();
+        showAllItems = !showAllItems;
+        updateItemVisibility();
+
+        if (showAllItems) {
+            // Move keyboard focus to the first newly revealed item
+            const firstNewItem = matchingItems()[firstHiddenIndex];
+            const firstNewLink = firstNewItem && firstNewItem.querySelector('.portfolio-title a');
+            if (firstNewLink) {
+                firstNewLink.focus({ preventScroll: true });
             }
-            
-            updateItemVisibility();
-            
-            if (!showAllItems) {
-                // Scroll back to the top of the portfolio section
-                document.getElementById('writing').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+        } else {
+            // Scroll back to the top of the portfolio section
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.getElementById('writing').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
         }
     });
-    
+
     // Update on window resize
     let resizeTimer;
     window.addEventListener('resize', function() {

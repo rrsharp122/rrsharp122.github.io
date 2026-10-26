@@ -10,7 +10,9 @@
   gap: 0.5rem;
   justify-content: center;
   margin-bottom: 2rem;
+  overflow-x: auto;
   padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .filter-btn {
@@ -19,6 +21,7 @@
   border-radius: 25px;
   color: var(--primary-color);
   cursor: pointer;
+  font-family: var(--font-family);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 1.5rem;
@@ -27,13 +30,23 @@
 
 .filter-btn:hover {
   background-color: var(--light-background);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   transform: translateY(-2px);
 }
 
 .filter-btn.active {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
+  box-shadow: 0 4px 12px var(--shadow-medium);
   color: white;
+  font-weight: 600;
+}
+
+.filter-count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  margin-left: 0.2rem;
 }
 
 /* Portfolio Grid */
@@ -42,6 +55,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   margin-bottom: 3rem;
+  padding: 0;
 }
 
 /* 3 columns on standard laptops/desktops */
@@ -60,7 +74,9 @@
 
 /* Portfolio Item (Tile) */
 .portfolio-item {
+  display: block;
   opacity: 1;
+  padding: 0;
   transform: translateY(0);
   transition: all 0.4s ease;
 }
@@ -82,29 +98,54 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 0;
   overflow: hidden;
+  position: relative;
   transition: all 0.3s ease;
 }
 
+/* Keyboard focus on the title link outlines the whole card */
+.portfolio-tile:has(.portfolio-title a:focus-visible) {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.portfolio-tile .portfolio-title a:focus-visible {
+  outline: none;
+}
+
 .portfolio-tile:hover {
+  border-color: var(--primary-color);
   box-shadow: 0 8px 20px var(--shadow-strong);
   transform: translateY(-4px);
 }
 
 /* Portfolio Image */
 .portfolio-image {
-  aspect-ratio: 16 / 9;
   background-color: var(--light-background);
+  border-bottom: var(--border-interactive);
+  border-radius: 8px 8px 0 0;
+  height: 200px;
   overflow: hidden;
   position: relative;
-  border-bottom: var(--border-interactive);
 }
 
 .portfolio-image img {
+  border-radius: 8px 8px 0 0;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
   width: 100%;
+}
+
+/* Figures and diagrams: show the whole image instead of cropping it */
+.portfolio-image.is-contain {
+  background-color: #FFFFFF;
+}
+
+.portfolio-image.is-contain img {
+  object-fit: contain;
+  padding: 0.75rem;
 }
 
 .portfolio-tile:hover .portfolio-image img {
@@ -114,13 +155,15 @@
 /* Portfolio Content */
 .portfolio-content {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  flex-grow: 1;
   padding: 1.5rem;
 }
 
 .portfolio-meta {
+  align-items: center;
   display: flex;
+  flex-wrap: wrap;
   font-size: 0.85rem;
   gap: 1rem;
   margin-bottom: 0.75rem;
@@ -130,6 +173,7 @@
   background-color: var(--accent-color);
   border-radius: 4px;
   color: white;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 0.25rem 0.75rem;
   text-transform: uppercase;
@@ -137,11 +181,23 @@
 
 .portfolio-publication {
   color: var(--text-muted);
+  font-size: 0.85rem;
   font-style: italic;
+}
+
+/* Rachel's role on research papers, e.g. "First author" */
+.portfolio-role {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: -0.25rem 0 0.5rem;
+  text-transform: uppercase;
 }
 
 .portfolio-title {
   font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1.4;
   margin: 0 0 1rem;
 }
@@ -156,18 +212,65 @@
   color: var(--primary-color);
 }
 
+/* Stretch the title link over the whole card so any part of it is clickable */
+.portfolio-title a::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
 .portfolio-description {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   color: var(--text-muted);
-  flex-grow: 1;
+  display: -webkit-box;
+  flex: none;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* Rachel's own one-line note on her part in a co-authored paper
+   (`contribution` in data/portfolio.yaml; shown in addition to the summary) */
+.portfolio-contribution {
+  border-left: 3px solid var(--accent-color);
+  color: var(--text-color);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: -0.25rem 0 1rem;
+  padding-left: 0.6rem;
+}
+
+.portfolio-contribution-label {
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.portfolio-footer {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
 .portfolio-date {
   color: var(--text-muted);
   font-size: 0.85rem;
-  margin-top: auto;
+}
+
+.portfolio-cta {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.portfolio-tile:hover .portfolio-cta {
+  text-decoration: underline;
 }
 
 /* Loading Indicator */
