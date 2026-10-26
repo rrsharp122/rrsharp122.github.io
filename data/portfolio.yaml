@@ -1,6 +1,4 @@
-# Optional per-item fields: role (e.g. "Co-author"), contribution (Rachel's own
-# line on her part, under ~15 words, shown below the description), image_fit,
-# image_position.
+# Optional per-item fields: role (e.g. "Co-author"), image_fit, image_position.
 items:
   # Science Journalism Articles
   - title: "Finding Humanity in Health Data"
@@ -113,8 +111,6 @@ items:
     image_fit: contain
     link: "https://www.nature.com/articles/s41588-025-02127-z"
     publication: "Nature Genetics"
-    role: Co-author
-    contribution: "Provided perspectives and wrote sections on social risk factors and bipolar disorder"
 
   - title: "Deciphering the impact of genomic variation on function"
     category: articles
@@ -124,7 +120,6 @@ items:
     image_fit: contain
     link: "https://doi.org/10.1038/s41586-024-07510-0"
     publication: "Nature"
-    role: Consortium author
 
   - title: "Cx3cr1 controls kidney resident macrophage heterogeneity"
     category: articles
@@ -134,8 +129,6 @@ items:
     image_fit: contain
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1082078/full"
     publication: "Frontiers in Immunology"
-    role: Co-author
-    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Discovery of Hippo signaling as a regulator of CSPG4 expression and as a therapeutic target for Clostridioides difficile disease"
     category: articles
@@ -144,8 +137,6 @@ items:
     image: "/images/research-hippoSignalling.png"
     link: "https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011272"
     publication: "PLOS Pathogens"
-    role: Co-author
-    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Protective interaction of human phagocytic APC subsets with Cryptococcus neoformans induces genes associated with metabolism and antigen presentation"
     category: articles
@@ -155,8 +146,6 @@ items:
     image_position: top
     link: "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.1054477/full"
     publication: "Frontiers in Immunology"
-    role: Co-author
-    contribution: "Analyzed, interpreted, and communicated scRNA-seq data to guide follow-up studies"
 
   - title: "Short-Term Adaptations in Skeletal Muscle Mitochondrial Oxidative Capacity and Metabolic Pathways to Breaking up Sedentary Behaviors"
     category: articles
@@ -166,7 +155,6 @@ items:
     image_position: top
     link: "https://www.mdpi.com/2072-6643/14/3/454"
     publication: "Nutrients"
-    role: Co-author
 
   - title: "Breast Cancer Endocrine Therapy Promotes Weight Gain With Distinct Adipose Tissue Effects in Lean and Obese Female Mice"
     category: articles
@@ -176,7 +164,6 @@ items:
     image_fit: contain
     link: "https://academic.oup.com/endo/article/162/11/bqab174/6354857"
     publication: "Endocrinology"
-    role: Co-author
 
   - title: "Combined ASBT Inhibitor and FGF15 Treatment Improves Therapeutic Efficacy in Experimental Nonalcoholic Steatohepatitis"
     category: articles
@@ -186,7 +173,6 @@ items:
     image_fit: contain
     link: "https://doi.org/10.1016/j.jcmgh.2021.04.013"
     publication: "Cellular and Molecular Gastroenterology and Hepatology"
-    role: Co-author
 
 # Categories for filtering
 categories:

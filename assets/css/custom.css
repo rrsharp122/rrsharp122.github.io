@@ -1936,7 +1936,7 @@ main.main {
 }
 
 .about-content {
-  max-width: 600px;
+  max-width: 680px; /* wider than Research so text keeps a comfortable line length beside the photos */
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.8;
@@ -1958,8 +1958,25 @@ main.main {
 }
 
 .about-content h3 {
-  margin-top: 3rem; /* More separation for "Beyond the lab" etc. */
+  margin-top: 2.5rem; /* Separation for "Beyond the lab" etc. */
   margin-bottom: 1rem;
+}
+
+/* Where photos float beside the text, line a photo that follows a heading up
+   with the top of the heading rather than the paragraph below it */
+@media (min-width: 769px) {
+  .about-content {
+    --about-h3-size: 1.75rem;
+  }
+
+  .about-content h3 {
+    font-size: var(--about-h3-size);
+    line-height: 1.2;
+  }
+
+  .about-content h3 + figure.float-right {
+    margin-top: calc(-1.2 * var(--about-h3-size) - 1rem);
+  }
 }
 
 /* Research Section */

@@ -220,6 +220,8 @@
   z-index: 1;
 }
 
+/* Clamped to 3 lines by default; portfolio.js raises the clamp when the
+   card has spare height in its row */
 .portfolio-description {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -230,23 +232,6 @@
   line-height: 1.6;
   margin-bottom: 1rem;
   overflow: hidden;
-}
-
-/* Rachel's own one-line note on her part in a co-authored paper
-   (`contribution` in data/portfolio.yaml; shown in addition to the summary) */
-.portfolio-contribution {
-  border-left: 3px solid var(--accent-color);
-  color: var(--text-color);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin: -0.25rem 0 1rem;
-  padding-left: 0.6rem;
-}
-
-.portfolio-contribution-label {
-  color: var(--accent-color);
-  font-weight: 700;
-  margin-right: 0.25rem;
 }
 
 .portfolio-footer {

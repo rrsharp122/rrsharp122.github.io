@@ -61,10 +61,41 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             showMoreBtn.style.display = 'none';
         }
+
+        fitDescriptions();
+    }
+
+    // Let each description show as many lines as fit in its card, so shorter
+    // cards in a row fill their spare space instead of cutting off at 3 lines
+    function fitDescriptions() {
+        const descriptions = Array.from(portfolioGrid.querySelectorAll('.portfolio-description'));
+
+        // Reset to the CSS default so row heights come from the 3-line clamp
+        descriptions.forEach(desc => desc.style.removeProperty('-webkit-line-clamp'));
+
+        const extraLines = descriptions.map(desc => {
+            if (!desc.offsetParent) return 0;
+            const style = getComputedStyle(desc);
+            const footer = desc.parentElement.querySelector('.portfolio-footer');
+            const spare = footer.getBoundingClientRect().top - desc.getBoundingClientRect().bottom
+                - parseFloat(style.marginBottom);
+            // Take a line that almost fits; growing the card a few pixels is unnoticeable
+            return Math.floor(spare / parseFloat(style.lineHeight) + 0.2);
+        });
+
+        descriptions.forEach((desc, i) => {
+            if (extraLines[i] > 0) {
+                const baseLines = parseInt(getComputedStyle(desc).webkitLineClamp, 10);
+                desc.style.setProperty('-webkit-line-clamp', baseLines + extraLines[i]);
+            }
+        });
     }
 
     // Initial setup
     updateItemVisibility();
+    if (document.fonts) {
+        document.fonts.ready.then(fitDescriptions);
+    }
 
     // Show more button click handler
     showMoreBtn.addEventListener('click', function() {
@@ -93,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
         resizeTimer = setTimeout(function() {
             if (!showAllItems) {
                 updateItemVisibility();
+            } else {
+                fitDescriptions();
             }
         }, 250);
     });

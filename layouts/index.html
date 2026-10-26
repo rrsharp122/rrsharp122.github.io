@@ -110,9 +110,6 @@
                                 </h3>
                                 
                                 <p class="portfolio-description">{{ $item.description }}</p>
-                                {{ with $item.contribution }}
-                                    <p class="portfolio-contribution"><span class="portfolio-contribution-label">My role</span> {{ . }}</p>
-                                {{ end }}
 
                                 <div class="portfolio-footer">
                                     {{ if $item.date }}

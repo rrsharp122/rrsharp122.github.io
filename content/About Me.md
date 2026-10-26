@@ -23,6 +23,6 @@ I am a science communicator and neuroscientist passionate about the intersection
 
 ### Beyond the lab
 
-{{< figure src="/images/rachel-organizingMarch.jpg" alt="A photo showing Rachel in action in the middle of a field. You can see a line of protestors with signs behind her. Rachel is holding a megaphone and seems to be yelling into it. She is wearing a backback, army green jacket, and lilac baseball cap. She looks super cool." class="float-right" width="200px" >}}
+{{< figure src="/images/taz-forest.jpeg" alt="Taz, a white and gray tabby cat, walking along a fallen log in the forest and leaning in close to the camera with big curious eyes and long whiskers." class="float-right" width="200px" >}}
 
 When I'm not writing, you can find me at the climbing gym, reading (check out *Until the Red Swallows It All* by Mason Parker), taking long walks in the woods, attending community-building events, or taking my cat, Taz, to a bar. 
