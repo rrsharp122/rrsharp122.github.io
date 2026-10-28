@@ -23,7 +23,7 @@ items:
   - title: "The Need for Diversity in Large-Scale Genetic Studies"
     category: journalism
     date: 2023-10-17
-    description: "Discover why the lack of diversity in Genome-wide Association Studies (GWAS) is more than a social issue—it's a scientific blind spot that could be missing key insights into human genetics."
+    description: "People of African descent hold the highest degree of human genetic diversity, yet make up just 2% of genome-wide association study participants. Examining how ancient migration bottlenecks shaped global variation underscores why this representation gap limits our ability to identify disease-causing variants."
     image: "/images/DNA.webp"
     link: "https://www.thepipettepen.com/the-need-for-diversity-in-large-scale-genetic-studies/"
     publication: "The Pipettepen"
@@ -32,7 +32,7 @@ items:
   - title: "The Myth of Prestige: Does Where You Attend School Truly Matter?"
     category: journalism
     date: 2024-03-22
-    description: "Explore the myth of institutional prestige through one graduate student's journey, revealing insights that challenge conventional beliefs about success and education. Uncover surprising data that questions the correlation between prestigious universities and future earnings."
+    description: "Graduates of elite universities out-earn their peers on average, but economic research shows this gap has little to do with the quality of education. Examining admissions data and career outcomes reveals who actually benefits from institutional prestige and why."
     image: "/images/pipettepen-doesSchoolMatter.png"
     link: "https://www.thepipettepen.com/the-myth-of-prestige-does-where-you-attend-school-truly-matter/"
     publication: "The Pipettepen"
@@ -95,7 +95,7 @@ items:
   - title: "Considering social risk alongside genetic risk for bipolar disorder in the All of Us Research Program"
     category: articles
     date: 2026-10-08
-    description: "In 115,275 All of Us participants, each of six social risk factors, from perceived stress to adverse childhood experiences, was more strongly associated with bipolar disorder than polygenic risk, supporting integrated genetic-social models of psychiatric risk."
+    description: "Polygenic risk scores capture only a fraction of bipolar disorder liability. This multi-ancestry study of 115,275 All of Us participants demonstrates that social risk factors confer substantial explanatory power beyond genetic liability alone, emphasizing the necessity of incorporating social context into precision psychiatry models."
     image: "/images/research-hggAdvances.png"
     image_fit: contain
     link: "https://doi.org/10.1016/j.xhgg.2026.100665"
