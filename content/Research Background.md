@@ -12,7 +12,7 @@ build:
   list: never
 ---
 
-My current project focuses on how social risk factors, such as neighborhood safety or perceived stress, impact genetic risk for bipolar disorder. This work allows me to draw on my background in neuroscience, genetics, computational biology, and social sciences to explore how social and biological factors interact to influence mental health outcomes.
+My research bridges neuroscience, statistical genetics, computational biology, and social epidemiology to understand how inherited genetic liability and lived social context shape complex psychiatric conditions. During my PhD at UNC Chapel Hill, I analyzed whole-genome sequencing, electronic health records, and survey data from over 115,000 diverse participants in the All of Us Research Program to evaluate multi-ancestry polygenic risk scores alongside social determinants of health in bipolar disorder. Beyond empirical modeling, my work examines the clinical readiness, ancestral portability, and ethical limitations of psychiatric polygenic scores, advocating for holistic risk frameworks that integrate social and environmental risk to advance health equity.
 
 My graduate research was supported by an NSF Graduate Research Fellowship and the UNC Department of Neuroscience T32 Training Grant.
 
